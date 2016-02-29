@@ -91,4 +91,9 @@
         self.customWindow.hidden = YES;
     });
 }
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    for (UITextField *one in self.textFields) {
+        [one resignFirstResponder];
+    }
+}
 @end
