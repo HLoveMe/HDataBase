@@ -41,6 +41,7 @@ typedef enum {
 
 
 /////////////////////////////////////
++(void)closeDataBase;
  /**删除表*/
 +(BOOL)dropTable:(Class)clazz;
 +(BOOL)deleteAllObjects:(Class)clazz;

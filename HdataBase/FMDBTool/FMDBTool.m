@@ -282,4 +282,10 @@ static     NSString *tableName;
     }
     return nil;
 }
+
++(void)closeDataBase{
+    if (dataBase) {
+        [dataBase close];
+    }
+}
 @end

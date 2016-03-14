@@ -35,28 +35,34 @@
     }
     return _customWindow;
 }
-
+ /**保存某个数据*/
 - (IBAction)save:(id)sender {
-    /**保存对象*/
+   
     BOOL flag =0;
     student *stu = [self studentFromTextField];
     if (stu) {
             flag = [FMDBTool saveObjectAllProperty:stu];
-//            flag = [FMDBTool H_saveObject:<#(NSObject *)#> onlyFlag:<#(NSString *)#>]
-//            对象属性不能完全一致 有唯一标识
     }
     if(flag)
         [self showMessage:@"Success" time:2];
     else
         [self showMessage:@"failure" time:2];
 }
+ /**删除某条数据*/
 - (IBAction)deleteData:(id)sender {
     [FMDBTool deleteObject:[self studentFromTextField]];
-//    [FMDBTool H_deleteObjectByFlag:<#(NSString *)#> withClass:<#(__unsafe_unretained Class)#>]
 }
+ /**所有数据*/
 - (IBAction)alldata:(id)sender {
     [self.navigationController pushViewController:[resultTableViewController new] animated:YES];
 }
+
+ /**更多详细的操作 请看 FMDBTool.h*/
+
+
+
+
+
 -(student *)studentFromTextField{
     student *stu = [[student alloc]init];
     if (self.nameTextField.text.length>=1) {
