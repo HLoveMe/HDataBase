@@ -41,10 +41,16 @@ typedef enum {
 
 
 /////////////////////////////////////
+ /**关闭数据库连接*/
 +(void)closeDataBase;
  /**删除表*/
 +(BOOL)dropTable:(Class)clazz;
+ /**删除clazz所有数据*/
 +(BOOL)deleteAllObjects:(Class)clazz;
+//更改表名
++(BOOL)rename:(Class)oldClass useClass:(Class)newClass;
+//增加列
++(BOOL)addColumn:(Class)clazz name:(NSString *)name;
 /////////////////////////////////////
 
 

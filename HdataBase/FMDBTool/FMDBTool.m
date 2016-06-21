@@ -69,6 +69,16 @@ static FMDatabase *dataBase;
     return [dataBase executeUpdate:[NSString stringWithFormat:@"delete from t_%@ where '1' = '1'",clazz]];
 }
 
++(BOOL)rename:(Class)oldClass useClass:(Class)newClass{
+    if (!dataBase) [FMDBTool createDatabaseAndTableAndOpen:[[oldClass alloc]init]];
+    return [dataBase executeUpdate:[[NSString alloc] initWithFormat:@"alter table t_%@ rename to t_%@",NSStringFromClass(oldClass),NSStringFromClass(newClass)]];
+}
++(BOOL)addColumn:(Class)clazz name:(NSString *)name{
+    if (!dataBase) [FMDBTool createDatabaseAndTableAndOpen:[[clazz alloc]init]];
+    return [dataBase executeUpdate:[[NSString alloc] initWithFormat:@"ALTER TABLE t_%@ ADD COLUMN %@ TEXT",NSStringFromClass(clazz),name]];
+
+}
+
 +(BOOL)dropTable:(Class)clazz{
     NSObject *obj=[[clazz alloc]init];
     if (!dataBase) [FMDBTool createDatabaseAndTableAndOpen:obj];

@@ -23,6 +23,7 @@
 		B206D7991C81AA1E00F66DE7 /* resultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7981C81AA1E00F66DE7 /* resultTableViewController.m */; };
 		B206D79B1C81ACC400F66DE7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */; };
 		CA38D22BB8FB7B2F32295E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2104D617ACF2DF7CEA93C3 /* libPods.a */; };
+		DB02592A1D196FE100F6785B /* teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0259291D196FE100F6785B /* teacher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		B206D7971C81AA1E00F66DE7 /* resultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultTableViewController.h; sourceTree = "<group>"; };
 		B206D7981C81AA1E00F66DE7 /* resultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultTableViewController.m; sourceTree = "<group>"; };
 		B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		DB0259281D196FE100F6785B /* teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teacher.h; sourceTree = "<group>"; };
+		DB0259291D196FE100F6785B /* teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teacher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 			children = (
 				B206D78F1C81A2B900F66DE7 /* student.h */,
 				B206D7901C81A2B900F66DE7 /* student.m */,
+				DB0259281D196FE100F6785B /* teacher.h */,
+				DB0259291D196FE100F6785B /* teacher.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				B206D7541C819EEA00F66DE7 /* AppDelegate.m in Sources */,
 				B206D78B1C81A09700F66DE7 /* HArhiever.m in Sources */,
 				B206D7511C819EEA00F66DE7 /* main.m in Sources */,
+				DB02592A1D196FE100F6785B /* teacher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

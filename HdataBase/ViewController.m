@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "propertyViewControoler.h"
+#import "FMDBTool.h"
+#import "student.h"
+#import "teacher.h"
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *one;
 @property (strong, nonatomic) IBOutlet UIButton *two;
@@ -17,7 +20,9 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    [FMDBTool addColumn:[student class] name:@"AAAAAA"];
     [super viewDidLoad];
+    
 }
 - (IBAction)onetouch:(id)sender {
     propertyViewControoler *one= [propertyViewControoler new];
