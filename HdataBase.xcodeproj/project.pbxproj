@@ -15,7 +15,6 @@
 		B206D75F1C819EEA00F66DE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B206D75D1C819EEA00F66DE7 /* LaunchScreen.storyboard */; };
 		B206D76A1C819EEA00F66DE7 /* HdataBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7691C819EEA00F66DE7 /* HdataBaseTests.m */; };
 		B206D7751C819EEA00F66DE7 /* HdataBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */; };
-		B206D7881C81A03C00F66DE7 /* FMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7871C81A03C00F66DE7 /* FMDBTool.m */; };
 		B206D78B1C81A09700F66DE7 /* HArhiever.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D78A1C81A09700F66DE7 /* HArhiever.m */; };
 		B206D7911C81A2B900F66DE7 /* student.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7901C81A2B900F66DE7 /* student.m */; };
 		B206D7941C81A45A00F66DE7 /* propertyViewControoler.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7931C81A45A00F66DE7 /* propertyViewControoler.m */; };
@@ -24,6 +23,7 @@
 		B206D79B1C81ACC400F66DE7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */; };
 		CA38D22BB8FB7B2F32295E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2104D617ACF2DF7CEA93C3 /* libPods.a */; };
 		DB02592A1D196FE100F6785B /* teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0259291D196FE100F6785B /* teacher.m */; };
+		DB93DA061D2F83F10028E532 /* FMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93DA051D2F83F10028E532 /* FMDBTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,6 @@
 		B206D7701C819EEA00F66DE7 /* HdataBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HdataBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HdataBaseUITests.m; sourceTree = "<group>"; };
 		B206D7761C819EEA00F66DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B206D7861C81A03C00F66DE7 /* FMDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTool.h; sourceTree = "<group>"; };
-		B206D7871C81A03C00F66DE7 /* FMDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTool.m; sourceTree = "<group>"; };
 		B206D7891C81A09700F66DE7 /* HArhiever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HArhiever.h; sourceTree = "<group>"; };
 		B206D78A1C81A09700F66DE7 /* HArhiever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HArhiever.m; sourceTree = "<group>"; };
 		B206D78F1C81A2B900F66DE7 /* student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
@@ -77,6 +75,8 @@
 		B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DB0259281D196FE100F6785B /* teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teacher.h; sourceTree = "<group>"; };
 		DB0259291D196FE100F6785B /* teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teacher.m; sourceTree = "<group>"; };
+		DB93DA041D2F83F10028E532 /* FMDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTool.h; sourceTree = "<group>"; };
+		DB93DA051D2F83F10028E532 /* FMDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,8 +187,8 @@
 			children = (
 				B206D7891C81A09700F66DE7 /* HArhiever.h */,
 				B206D78A1C81A09700F66DE7 /* HArhiever.m */,
-				B206D7861C81A03C00F66DE7 /* FMDBTool.h */,
-				B206D7871C81A03C00F66DE7 /* FMDBTool.m */,
+				DB93DA041D2F83F10028E532 /* FMDBTool.h */,
+				DB93DA051D2F83F10028E532 /* FMDBTool.m */,
 			);
 			path = FMDBTool;
 			sourceTree = "<group>";
@@ -408,9 +408,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B206D7941C81A45A00F66DE7 /* propertyViewControoler.m in Sources */,
-				B206D7881C81A03C00F66DE7 /* FMDBTool.m in Sources */,
 				B206D7911C81A2B900F66DE7 /* student.m in Sources */,
 				B206D7571C819EEA00F66DE7 /* ViewController.m in Sources */,
+				DB93DA061D2F83F10028E532 /* FMDBTool.m in Sources */,
 				B206D7991C81AA1E00F66DE7 /* resultTableViewController.m in Sources */,
 				B206D7541C819EEA00F66DE7 /* AppDelegate.m in Sources */,
 				B206D78B1C81A09700F66DE7 /* HArhiever.m in Sources */,
