@@ -17,9 +17,15 @@ static FMDatabase *dataBase;
         dataBase=[FMDatabase databaseWithPath:HDataBasePath];
         [dataBase open];
     }
-    if (obj)
+    if (obj){
+        NSString *sql = [NSString stringWithFormat:@"SELECT count(*) FROM sqlite_master WHERE type='table' AND name='t_%@'",obj.class];
+         FMResultSet *set=[dataBase executeQuery:sql];
+        [set next];
+        if ([set intForColumnIndex:0]==1){
+            return;
+        }
         [dataBase executeUpdate:[FMDBTool sqlStringWith:FMDBCreate object:obj clazz:obj.class]];
-    
+    }
 }
 
 +(BOOL)saveObjectAllProperty:(NSObject *)obj{
@@ -136,7 +142,6 @@ static FMDatabase *dataBase;
 +(BOOL)rename:(Class)oldClass useClass:(Class)newClass{
     [FMDBTool createDatabaseAndTableAndOpen:[[oldClass alloc]init]];
     return [dataBase executeUpdate:[[NSString alloc] initWithFormat:@"alter table t_%@ rename to t_%@",NSStringFromClass(oldClass),NSStringFromClass(newClass)]];
-    
 }
 +(long long int )lastInsertRow{
     return [dataBase lastInsertRowId];
@@ -147,6 +152,112 @@ static FMDatabase *dataBase;
     NSString *sql =[NSString stringWithFormat:@" alter table '%@' add '%@' text ",table,row];
     BOOL flag=[dataBase executeUpdate:sql];
     return flag;
+}
++(BOOL)dataUpdate:(Class)old new:(Class)newC deleteOld:(BOOL)flag2{
+    id obj = [[newC alloc]init];
+    [FMDBTool createDatabaseAndTableAndOpen:obj];
+    FMResultSet *set=[dataBase executeQuery:[NSString stringWithFormat:@"select * from t_%@",old]];
+    NSMutableArray *sqlArr = [NSMutableArray array];
+    NSString *insert = [NSString stringWithFormat:@"insert into t_%@ ",newC];
+    
+    NSDictionary *par=@{};
+    if ([newC respondsToSelector:@selector(dataMigrate)]){
+        par = [newC performSelector:@selector(dataMigrate)];
+    }
+    while (set.next) {
+        NSMutableArray *optArr =[NSMutableArray array];
+        NSMutableArray *valueArr =[NSMutableArray array];
+        [obj enumeratePropertyValue:^(NSString *proName, id value) {
+            NSString * key=proName;
+            NSString * oldkey = par[proName];
+            if (oldkey) {key=oldkey;}
+            id reavalue = [set stringForColumn:key];
+            [valueArr addObject:[NSString stringWithFormat:@"'%@'",reavalue]];
+            [optArr addObject:[NSString stringWithFormat:@"'%@'",proName]];
+        }];
+        NSString *one = [insert stringByAppendingFormat:@"(%@) values (%@)",[optArr componentsJoinedByString:@","],[valueArr componentsJoinedByString:@","]] ;
+        [sqlArr addObject:one];
+    }
+    
+    [dataBase beginTransaction];
+    __block BOOL success=YES;
+    [sqlArr enumerateObjectsUsingBlock:^(NSString * sql, NSUInteger idx, BOOL * _Nonnull stop) {
+        BOOL flag = [dataBase executeUpdate:sql];
+        *stop=!flag;
+        success=flag;
+    }];
+    if (!success) {
+        [dataBase rollback];
+        return NO;
+    }
+    [dataBase commit];
+    if (flag2){
+        [FMDBTool dropTable:old];
+    }
+    return YES;
+}
++(BOOL)dataUpdate:(Class)clazz{
+    id obj=[[clazz alloc]init];
+    [FMDBTool createDatabaseAndTableAndOpen:nil];
+    
+    NSString *createsql = [FMDBTool sqlStringWith:FMDBCreate object:obj clazz:[obj class]];
+    NSString *tempTable = [NSString stringWithFormat:@"t_t_t_%@",clazz];
+    createsql = [createsql stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"t_%@",clazz] withString:tempTable];
+    [dataBase executeUpdate:createsql];
+    
+    FMResultSet *set=[dataBase executeQuery:[NSString stringWithFormat:@"select * from t_%@",clazz]];
+    NSMutableArray *sqlArr = [NSMutableArray array];
+    NSString *insert = [NSString stringWithFormat:@"insert into %@ ",tempTable];
+    NSDictionary *par=@{};
+    if ([clazz respondsToSelector:@selector(dataMigrate)]){
+        par = [clazz performSelector:@selector(dataMigrate)];
+    }
+    while (set.next) {
+        NSMutableArray *optArr =[NSMutableArray array];
+        NSMutableArray *valueArr =[NSMutableArray array];
+        [obj enumeratePropertyValue:^(NSString *proName, id value) {
+            NSString * key=proName;
+            NSString * oldkey = par[proName];
+            if (oldkey) {key=oldkey;}
+            id reavalue = [set stringForColumn:key];
+            [valueArr addObject:[NSString stringWithFormat:@"'%@'",reavalue]];
+            [optArr addObject:[NSString stringWithFormat:@"'%@'",proName]];
+        }];
+        NSString *one = [insert stringByAppendingFormat:@"(%@) values (%@)",[optArr componentsJoinedByString:@","],[valueArr componentsJoinedByString:@","]] ;
+        [sqlArr addObject:one];
+    }
+    [dataBase beginTransaction];
+    __block BOOL success=YES;
+    [sqlArr enumerateObjectsUsingBlock:^(NSString * sql, NSUInteger idx, BOOL * _Nonnull stop) {
+        BOOL flag = [dataBase executeUpdate:sql];
+        *stop=!flag;
+        success=flag;
+    }];
+    
+    
+    success=[FMDBTool dropTable:clazz];
+    success=[dataBase executeUpdate:[[NSString alloc] initWithFormat:@"alter table %@ rename to t_%@",tempTable,NSStringFromClass(clazz)]];
+    
+    if (!success) {
+        [dataBase rollback];
+        return NO;
+    }
+    [dataBase commit];
+    return YES;
+}
++(BOOL)syncData:(Class)clazz{
+    [FMDBTool createDatabaseAndTableAndOpen:nil];
+    NSArray *array = [FMDBTool ObjectsWithClass:clazz];
+    BOOL flag=1;
+    [dataBase beginTransaction];
+    flag = [FMDBTool deleteAllObjects:clazz];
+    flag = [FMDBTool saveObjscts:array];
+    if (!flag){
+        [dataBase rollback];
+        return NO;
+    }
+    [dataBase commit];
+    return YES;
 }
 
 +(BOOL)dropTable:(Class)clazz{
@@ -315,103 +426,6 @@ static FMDatabase *dataBase;
     NSString *str=[NSString stringWithFormat:@"(%@)",[array componentsJoinedByString:@","]];
     return str;
 }
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////id主键  object 序列化对象   obj_flag 又一标识   //////////////////////////////////////
-static     NSString *tableName;
-+(void)createBaseTable:(Class)class{
-    dataBase=[FMDatabase databaseWithPath:HDataBasePath];
-    [dataBase open];
-    [dataBase executeUpdate:[NSString stringWithFormat:@" CREATE TABLE if not exists %@ (id integer primary key,object BLOB ,obj_flag text)",tableName]];
-}
-+(BOOL)H_saveObjscts:(NSArray *)datas onlyFlag:(NSString *)flagValue{
-    tableName=[NSString stringWithFormat:@"t_%@",NSStringFromClass([datas.lastObject class])];
-    [FMDBTool createBaseTable:[datas.lastObject class]];
-    __block BOOL flag  = 1;
-    [datas enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSData *data=[NSKeyedArchiver archivedDataWithRootObject:obj];
-        NSString  *sql=[NSString stringWithFormat:@"insert into  %@ (object,obj_flag) values (?,?)",tableName];
-        BOOL one = [dataBase executeUpdate:sql,data,flagValue];
-        if (!one) {
-            *stop=YES;
-            flag=0;
-        }
-    }];
-    return flag;
-    
-}
-+(BOOL)H_saveObject:(NSObject *)obj onlyFlag:(NSString *)flagValue{
-    tableName=[NSString stringWithFormat:@"t_%@",NSStringFromClass(obj.class)];
-    [FMDBTool createBaseTable:obj.class];
-    NSData *data=[NSKeyedArchiver archivedDataWithRootObject:obj];
-    NSString  *sql=[NSString stringWithFormat:@"insert into  %@ (object,obj_flag) values (?,?)",tableName];
-    return  [dataBase executeUpdate:sql,data,flagValue];
-    
-}
-+(BOOL)H_deleteObjectByFlag:(NSString *)obj_flag withClass:(Class)clazz{
-    tableName=[NSString stringWithFormat:@"t_%@",NSStringFromClass(clazz)];
-    [FMDBTool createBaseTable:clazz];
-    [dataBase open];
-    return  [dataBase executeUpdate:[NSString stringWithFormat:@"delete from %@ where obj_flag=%@ ",tableName,obj_flag]];
-    
-}
-+(BOOL)H_deleteAllObjectwithClass:(Class)clazz{
-    tableName=[NSString stringWithFormat:@"t_%@",NSStringFromClass(clazz)];
-    [FMDBTool createBaseTable:clazz];
-    NSString *sql=[NSString stringWithFormat:@"delete from %@ ",tableName];
-    return [dataBase executeUpdate:sql];
-}
-
-+(NSArray *)H_ObjectsByClass:(Class)clazz{
-    tableName=[NSString stringWithFormat:@"t_%@",NSStringFromClass(clazz)];
-    [FMDBTool createBaseTable:clazz];
-    id obj;
-    NSString *sql=[NSString stringWithFormat:@"select  * from %@",tableName];
-    NSMutableArray *objArray=[NSMutableArray array];
-    FMResultSet *set=[dataBase executeQuery:sql];
-    while (set.next) {
-        NSData *readData=[set objectForColumnName:@"object"];
-        obj=[NSKeyedUnarchiver unarchiveObjectWithData:readData];
-        [objArray addObject:obj];
-    }
-    return objArray;
-}
-+(NSArray *)H_objects:(NSString *)sql Class:(Class)clazz{
-    tableName=[NSString stringWithFormat:@"t_%@",NSStringFromClass(clazz)];
-    [FMDBTool createBaseTable:clazz];
-    id obj;
-    NSMutableArray *objArray=[NSMutableArray array];
-    FMResultSet *set=[dataBase executeQuery:sql];
-    while (set.next) {
-        NSData *readData=[set objectForColumnName:@"object"];
-        obj=[NSKeyedUnarchiver unarchiveObjectWithData:readData];
-        [objArray addObject:obj];
-    }
-    return objArray;
-}
-+(id)H_objectForFlag:(NSString *)flag withClazz:(Class)clazz{
-    NSString *sql=[@"select * from" stringByAppendingFormat:@" t_%@",NSStringFromClass(clazz)];
-    sql=[sql stringByAppendingFormat:@" where obj_flag ='%@'",flag];
-    [FMDBTool createDatabaseAndTableAndOpen:[clazz new]];
-    id obj;
-    FMResultSet *result= [dataBase executeQuery:sql];
-    if (result.next) {
-        NSData *data=[result objectForColumnName:@"object"];
-        obj=[NSKeyedUnarchiver unarchiveObjectWithData:data];
-        return obj;
-    }
-    return nil;
-}
-
 +(void)closeDataBase{
     if (dataBase) {
         [dataBase close];

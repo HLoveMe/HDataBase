@@ -98,7 +98,7 @@
                 }
             }];
             temp=[temp substringToIndex:temp.length-1].mutableCopy;
-
+            
             [temp appendFormat:@"{\"clazz\":\"%@\"}",info.arrClazz];
             [temp appendString:@"]"];
             
@@ -121,13 +121,17 @@
     id this = [[clazz alloc]init];
     NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:[dicStr dataUsingEncoding:4] options:0 error:nil];
     NSAssert(dic, @"解析错误");
-    
+    NSDictionary *pro;
+    if([clazz respondsToSelector:@selector(dataMigrate)]){
+        pro = [clazz performSelector:@selector(dataMigrate)];
+    }
     [this enumerateObjectsUsingBlock:^(ivarInfomation *info) {
         id str = dic[info.proName];
+        if(!str){str = dic[pro[info.proName]];}
         if (info.isArray) {
             NSArray *a = dic[info.proName];
             Class clazz = NSClassFromString(a.lastObject[@"clazz"]);
-             NSMutableArray *arr =[NSMutableArray array];
+            NSMutableArray *arr =[NSMutableArray array];
             if (clazz){
                 NSArray *con=str;
                 for (int i=0; i<con.count-1; i++) {
@@ -149,5 +153,4 @@
     }];
     return this;
 }
-
 @end

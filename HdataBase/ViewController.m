@@ -20,7 +20,7 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-    [FMDBTool addColumn:[student class] name:@"AAAAAA"];
+    [FMDBTool addColumnWith:[student class] filed:@"AAAAAA"];
     [super viewDidLoad];
     
 }

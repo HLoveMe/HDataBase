@@ -24,6 +24,8 @@
 		CA38D22BB8FB7B2F32295E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2104D617ACF2DF7CEA93C3 /* libPods.a */; };
 		DB02592A1D196FE100F6785B /* teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0259291D196FE100F6785B /* teacher.m */; };
 		DB93DA061D2F83F10028E532 /* FMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93DA051D2F83F10028E532 /* FMDBTool.m */; };
+		DB93DB581D37824D0028E532 /* ivarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93DB551D37824D0028E532 /* ivarInfomation.m */; };
+		DB93DB591D37824D0028E532 /* NSObject+info.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93DB571D37824D0028E532 /* NSObject+info.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,10 @@
 		DB0259291D196FE100F6785B /* teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teacher.m; sourceTree = "<group>"; };
 		DB93DA041D2F83F10028E532 /* FMDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTool.h; sourceTree = "<group>"; };
 		DB93DA051D2F83F10028E532 /* FMDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTool.m; sourceTree = "<group>"; };
+		DB93DB541D37824D0028E532 /* ivarInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ivarInfomation.h; sourceTree = "<group>"; };
+		DB93DB551D37824D0028E532 /* ivarInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ivarInfomation.m; sourceTree = "<group>"; };
+		DB93DB561D37824D0028E532 /* NSObject+info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+info.h"; sourceTree = "<group>"; };
+		DB93DB571D37824D0028E532 /* NSObject+info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+info.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,10 @@
 		B206D7851C81A03C00F66DE7 /* FMDBTool */ = {
 			isa = PBXGroup;
 			children = (
+				DB93DB541D37824D0028E532 /* ivarInfomation.h */,
+				DB93DB551D37824D0028E532 /* ivarInfomation.m */,
+				DB93DB561D37824D0028E532 /* NSObject+info.h */,
+				DB93DB571D37824D0028E532 /* NSObject+info.m */,
 				B206D7891C81A09700F66DE7 /* HArhiever.h */,
 				B206D78A1C81A09700F66DE7 /* HArhiever.m */,
 				DB93DA041D2F83F10028E532 /* FMDBTool.h */,
@@ -408,11 +418,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B206D7941C81A45A00F66DE7 /* propertyViewControoler.m in Sources */,
+				DB93DB581D37824D0028E532 /* ivarInfomation.m in Sources */,
 				B206D7911C81A2B900F66DE7 /* student.m in Sources */,
 				B206D7571C819EEA00F66DE7 /* ViewController.m in Sources */,
 				DB93DA061D2F83F10028E532 /* FMDBTool.m in Sources */,
 				B206D7991C81AA1E00F66DE7 /* resultTableViewController.m in Sources */,
 				B206D7541C819EEA00F66DE7 /* AppDelegate.m in Sources */,
+				DB93DB591D37824D0028E532 /* NSObject+info.m in Sources */,
 				B206D78B1C81A09700F66DE7 /* HArhiever.m in Sources */,
 				B206D7511C819EEA00F66DE7 /* main.m in Sources */,
 				DB02592A1D196FE100F6785B /* teacher.m in Sources */,

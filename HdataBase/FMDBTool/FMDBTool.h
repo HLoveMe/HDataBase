@@ -55,37 +55,36 @@ typedef enum {
 +(BOOL)dropTable:(Class)clazz;
  /**删除clazz所有数据*/
 +(BOOL)deleteAllObjects:(Class)clazz;
-//更改表名
+//更改表名 但是还是使用t_XXX作为操作数据库的表名
 +(BOOL)rename:(Class)oldClass useClass:(Class)newClass;
 //最后插进去的rowid
 +(long long int )lastInsertRow;
 //增加行 
 +(BOOL)addColumnWith:(Class)clazz filed:(NSString *)name;
-/////////////////////////////////////
-
 
 
 /**
- *  对象必须实现NSCoding协议
+ 数据表迁移  newC实现+(NSDictionary *)dataMigrate  是否删除之前表 YES
+     
+        +(NSDictionary *)dataMigrate{
+            返回属性名对应关系
+            return @{@"newID":@"oldID"
+        }
+ 说明:
+    如果数据本身处在关联关系
+        例: Person 有一个属性为 Car 对象
+    如果在更新Person对应的表后
+        如果也修改了Car 属性，那么Car就要实现+(NSDictionary *)dataMigrate，建议调用@selector(syncData:)
+ 
+        }
  */
++(BOOL)dataUpdate:(Class)old new:(Class)newC  deleteOld:(BOOL)flag;
+/**数据表升级  实现+(NSDictionary *)dataMigrate*/
++(BOOL)dataUpdate:(Class)clazz;
 
-/**整个对象序列化   再保存到数据库中  必须提供一个唯一标示*/
-+(BOOL)H_saveObject:(NSObject *)obj onlyFlag:(NSString *)flagValue;
-+(BOOL)H_saveObjscts:(NSArray *)datas onlyFlag:(NSString *)flagValue;
- /**整个对象序列化  删除所有数据*/
-+(BOOL)H_deleteAllObjectwithClass:(Class)clazz;
+/**更新表 并且也更新关联对象 建议调用以保证 已保存的数据也更新*/
++(BOOL)syncData:(Class)clazz;
 
-/** 整个对象序列化  删除数据*/
-+(BOOL)H_deleteObjectByFlag:(NSString *)obj_flag withClass:(Class)clazz;
-
- /**整个对象序列化   给定唯一标示得到某个Model*/
-+(id)H_objectForFlag:(NSString *)flag withClazz:(Class)clazz;
-
- /** 整个对象序列化  获取所有数据*/
-+(NSArray *)H_ObjectsByClass:(Class)clazz;
-
-/**整个对象序列化    给定查找SQl查找数据  返回模型数组*/
-+(NSArray *)H_objects:(NSString *)sql Class:(Class)clazz;
 @end
 
 
