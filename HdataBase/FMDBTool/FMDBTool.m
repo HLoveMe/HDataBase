@@ -72,7 +72,7 @@ static FMDatabase *dataBase;
                     Class clazz = NSClassFromString(result[0]);
                     NSMutableArray *va =[NSMutableArray array];
                     if (clazz) {
-                        NSArray *temp = [result[1] componentsSeparatedByString:@"-"];
+                        NSArray *temp = [result[1] componentsSeparatedByString:@"-|-"];
                         [temp enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                             id t;
                             if([result[0] containsString:@"NS"]){
@@ -383,9 +383,9 @@ static FMDatabase *dataBase;
                         NSString *a = [res toString];
                         [nums addObject:a];
                     }];
-                    valu=[nums componentsJoinedByString:@"-"];
+                    valu=[nums componentsJoinedByString:@"-|-"];
                 }else{
-                    valu=[temp componentsJoinedByString:@"-"];
+                    valu=[temp componentsJoinedByString:@"-|-"];
                 }
                 valu = [@"" stringByAppendingFormat:@"%@::%@",info.arrClazz,valu];
             }
