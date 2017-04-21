@@ -7,7 +7,7 @@
 //
 #define  HRandomColor [UIColor  colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
 #import "resultTableViewController.h"
-#import "FMDBTool.h"
+#import "DBArhiever.h"
 #import "student.h"
 @interface resultTableViewController ()
 @property(nonatomic,strong)NSMutableArray *dataArray;
@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataArray = [FMDBTool ObjectsWithClass:[student class]].mutableCopy;
+    self.dataArray = [DataBaseConnect objectsWithClass:[student class]].mutableCopy;
 //    [FMDBTool H_ObjectsByClass:<#(__unsafe_unretained Class)#>]
     [self initRight];
     NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.db",[NSBundle mainBundle].infoDictionary[@"CFBundleName"]]];
@@ -30,7 +30,7 @@
 }
 -(void)remove{
     [self.dataArray removeAllObjects];
-    [FMDBTool deleteAllObjects:[student class]];
+    [DataBaseConnect deleteAllObjects:[student class]];
 //    [FMDBTool H_deleteAllObjectwithClass:<#(__unsafe_unretained Class)#>]
     [self.tableView reloadData];
 }

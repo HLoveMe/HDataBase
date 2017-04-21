@@ -15,7 +15,6 @@
 		B206D75F1C819EEA00F66DE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B206D75D1C819EEA00F66DE7 /* LaunchScreen.storyboard */; };
 		B206D76A1C819EEA00F66DE7 /* HdataBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7691C819EEA00F66DE7 /* HdataBaseTests.m */; };
 		B206D7751C819EEA00F66DE7 /* HdataBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */; };
-		B206D78B1C81A09700F66DE7 /* HArhiever.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D78A1C81A09700F66DE7 /* HArhiever.m */; };
 		B206D7911C81A2B900F66DE7 /* student.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7901C81A2B900F66DE7 /* student.m */; };
 		B206D7941C81A45A00F66DE7 /* propertyViewControoler.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7931C81A45A00F66DE7 /* propertyViewControoler.m */; };
 		B206D7961C81A48500F66DE7 /* propertyViewControoler.xib in Resources */ = {isa = PBXBuildFile; fileRef = B206D7951C81A48500F66DE7 /* propertyViewControoler.xib */; };
@@ -23,9 +22,27 @@
 		B206D79B1C81ACC400F66DE7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */; };
 		CA38D22BB8FB7B2F32295E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2104D617ACF2DF7CEA93C3 /* libPods.a */; };
 		DB02592A1D196FE100F6785B /* teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0259291D196FE100F6785B /* teacher.m */; };
-		DB93DA061D2F83F10028E532 /* FMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93DA051D2F83F10028E532 /* FMDBTool.m */; };
-		DB93DB581D37824D0028E532 /* ivarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93DB551D37824D0028E532 /* ivarInfomation.m */; };
-		DB93DB591D37824D0028E532 /* NSObject+info.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93DB571D37824D0028E532 /* NSObject+info.m */; };
+		DB196E2A1EA9EDAB002C0622 /* NSArray+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196DFB1EA9EDAB002C0622 /* NSArray+class.m */; };
+		DB196E2B1EA9EDAB002C0622 /* NSMutableArray+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196DFD1EA9EDAB002C0622 /* NSMutableArray+class.m */; };
+		DB196E2C1EA9EDAB002C0622 /* NSMutableAttributedString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196DFF1EA9EDAB002C0622 /* NSMutableAttributedString+class.m */; };
+		DB196E2D1EA9EDAB002C0622 /* NSMutableString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E011EA9EDAB002C0622 /* NSMutableString+class.m */; };
+		DB196E2E1EA9EDAB002C0622 /* NSNumber+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E031EA9EDAB002C0622 /* NSNumber+class.m */; };
+		DB196E2F1EA9EDAB002C0622 /* NSString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E051EA9EDAB002C0622 /* NSString+class.m */; };
+		DB196E301EA9EDAB002C0622 /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E081EA9EDAB002C0622 /* DataBaseConnect.m */; };
+		DB196E311EA9EDAB002C0622 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E0A1EA9EDAB002C0622 /* DBManager.m */; };
+		DB196E321EA9EDAB002C0622 /* IvarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E0C1EA9EDAB002C0622 /* IvarInfomation.m */; };
+		DB196E331EA9EDAB002C0622 /* NSObject+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E0E1EA9EDAB002C0622 /* NSObject+Base.m */; };
+		DB196E341EA9EDAB002C0622 /* DBBaseTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E121EA9EDAB002C0622 /* DBBaseTarget.m */; };
+		DB196E351EA9EDAB002C0622 /* ArrayProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E161EA9EDAB002C0622 /* ArrayProperty.m */; };
+		DB196E361EA9EDAB002C0622 /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E181EA9EDAB002C0622 /* ClassProperty.m */; };
+		DB196E371EA9EDAB002C0622 /* GeneralProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E1A1EA9EDAB002C0622 /* GeneralProperty.m */; };
+		DB196E381EA9EDAB002C0622 /* IDProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E1C1EA9EDAB002C0622 /* IDProperty.m */; };
+		DB196E391EA9EDAB002C0622 /* NumberProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E1E1EA9EDAB002C0622 /* NumberProperty.m */; };
+		DB196E3A1EA9EDAB002C0622 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E201EA9EDAB002C0622 /* Property.m */; };
+		DB196E3B1EA9EDAB002C0622 /* PropertyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E221EA9EDAB002C0622 /* PropertyFactory.m */; };
+		DB196E3C1EA9EDAB002C0622 /* SELProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E251EA9EDAB002C0622 /* SELProperty.m */; };
+		DB196E3D1EA9EDAB002C0622 /* StructProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E271EA9EDAB002C0622 /* StructProperty.m */; };
+		DB196E3E1EA9EDAB002C0622 /* TargetProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E291EA9EDAB002C0622 /* TargetProperty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +82,6 @@
 		B206D7701C819EEA00F66DE7 /* HdataBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HdataBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HdataBaseUITests.m; sourceTree = "<group>"; };
 		B206D7761C819EEA00F66DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B206D7891C81A09700F66DE7 /* HArhiever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HArhiever.h; sourceTree = "<group>"; };
-		B206D78A1C81A09700F66DE7 /* HArhiever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HArhiever.m; sourceTree = "<group>"; };
 		B206D78F1C81A2B900F66DE7 /* student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
 		B206D7901C81A2B900F66DE7 /* student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = student.m; sourceTree = "<group>"; };
 		B206D7921C81A45A00F66DE7 /* propertyViewControoler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = propertyViewControoler.h; sourceTree = "<group>"; };
@@ -77,12 +92,52 @@
 		B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DB0259281D196FE100F6785B /* teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teacher.h; sourceTree = "<group>"; };
 		DB0259291D196FE100F6785B /* teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teacher.m; sourceTree = "<group>"; };
-		DB93DA041D2F83F10028E532 /* FMDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTool.h; sourceTree = "<group>"; };
-		DB93DA051D2F83F10028E532 /* FMDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTool.m; sourceTree = "<group>"; };
-		DB93DB541D37824D0028E532 /* ivarInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ivarInfomation.h; sourceTree = "<group>"; };
-		DB93DB551D37824D0028E532 /* ivarInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ivarInfomation.m; sourceTree = "<group>"; };
-		DB93DB561D37824D0028E532 /* NSObject+info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+info.h"; sourceTree = "<group>"; };
-		DB93DB571D37824D0028E532 /* NSObject+info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+info.m"; sourceTree = "<group>"; };
+		DB196DF91EA9EDAB002C0622 /* classExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classExtension.h; sourceTree = "<group>"; };
+		DB196DFA1EA9EDAB002C0622 /* NSArray+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+class.h"; sourceTree = "<group>"; };
+		DB196DFB1EA9EDAB002C0622 /* NSArray+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+class.m"; sourceTree = "<group>"; };
+		DB196DFC1EA9EDAB002C0622 /* NSMutableArray+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+class.h"; sourceTree = "<group>"; };
+		DB196DFD1EA9EDAB002C0622 /* NSMutableArray+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+class.m"; sourceTree = "<group>"; };
+		DB196DFE1EA9EDAB002C0622 /* NSMutableAttributedString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+class.h"; sourceTree = "<group>"; };
+		DB196DFF1EA9EDAB002C0622 /* NSMutableAttributedString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+class.m"; sourceTree = "<group>"; };
+		DB196E001EA9EDAB002C0622 /* NSMutableString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+class.h"; sourceTree = "<group>"; };
+		DB196E011EA9EDAB002C0622 /* NSMutableString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+class.m"; sourceTree = "<group>"; };
+		DB196E021EA9EDAB002C0622 /* NSNumber+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+class.h"; sourceTree = "<group>"; };
+		DB196E031EA9EDAB002C0622 /* NSNumber+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+class.m"; sourceTree = "<group>"; };
+		DB196E041EA9EDAB002C0622 /* NSString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+class.h"; sourceTree = "<group>"; };
+		DB196E051EA9EDAB002C0622 /* NSString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+class.m"; sourceTree = "<group>"; };
+		DB196E071EA9EDAB002C0622 /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseConnect.h; sourceTree = "<group>"; };
+		DB196E081EA9EDAB002C0622 /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseConnect.m; sourceTree = "<group>"; };
+		DB196E091EA9EDAB002C0622 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		DB196E0A1EA9EDAB002C0622 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		DB196E0B1EA9EDAB002C0622 /* IvarInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IvarInfomation.h; sourceTree = "<group>"; };
+		DB196E0C1EA9EDAB002C0622 /* IvarInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IvarInfomation.m; sourceTree = "<group>"; };
+		DB196E0D1EA9EDAB002C0622 /* NSObject+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Base.h"; sourceTree = "<group>"; };
+		DB196E0E1EA9EDAB002C0622 /* NSObject+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Base.m"; sourceTree = "<group>"; };
+		DB196E0F1EA9EDAB002C0622 /* DBArhiever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBArhiever.h; sourceTree = "<group>"; };
+		DB196E111EA9EDAB002C0622 /* DBBaseTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTarget.h; sourceTree = "<group>"; };
+		DB196E121EA9EDAB002C0622 /* DBBaseTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBaseTarget.m; sourceTree = "<group>"; };
+		DB196E131EA9EDAB002C0622 /* DBBaseTargetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTargetProtocol.h; sourceTree = "<group>"; };
+		DB196E151EA9EDAB002C0622 /* ArrayProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayProperty.h; sourceTree = "<group>"; };
+		DB196E161EA9EDAB002C0622 /* ArrayProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayProperty.m; sourceTree = "<group>"; };
+		DB196E171EA9EDAB002C0622 /* ClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassProperty.h; sourceTree = "<group>"; };
+		DB196E181EA9EDAB002C0622 /* ClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassProperty.m; sourceTree = "<group>"; };
+		DB196E191EA9EDAB002C0622 /* GeneralProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralProperty.h; sourceTree = "<group>"; };
+		DB196E1A1EA9EDAB002C0622 /* GeneralProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralProperty.m; sourceTree = "<group>"; };
+		DB196E1B1EA9EDAB002C0622 /* IDProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDProperty.h; sourceTree = "<group>"; };
+		DB196E1C1EA9EDAB002C0622 /* IDProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDProperty.m; sourceTree = "<group>"; };
+		DB196E1D1EA9EDAB002C0622 /* NumberProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberProperty.h; sourceTree = "<group>"; };
+		DB196E1E1EA9EDAB002C0622 /* NumberProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberProperty.m; sourceTree = "<group>"; };
+		DB196E1F1EA9EDAB002C0622 /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
+		DB196E201EA9EDAB002C0622 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
+		DB196E211EA9EDAB002C0622 /* PropertyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyFactory.h; sourceTree = "<group>"; };
+		DB196E221EA9EDAB002C0622 /* PropertyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyFactory.m; sourceTree = "<group>"; };
+		DB196E231EA9EDAB002C0622 /* propertys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = propertys.h; sourceTree = "<group>"; };
+		DB196E241EA9EDAB002C0622 /* SELProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELProperty.h; sourceTree = "<group>"; };
+		DB196E251EA9EDAB002C0622 /* SELProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELProperty.m; sourceTree = "<group>"; };
+		DB196E261EA9EDAB002C0622 /* StructProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructProperty.h; sourceTree = "<group>"; };
+		DB196E271EA9EDAB002C0622 /* StructProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructProperty.m; sourceTree = "<group>"; };
+		DB196E281EA9EDAB002C0622 /* TargetProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetProperty.h; sourceTree = "<group>"; };
+		DB196E291EA9EDAB002C0622 /* TargetProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +201,7 @@
 		B206D74E1C819EE900F66DE7 /* HdataBase */ = {
 			isa = PBXGroup;
 			children = (
-				B206D7851C81A03C00F66DE7 /* FMDBTool */,
+				DB196DF71EA9EDAB002C0622 /* HDataArhiever */,
 				B206D7521C819EEA00F66DE7 /* AppDelegate.h */,
 				B206D7531C819EEA00F66DE7 /* AppDelegate.m */,
 				B206D7551C819EEA00F66DE7 /* ViewController.h */,
@@ -188,21 +243,6 @@
 			path = HdataBaseUITests;
 			sourceTree = "<group>";
 		};
-		B206D7851C81A03C00F66DE7 /* FMDBTool */ = {
-			isa = PBXGroup;
-			children = (
-				DB93DB541D37824D0028E532 /* ivarInfomation.h */,
-				DB93DB551D37824D0028E532 /* ivarInfomation.m */,
-				DB93DB561D37824D0028E532 /* NSObject+info.h */,
-				DB93DB571D37824D0028E532 /* NSObject+info.m */,
-				B206D7891C81A09700F66DE7 /* HArhiever.h */,
-				B206D78A1C81A09700F66DE7 /* HArhiever.m */,
-				DB93DA041D2F83F10028E532 /* FMDBTool.h */,
-				DB93DA051D2F83F10028E532 /* FMDBTool.m */,
-			);
-			path = FMDBTool;
-			sourceTree = "<group>";
-		};
 		B206D78C1C81A29100F66DE7 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +273,91 @@
 				5E2104D617ACF2DF7CEA93C3 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB196DF71EA9EDAB002C0622 /* HDataArhiever */ = {
+			isa = PBXGroup;
+			children = (
+				DB196DF81EA9EDAB002C0622 /* class */,
+				DB196E061EA9EDAB002C0622 /* core */,
+				DB196E0F1EA9EDAB002C0622 /* DBArhiever.h */,
+				DB196E101EA9EDAB002C0622 /* model */,
+				DB196E141EA9EDAB002C0622 /* propertys */,
+			);
+			path = HDataArhiever;
+			sourceTree = "<group>";
+		};
+		DB196DF81EA9EDAB002C0622 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				DB196DF91EA9EDAB002C0622 /* classExtension.h */,
+				DB196DFA1EA9EDAB002C0622 /* NSArray+class.h */,
+				DB196DFB1EA9EDAB002C0622 /* NSArray+class.m */,
+				DB196DFC1EA9EDAB002C0622 /* NSMutableArray+class.h */,
+				DB196DFD1EA9EDAB002C0622 /* NSMutableArray+class.m */,
+				DB196DFE1EA9EDAB002C0622 /* NSMutableAttributedString+class.h */,
+				DB196DFF1EA9EDAB002C0622 /* NSMutableAttributedString+class.m */,
+				DB196E001EA9EDAB002C0622 /* NSMutableString+class.h */,
+				DB196E011EA9EDAB002C0622 /* NSMutableString+class.m */,
+				DB196E021EA9EDAB002C0622 /* NSNumber+class.h */,
+				DB196E031EA9EDAB002C0622 /* NSNumber+class.m */,
+				DB196E041EA9EDAB002C0622 /* NSString+class.h */,
+				DB196E051EA9EDAB002C0622 /* NSString+class.m */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		DB196E061EA9EDAB002C0622 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				DB196E071EA9EDAB002C0622 /* DataBaseConnect.h */,
+				DB196E081EA9EDAB002C0622 /* DataBaseConnect.m */,
+				DB196E091EA9EDAB002C0622 /* DBManager.h */,
+				DB196E0A1EA9EDAB002C0622 /* DBManager.m */,
+				DB196E0B1EA9EDAB002C0622 /* IvarInfomation.h */,
+				DB196E0C1EA9EDAB002C0622 /* IvarInfomation.m */,
+				DB196E0D1EA9EDAB002C0622 /* NSObject+Base.h */,
+				DB196E0E1EA9EDAB002C0622 /* NSObject+Base.m */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		DB196E101EA9EDAB002C0622 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DB196E111EA9EDAB002C0622 /* DBBaseTarget.h */,
+				DB196E121EA9EDAB002C0622 /* DBBaseTarget.m */,
+				DB196E131EA9EDAB002C0622 /* DBBaseTargetProtocol.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		DB196E141EA9EDAB002C0622 /* propertys */ = {
+			isa = PBXGroup;
+			children = (
+				DB196E151EA9EDAB002C0622 /* ArrayProperty.h */,
+				DB196E161EA9EDAB002C0622 /* ArrayProperty.m */,
+				DB196E171EA9EDAB002C0622 /* ClassProperty.h */,
+				DB196E181EA9EDAB002C0622 /* ClassProperty.m */,
+				DB196E191EA9EDAB002C0622 /* GeneralProperty.h */,
+				DB196E1A1EA9EDAB002C0622 /* GeneralProperty.m */,
+				DB196E1B1EA9EDAB002C0622 /* IDProperty.h */,
+				DB196E1C1EA9EDAB002C0622 /* IDProperty.m */,
+				DB196E1D1EA9EDAB002C0622 /* NumberProperty.h */,
+				DB196E1E1EA9EDAB002C0622 /* NumberProperty.m */,
+				DB196E1F1EA9EDAB002C0622 /* Property.h */,
+				DB196E201EA9EDAB002C0622 /* Property.m */,
+				DB196E211EA9EDAB002C0622 /* PropertyFactory.h */,
+				DB196E221EA9EDAB002C0622 /* PropertyFactory.m */,
+				DB196E231EA9EDAB002C0622 /* propertys.h */,
+				DB196E241EA9EDAB002C0622 /* SELProperty.h */,
+				DB196E251EA9EDAB002C0622 /* SELProperty.m */,
+				DB196E261EA9EDAB002C0622 /* StructProperty.h */,
+				DB196E271EA9EDAB002C0622 /* StructProperty.m */,
+				DB196E281EA9EDAB002C0622 /* TargetProperty.h */,
+				DB196E291EA9EDAB002C0622 /* TargetProperty.m */,
+			);
+			path = propertys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,16 +543,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				B206D7941C81A45A00F66DE7 /* propertyViewControoler.m in Sources */,
-				DB93DB581D37824D0028E532 /* ivarInfomation.m in Sources */,
+				DB196E381EA9EDAB002C0622 /* IDProperty.m in Sources */,
+				DB196E3A1EA9EDAB002C0622 /* Property.m in Sources */,
+				DB196E3E1EA9EDAB002C0622 /* TargetProperty.m in Sources */,
+				DB196E321EA9EDAB002C0622 /* IvarInfomation.m in Sources */,
+				DB196E3B1EA9EDAB002C0622 /* PropertyFactory.m in Sources */,
+				DB196E371EA9EDAB002C0622 /* GeneralProperty.m in Sources */,
+				DB196E2C1EA9EDAB002C0622 /* NSMutableAttributedString+class.m in Sources */,
 				B206D7911C81A2B900F66DE7 /* student.m in Sources */,
 				B206D7571C819EEA00F66DE7 /* ViewController.m in Sources */,
-				DB93DA061D2F83F10028E532 /* FMDBTool.m in Sources */,
+				DB196E2A1EA9EDAB002C0622 /* NSArray+class.m in Sources */,
+				DB196E2B1EA9EDAB002C0622 /* NSMutableArray+class.m in Sources */,
+				DB196E331EA9EDAB002C0622 /* NSObject+Base.m in Sources */,
 				B206D7991C81AA1E00F66DE7 /* resultTableViewController.m in Sources */,
+				DB196E2F1EA9EDAB002C0622 /* NSString+class.m in Sources */,
+				DB196E391EA9EDAB002C0622 /* NumberProperty.m in Sources */,
+				DB196E2D1EA9EDAB002C0622 /* NSMutableString+class.m in Sources */,
+				DB196E341EA9EDAB002C0622 /* DBBaseTarget.m in Sources */,
+				DB196E311EA9EDAB002C0622 /* DBManager.m in Sources */,
+				DB196E301EA9EDAB002C0622 /* DataBaseConnect.m in Sources */,
 				B206D7541C819EEA00F66DE7 /* AppDelegate.m in Sources */,
-				DB93DB591D37824D0028E532 /* NSObject+info.m in Sources */,
-				B206D78B1C81A09700F66DE7 /* HArhiever.m in Sources */,
 				B206D7511C819EEA00F66DE7 /* main.m in Sources */,
+				DB196E2E1EA9EDAB002C0622 /* NSNumber+class.m in Sources */,
+				DB196E361EA9EDAB002C0622 /* ClassProperty.m in Sources */,
+				DB196E351EA9EDAB002C0622 /* ArrayProperty.m in Sources */,
+				DB196E3D1EA9EDAB002C0622 /* StructProperty.m in Sources */,
 				DB02592A1D196FE100F6785B /* teacher.m in Sources */,
+				DB196E3C1EA9EDAB002C0622 /* SELProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "propertyViewControoler.h"
-#import "FMDBTool.h"
+#import "DataBaseConnect.h"
 #import "student.h"
 #import "teacher.h"
 @interface ViewController ()
@@ -20,7 +20,6 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-    [FMDBTool addColumnWith:[student class] filed:@"AAAAAA"];
     [super viewDidLoad];
     
 }

@@ -7,7 +7,7 @@
 //
 
 #import "propertyViewControoler.h"
-#import "FMDBTool.h"
+#import "DBArhiever.h"
 #import "student.h"
 #import "resultTableViewController.h"
 @interface propertyViewControoler()
@@ -41,7 +41,7 @@
     BOOL flag =0;
     student *stu = [self studentFromTextField];
     if (stu) {
-            flag = [FMDBTool saveObjectAllProperty:stu];
+            flag = [DataBaseConnect saveObjectAllProperty:stu];
     }
     if(flag)
         [self showMessage:@"Success" time:2];
@@ -50,7 +50,15 @@
 }
  /**删除某条数据*/
 - (IBAction)deleteData:(id)sender {
-    [FMDBTool deleteObject:[self studentFromTextField]];
+    
+    [DataBaseConnect deleteObject:[student class] dic:@{
+                    @"name":self.nameTextField.text,
+                    @"age":self.ageTextField.text,
+                    @"gender":self.genderTextField.text,
+                    @"address":self.addressTextField.text,
+                    @"weight":self.weidthTextFielf.text,
+                    @"source":self.sorceTextField
+                    }];
 }
  /**所有数据*/
 - (IBAction)alldata:(id)sender {

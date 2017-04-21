@@ -20,17 +20,4 @@
     }
     return self;
 }
--(NSString *)description{
-    NSMutableString *one= [NSMutableString string];
-    unsigned int num;
-    objc_property_t *pros =  class_copyPropertyList(self.class, &num);
-    for (int i=0; i<num; i++) {
-        NSString *name = [NSString stringWithUTF8String:property_getName(pros[i])];
-        id value = [self valueForKey:name];
-        if(!([value integerValue]==0||[value stringValue].length==0)){
-            [one appendFormat:@"  %@: %@",name,value];
-        }
-    }
-    return one;
-}
 @end

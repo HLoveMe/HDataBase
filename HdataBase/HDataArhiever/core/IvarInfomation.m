@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Space. All rights reserved.
 //
 
-#import "ivarInfomation.h"
+#import "IvarInfomation.h"
 
-@implementation ivarInfomation
+@implementation IvarInfomation
 
 @end

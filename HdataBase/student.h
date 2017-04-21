@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HArhiever.h"
-@interface student : HArhiever
+#import "DBBaseTargetProtocol.h"
+@interface student :NSObject<DBArhieverProtocol>
 @property(nonatomic,copy)NSString *name;
 @property(nonatomic,assign)int age;
 @property(nonatomic,copy)NSString *gender;
