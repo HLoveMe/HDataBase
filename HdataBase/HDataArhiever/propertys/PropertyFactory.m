@@ -25,25 +25,63 @@
             ArrayProperty *arrP = [[ArrayProperty alloc]init];
             //数组
             if(value!=nil && [(NSArray *)value count]>=1){
-                NSObject *tar = [(NSArray *)value firstObject];
-                BOOL code = [tar isEnCode];
-                BOOL base = [tar isBaseTarget];
-                if (code || base){
-                    if(code && base){
-                        arrP.vType = isBaseTarget;
-                    }else if (code){
-                        arrP.vType = isEnCode;
+                //                arrP.valueClass = [tar class];
+                NSArray * temp = (NSArray *)value;
+                NSMutableArray *types = [NSMutableArray array];
+                NSMutableArray *clas = [NSMutableArray array];
+                for (int i=0; i<temp.count; i++) {
+                    NSObject *tar = [(NSArray *)value firstObject];
+                    BOOL code = [tar isEnCode];
+                    BOOL base = [tar isBaseTarget];
+                    if (code || base){
+                        if(code && base){
+                            [types addObject:@(isBaseTarget)];
+                        }else if (code){
+                            [types addObject:@(isEnCode)];
+                        }else{
+                            [types addObject:@(isBaseTarget)];
+                        }
                     }else{
-                        arrP.vType = isBaseTarget;
+                        NSAssert(NO, @"该数组属性  值 不可保存");
                     }
-                }else{
-                    NSAssert(NO, @"该数组属性  值 不可保存");
+                    [clas addObject:[tar class]];
                 }
-                arrP.valueClass = [tar class];
+                arrP.vTypes = types;
+                arrP.valuesClazzs = clas;
             }
             arrP.type = encode;
             arrP.proClass = [NSArray class];
             pro = arrP;
+        }else if([encode containsString:@"Dictionary"]){
+            DictionaryProperty *dicp = [[DictionaryProperty alloc]init];
+            dicp.type = encode;
+            dicp.proClass = [NSDictionary class];
+            
+            if(value && [(NSDictionary *)value allKeys].count >=1 ){
+                NSDictionary * temp = (NSDictionary *)value;
+                NSMutableArray *types = [NSMutableArray array];
+                NSMutableArray *clas = [NSMutableArray array];
+                
+                [temp enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                    BOOL code = [obj isEnCode];
+                    BOOL base = [obj isBaseTarget];
+                    if (code || base){
+                        if(code && base){
+                            [types addObject:@(isBaseTarget)];
+                        }else if (code){
+                            [types addObject:@(isEnCode)];
+                        }else{
+                            [types addObject:@(isBaseTarget)];
+                        }
+                    }else{
+                        NSAssert(NO, @"该数组属性  值 不可保存");
+                    }
+                    [clas addObject:[obj class]];
+                }];
+                dicp.vTypes = types;
+                dicp.valuesClazzs = clas;
+            }
+            pro = dicp;
         }else{
             Property *_temp;
             Class clazz = NSClassFromString(encode);
@@ -67,7 +105,7 @@
         }
         
     }else if([encode containsString:@"{"]){
-    //结构体 CGRange  NSRange
+        //结构体 CGRange  NSRange
     }else if([encode containsString:@":"]){
         //id 类型
         

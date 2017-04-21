@@ -12,7 +12,6 @@
 #import "NSObject+Base.h"
 #import "FMResultSet.h"
 typedef NS_ENUM(NSInteger, ValueType) {
-    isNUll = 0,
     isEnCode = 1,
     isBaseTarget = 2
 };
@@ -30,6 +29,7 @@ typedef NS_ENUM(NSInteger, ValueType) {
 //得到值为null  替换的值
 +(NSString *)nullValue;
 +(NSString *)arraynullValue;
++(NSString *)dictionarynullValue;
 
 //用于获取值  用于保存数据库
 /**

@@ -26,9 +26,17 @@
     });
     return null;
 }
++(NSString *)dictionarynullValue{
+    static NSString *null;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        null = @"_DICTIONARY_NULL_";
+    });
+    return null;
+}
 
 -(BOOL)dataBaseIsValue:(NSString *)current{
-    if ([current isEqualToString:[Property nullValue]] || [current isEqualToString:[Property arraynullValue]]){
+    if ([current isEqualToString:[Property nullValue]] || [current isEqualToString:[Property arraynullValue]] || [current isEqualToString:[Property dictionarynullValue]] ){
         return NO;
     }
     return YES;

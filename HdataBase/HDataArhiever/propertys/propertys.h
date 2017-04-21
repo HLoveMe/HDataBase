@@ -27,3 +27,5 @@
 
 #import "IDProperty.h"
 
+#import "DictionaryProperty.h"
+

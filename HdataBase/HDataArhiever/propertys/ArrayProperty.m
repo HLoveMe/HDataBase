@@ -9,55 +9,58 @@
 #import "ArrayProperty.h"
 
 @implementation ArrayProperty
--(instancetype)init{
-    if (self = [super init]) {
-        self.vType = isNUll;
-    }
-    return self;
-}
+
 -(NSString *)getReadValue:(long(^)(id<DBArhieverProtocol> obj))block value:(id)value{
     if (block&&value&&[value isKindOfClass:[NSArray class]]){
         NSArray *arr = (NSArray*)value;
-        NSString *clas = NSStringFromClass(self.valueClass);
-        if (self.vType == isBaseTarget){
-            NSMutableArray *res = [NSMutableArray array];
-            [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSMutableArray *res = [NSMutableArray array];
+        [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSAssert([self isCanSave:obj], @"数组 字典不能嵌套");
+            NSString *clas = NSStringFromClass(self.valuesClazzs[idx]);
+            ValueType type = [self.vTypes[idx] integerValue];
+            if (type == isBaseTarget){
                 [res addObject:@(block(obj))];
-            }];
+            }else{
+                [res addObject:[obj description]];
+            }
             [res addObject:clas];
-            return [res componentsJoinedByString:@"---"];
-        }else{
-            return [[arr arrayByAddingObject:clas] componentsJoinedByString:@"---"];
-        }
+        }];
+        return [res componentsJoinedByString:@"---"];
     }else{
         return [Property arraynullValue];
     }
 }
 -(id)valueWithSet:(id<DBArhieverProtocol> (^)(NSString *, __unsafe_unretained Class))block set:(FMResultSet *)set{
-    
+    if(block){return @[];}
     NSString *sqlvalue = [set stringForColumn:self.name];
     if(![self dataBaseIsValue:sqlvalue])
         return nil;
     
     NSMutableArray *array = [NSMutableArray array];
     NSArray *va = [sqlvalue componentsSeparatedByString:@"---"];
-    Class clazz = NSClassFromString([va lastObject]);
-    NSAssert(clazz != nil, @"数据库值 无法获取class");
-    if(block){
+    
+    for (int i=0; i<va.count; i+=2) {
+        Class clazz = NSClassFromString(va[i+1]);
+        NSAssert(clazz != nil, @"数据库值 无法获取class");
         if([clazz isBaseTarget]){
-            for (int i=0; i<va.count-1; i++) {
-                id value = block(va[i],clazz);
-                [array addObject:value];
-            }
+            id value = block(va[i],clazz);
+            [array addObject:value];
         }else{
-            for (int i=0; i<va.count-1; i++) {
-                id value = [self value:va[i] class:clazz];
-                [array addObject:value];
-            }
+            id value = [self value:va[i] class:clazz];
+            [array addObject:value];
         }
     }
+    
+    
     return array;
 }
+-(BOOL)isCanSave:(id)value{
+    if ([value isKindOfClass:[NSArray class]] || [value isKindOfClass:[NSDictionary class]]){
+        return NO;
+    }
+    return YES;
+}
+
 -(id)value:(NSString *)value class:(Class)class{
     //将数据库字符串存储的值 转为真实 类型
     id real_value;

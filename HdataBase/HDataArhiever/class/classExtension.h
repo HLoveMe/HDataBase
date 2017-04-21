@@ -17,3 +17,8 @@
 #import "NSArray+class.h"
 
 #import "NSMutableArray+class.h"
+
+#import "NSDictionary+class.h"
+
+#import "NSMutableDictionary+class.h"
+
