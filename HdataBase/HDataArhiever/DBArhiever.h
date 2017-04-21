@@ -20,6 +20,7 @@
 #import "DBBaseTarget.h"
 
 /**
+ 属性:
     1:只可以为 int long BOOL...
     2:NSNumber NSString  可序列化
     3:DBBaseTargetProtocol协议
@@ -31,6 +32,7 @@
  
             DBBaseTarget 子类
         }
+ 
     
     支持继承 支持属性(属性值 数据库保存)
  
@@ -38,5 +40,7 @@
         [DataBaseConnect saveObjectAllProperty:tea];
  
         [DataBaseConnect objectsWithClass:[Teacher class]];
+ 
+        .......
 
  */
