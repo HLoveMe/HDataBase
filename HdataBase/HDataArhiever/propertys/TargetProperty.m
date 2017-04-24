@@ -22,8 +22,10 @@
     
     if(![self dataBaseIsValue:sqlvalue])
         return nil;
-    
     NSArray *va = [sqlvalue componentsSeparatedByString:@"---"];
+    if([va count]==1){
+        return [va lastObject];
+    }
     Class clazz = NSClassFromString([va lastObject]);
     NSAssert(clazz != nil, @"数据库值 无法获取class");
     NSString *oneself = [va firstObject];

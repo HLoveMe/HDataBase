@@ -12,12 +12,13 @@
 #import "DBBaseTargetProtocol.h"
 #import "propertys.h"
 @implementation PropertyFactory
+
 +(Property *)propertyWith:(objc_property_t) t value:(id)value{
     NSString *att =[NSString stringWithUTF8String:property_getAttributes(t)];
     NSString *onepart = [[att componentsSeparatedByString:@","] firstObject];
     NSString *encode = [onepart substringWithRange:NSMakeRange(1, onepart.length-1)];
     Property *pro;
-    if ([encode containsString:@"@"]){
+    if ([encode containsString:@"\""]){
         //对象  数组   一定是可序列 或者协议对象
         encode = [encode substringWithRange:NSMakeRange(2, encode.length-3)];
         
@@ -105,16 +106,45 @@
         }
         
     }else if([encode containsString:@"{"]){
+        pro =[StructProperty new];
         //结构体 CGRange  NSRange
-    }else if([encode containsString:@":"]){
-        //id 类型
+        //@"{CGRect={CGPoint=dd}{CGSize=dd}}"
+        //@"{_NSRange=QQ}"
+        //@"{CGSize=dd}"
+        //@"{CGPoint=dd}"
+        pro.type = @"{";
         
+    }else if([encode containsString:@"@"]){
+        //id 类型
+        if(value){
+            BOOL base = [value isBaseTarget];
+            BOOL code = [value isEnCode];
+            Property *_pro ;
+            if(base || code){
+                Class _clazz = [value class];
+                if (base) {
+                    _pro = [[TargetProperty alloc]init];
+                }else{
+                    _pro = [[GeneralProperty alloc]init];
+                }
+                _pro.type = @"@";
+                _pro.proClass = _clazz;
+            }else{
+                NSAssert(NO, @"该 id 值 不支持数据库保存");
+            }
+            pro = _pro;
+        }else{
+            //默认为实现协议的
+            pro = [[TargetProperty alloc]init];
+        }
     }else if([encode containsString:@"#"]){
         //Class
-        
+        pro = [[ClassProperty alloc]init];
+        pro.type = @"#";
     }else if([encode containsString:@":"]){
         //        SEL
-        
+        pro = [[SELProperty alloc]init];
+        pro.type = @":";
     }else{
         NumberProperty *gen = [[NumberProperty alloc]init];
         gen.proClass = [NSNumber class];

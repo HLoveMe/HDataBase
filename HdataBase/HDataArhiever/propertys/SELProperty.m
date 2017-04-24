@@ -9,5 +9,16 @@
 #import "SELProperty.h"
 
 @implementation SELProperty
-
+-(NSString *)getReadValue:(long(^)(id<DBArhieverProtocol> obj))block value:(id)value{
+    SEL asel;
+    NSValue *temp = value;
+    [temp getValue:&asel];
+    NSString *selstr = NSStringFromSelector(asel);
+    return selstr ? selstr : [Property nullValue];
+}
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set{
+    NSString *sqlV = [set stringForColumn:self.name];
+    SEL asel = NSSelectorFromString(sqlV);
+    return  [NSValue value:&asel withObjCType:@encode(SEL)];
+}
 @end

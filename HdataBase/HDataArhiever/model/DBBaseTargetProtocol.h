@@ -7,6 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#define GETSELMETHOD(name) if(_##name){return _##name;};\
+SEL asel  = NSSelectorFromString(@"selBoxs:");\
+if([self respondsToSelector:asel]){\
+    NSString *_pro= NSStringFromSelector(_cmd);\
+    NSValue *value =[self performSelector:asel withObject:_pro];\
+    SEL resu;\
+    [value getValue:&resu];\
+    return resu;\
+}\
+return nil;
+
 @protocol DBArhieverProtocol<NSObject>
 //仅仅用于内部唯一标识 可以不做理会
 /**
@@ -18,4 +30,5 @@
 
 //用于 限制存储的属性范围    需要保存属性
 -(NSArray *)dbFileds;
+
 @end

@@ -10,6 +10,7 @@
 #import "FMDB.h"
 #import <objc/runtime.h>
 #import "NSObject+Base.h"
+#import "NSObject+SEL.h"
 #import "DBManager.h"
 #import "DBBaseTargetProtocol.h"
 #import "IvarInfomation.h"
@@ -150,8 +151,12 @@
                 id temp_value = [info.property valueWithSet:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
                     return  [self objectWithClass:class filed:@"oneself" value:onself];
                 } set:set];
-                if (temp_value)
+                if (temp_value && ![info.property isKindOfClass:[SELProperty class]])
                     [target setValue:temp_value forKey:info.property.name];
+                else if(temp_value && [info.property isKindOfClass:[SELProperty class]]){
+                    NSMutableDictionary *sel = [target addSelDictionary];
+                    sel[info.property.name] = temp_value;
+                }
             }];
             [objArray addObject:target];
         }

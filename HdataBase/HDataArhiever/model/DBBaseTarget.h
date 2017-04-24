@@ -13,6 +13,7 @@
 @class IvarInfomation;
 @interface DBBaseTarget : NSObject<DBArhieverProtocol>
 @property(nonatomic,assign)long oneself;
+
 @end
 
 

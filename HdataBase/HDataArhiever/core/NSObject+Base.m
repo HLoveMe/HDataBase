@@ -156,7 +156,7 @@
     return flag;
 }
 -(BOOL)isEnCode{
-    if ([self respondsToSelector:@selector(encodeWithCoder:)] && [self respondsToSelector:@selector(initWithCoder:)]){
+    if ([self isKindOfClass:[NSString class]] || [self isKindOfClass:[NSNumber class]] || [self isKindOfClass:[NSAttributedString class]]){
         return YES;
     }
     return NO;
@@ -174,4 +174,5 @@
     });
     return fileds;
 }
+
 @end

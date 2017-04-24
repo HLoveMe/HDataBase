@@ -14,6 +14,20 @@
     //return nil @[] 都是容许所有属性
     return @[];
 }
+/**
+ -(SEL)test{
+    if(_test){return _test;}
+    SEL asel  = NSSelectorFromString(@"selBoxs:");
+    if([self respondsToSelector:asel]){
+        NSValue *value =[self performSelector:asel withObject:@"test"];
+        SEL sel;
+        [value getValue:&sel];
+        return sel;
+    }
+    return nil;
+ }
+ */
 @end
+
 
 

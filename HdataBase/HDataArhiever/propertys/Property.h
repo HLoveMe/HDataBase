@@ -24,6 +24,9 @@ typedef NS_ENUM(NSInteger, ValueType) {
 
 @property(nonatomic,assign)objc_property_t t;
 
+
+
+
 //判断数据库的值是否有效 __NULL__  _ARRAY_NULL_ 无效
 -(BOOL)dataBaseIsValue:(NSString *)current;
 //得到值为null  替换的值
