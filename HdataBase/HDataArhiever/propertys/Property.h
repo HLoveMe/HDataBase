@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, ValueType) {
 /**
     解析数据库的值
  */
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set;
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz;
 
 
 

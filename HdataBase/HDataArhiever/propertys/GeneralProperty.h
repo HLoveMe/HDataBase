@@ -7,7 +7,8 @@
 //
 
 #import "Property.h"
-
+//用于处理系统可保存类型
+//NSString NSNumber  NSURL NSDate
 @interface GeneralProperty : Property
 
 @end

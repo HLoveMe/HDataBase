@@ -12,8 +12,6 @@
 
 #import "NSMutableString+class.h"
 
-#import "NSMutableAttributedString+class.h"
-
 #import "NSArray+class.h"
 
 #import "NSMutableArray+class.h"
@@ -22,3 +20,4 @@
 
 #import "NSMutableDictionary+class.h"
 
+#import "NSDate+class.h"

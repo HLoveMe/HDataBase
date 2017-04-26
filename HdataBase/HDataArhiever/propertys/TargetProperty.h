@@ -7,6 +7,6 @@
 //
 
 #import "Property.h"
-
+//实现协议的
 @interface TargetProperty : Property
 @end

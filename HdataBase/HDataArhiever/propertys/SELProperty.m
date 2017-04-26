@@ -16,7 +16,7 @@
     NSString *selstr = NSStringFromSelector(asel);
     return selstr ? selstr : [Property nullValue];
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set{
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     NSString *sqlV = [set stringForColumn:self.name];
     SEL asel = NSSelectorFromString(sqlV);
     return  [NSValue value:&asel withObjCType:@encode(SEL)];

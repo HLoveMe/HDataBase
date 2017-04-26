@@ -94,7 +94,7 @@
                 _temp = tar;
             }else if([clazz isEnCode]){
                 GeneralProperty *gen = [[GeneralProperty alloc]init];
-                //NSString ... 目前只支持字符串
+                
                 gen.proClass = clazz;
                 gen.type = encode;
                 NSAssert(gen.proClass != nil, @"value encode class fail");

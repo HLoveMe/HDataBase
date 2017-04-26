@@ -46,7 +46,7 @@
 -(NSString *)getReadValue:(long(^)(id<DBArhieverProtocol> obj))block value:(id)value{
     return (value ? [value description] : [Property nullValue]);
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set{
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     NSString *value = [set stringForColumn:self.name];
     return ([self dataBaseIsValue:value] ? value : nil);
 }

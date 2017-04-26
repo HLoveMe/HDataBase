@@ -62,11 +62,13 @@
 //辅助
 -(void)db_enumerateClazz:(Class)clazz propertys:(void(^)(objc_property_t t,NSString *name,id value))block{
     unsigned int  count;
-    NSArray * fileds = [NSObject autoIgnores];
+    NSMutableArray * fileds = [[NSObject autoIgnores] mutableCopy];
     if ([self isBaseTarget]){
-        if([self respondsToSelector:@selector(dbFileds)]){
-            NSArray *temp = [(id<DBArhieverProtocol>)self dbFileds];
-            if (temp != nil){fileds = [fileds arrayByAddingObjectsFromArray:temp];}
+        if([self respondsToSelector:@selector(ignoreFileds)]){
+            NSArray *ignore = [(id<DBArhieverProtocol>)self ignoreFileds];
+            if (ignore != nil){
+                [fileds addObjectsFromArray:ignore];
+            }
         }
     }
     objc_property_t *pros = class_copyPropertyList(clazz, &count);
@@ -82,11 +84,13 @@
 }
 -(void)db_enumerateClazz:(Class)clazz ivars:(void(^)(Ivar t,NSString *name,id value))block{
     unsigned int count ;
-    NSArray * fileds = [NSObject autoIgnores];
+    NSMutableArray * fileds = [[NSObject autoIgnores] mutableCopy];
     if ([self isBaseTarget]){
-        if([self respondsToSelector:@selector(dbFileds)]){
-            NSArray *temp = [(id<DBArhieverProtocol>)self dbFileds];
-            if (temp != nil){fileds = [fileds arrayByAddingObjectsFromArray:temp];}
+        if([self respondsToSelector:@selector(ignoreFileds)]){
+            NSArray *ignore = [(id<DBArhieverProtocol>)self ignoreFileds];
+            if (ignore != nil){
+                [fileds addObjectsFromArray:ignore];
+            }
         }
     }
     
@@ -156,7 +160,7 @@
     return flag;
 }
 -(BOOL)isEnCode{
-    if ([self isKindOfClass:[NSString class]] || [self isKindOfClass:[NSNumber class]] || [self isKindOfClass:[NSAttributedString class]]){
+    if ([self isKindOfClass:[NSString class]] || [self isKindOfClass:[NSNumber class]] || [NSURL class]||[NSDate class]){
         return YES;
     }
     return NO;

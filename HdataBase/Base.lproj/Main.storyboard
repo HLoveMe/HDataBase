@@ -1,58 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yNZ-pn-QHV">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yNZ-pn-QHV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Pp-Pc-v3T">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGj-kx-E36">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="302"/>
-                                        <color key="backgroundColor" red="0.6355624554" green="1" blue="0.61750338569999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="所有属性保存"/>
-                                        <connections>
-                                            <action selector="onetouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VSM-BM-64n"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWo-t3-u5e">
-                                        <rect key="frame" x="0.0" y="302" width="375" height="301"/>
-                                        <color key="backgroundColor" red="1" green="0.82900144860000002" blue="0.35708327620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="整个对象序列化"/>
-                                        <connections>
-                                            <action selector="twoTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ry9-bH-4jR"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7Pp-Pc-v3T" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Czy-MU-hTO"/>
-                            <constraint firstItem="7Pp-Pc-v3T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PUR-xb-QUt"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Pp-Pc-v3T" secondAttribute="bottom" id="R5h-tK-0kM"/>
-                            <constraint firstAttribute="trailing" secondItem="7Pp-Pc-v3T" secondAttribute="trailing" id="zGG-Pl-Uit"/>
-                        </constraints>
-                    </view>
                     <navigationItem key="navigationItem" id="QYc-DZ-3yf"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="one" destination="HGj-kx-E36" id="MKU-d2-brP"/>
-                        <outlet property="two" destination="VWo-t3-u5e" id="dFk-R4-UFb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

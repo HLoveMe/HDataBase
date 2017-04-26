@@ -37,12 +37,12 @@ typedef enum {
 /**字段保存   查找满足dic的对象 将其修改为obj*/
 +(BOOL)updataObject:(NSObject<DBArhieverProtocol> *)obj Agrms:(NSDictionary<NSString*,NSString*>*)dic;
 /**字段保存   查找满足oneself 修改为obj*/
-+(BOOL)updateObject:(NSObject<DBArhieverProtocol> *)obj ID:(NSString *)oneself;
++(BOOL)updateObject:(NSObject<DBArhieverProtocol> *)obj oneself:(NSString *)oneself;
 
 
 /**字段保存  查询*/
 +(NSArray *)objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic resultClazz:(Class)clazz;
-//提供字段查找
+//提供字段查找  只会返回得到结果的第一个
 +(NSObject<DBArhieverProtocol> *)objectWithClass:(Class)clazz filed:(NSString *)key value:(NSString *)value;
 +(NSArray *)objectsWithSQL:(NSString *)sql resultClass:(Class)clazz;
 +(NSArray *)objectsWithClass:(Class)clazz;

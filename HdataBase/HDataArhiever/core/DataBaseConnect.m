@@ -31,15 +31,38 @@
     DBManager *manager = [DBManager shareDBManager];
     [self createTable:[obj class]];
     //防止一个 oneself对象多次保存
-    if (NO){
-        NSString *_sql = [NSString stringWithFormat:@"select count(*) from t_%@",[obj class]];
-        if ([self objectsWithSQL:_sql resultClass:[obj class]].count == 1){
-            return YES;
+    __block BOOL isExits;
+    __block BOOL flag = NO;
+    
+    SEL asel = @selector(uniqueness);
+    NSString *IDName = @"onnself";
+    NSString *value = [NSString stringWithFormat:@"%ld",obj.oneself];
+    if([obj respondsToSelector:asel]){
+        @try {
+            IDName = [obj performSelector:asel];
+            value = [obj valueForKey:IDName];
+        } @catch (NSException *exception) {
+            NSLog(@"SEL uniqueness return value Error");
+            return  NO;
         }
     }
+    NSString *_sql = [NSString stringWithFormat:@"select count(*) from t_%@ where %@ = %@",[obj class],IDName,value];
+    [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+        FMResultSet *set = [database executeQuery:_sql];
+        [set next];
+        int count = [set intForColumnIndex:0];
+        if (count == 1){
+            flag = [self updateObject:obj oneself:[NSString stringWithFormat:@"%ld",obj.oneself]];
+            isExits = YES;
+            return YES;
+        }
+        return YES;
+    }];
+    
+    if(isExits){return flag;}
     
     //无记录继续保存
-    __block BOOL flag = NO;
+    
     __block NSString *sql = [self sqlStringWith:FMDBInsert object:obj clazz:[obj class]];
     [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
         flag = [database executeUpdate:sql];
@@ -123,7 +146,7 @@
     return flag;
 }
 /**字段保存   查找满足oneself 修改为obj*/
-+(BOOL)updateObject:(NSObject<DBArhieverProtocol> *)obj ID:(NSString *)oneself{
++(BOOL)updateObject:(NSObject<DBArhieverProtocol> *)obj oneself:(NSString *)oneself{
     return [self updataObject:obj Agrms:@{@"oneself":oneself}];
 }
 //查找
@@ -150,7 +173,7 @@
             [target enumerateObjectsUsingBlock:^(IvarInfomation *info) {
                 id temp_value = [info.property valueWithSet:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
                     return  [self objectWithClass:class filed:@"oneself" value:onself];
-                } set:set];
+                } set:set class:info.property.proClass];
                 if (temp_value && ![info.property isKindOfClass:[SELProperty class]])
                     [target setValue:temp_value forKey:info.property.name];
                 else if(temp_value && [info.property isKindOfClass:[SELProperty class]]){
@@ -162,7 +185,6 @@
         }
         return close;
     }];
-    
     return objArray;
 }
 
@@ -344,7 +366,7 @@
     NSMutableArray *array=[NSMutableArray array];
     
     [obj enumerateObjectsUsingBlock:^(IvarInfomation *info) {
-        id temp_value;
+        NSString *temp_value;
         if(![info.property.name  isEqualToString:@"oneself"]){
             temp_value = [info.property getReadValue:^long(id<DBArhieverProtocol> obj) {
                 if(obj){
@@ -356,7 +378,7 @@
             NSAssert(temp_value != nil, @"property getRead  not can  nil");
         }
         if(![info.property.name isEqualToString:@"oneself"]){
-            temp_value=[@"'values'" stringByReplacingOccurrencesOfString:@"values" withString:[NSString stringWithFormat:@"%@",temp_value]];
+            temp_value=[@"'values'" stringByReplacingOccurrencesOfString:@"values" withString:temp_value];
             [array addObject:temp_value];
         }
     }];

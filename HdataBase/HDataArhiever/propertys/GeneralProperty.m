@@ -7,15 +7,45 @@
 //
 
 #import "GeneralProperty.h"
-
 @implementation GeneralProperty
--(NSString *)getReadValue:(long (^)(id<DBArhieverProtocol>))block value:(id)value{
-    return value ? value : [Property nullValue];
+-(NSString *)realValue:(id)va{
+    if([va isKindOfClass:[NSString class]]||[va isKindOfClass:[NSNumber class]]){
+        return [[NSString alloc]initWithFormat:@"%@",va];
+    }else if([va isKindOfClass:[NSURL class]]){
+        return [(NSURL *)va absoluteString];
+    }else if([va isKindOfClass:[NSDate class]]){
+        return [[NSString alloc]initWithFormat:@"%f",[(NSDate *)va timeIntervalSince1970]];
+    }
+//    ... 增加isEnCode
+//    ... 增加 解析
+    return [Property nullValue];
 }
--(id)valueWithSet:(id<DBArhieverProtocol> (^)(NSString *, __unsafe_unretained Class))block set:(FMResultSet *)set{
+-(id)valueWithstr:(NSString *)str class:(Class)class{
+    if(!class)return nil;
+    if([class isSubclassOfClass:[NSString class]]){
+        //NSString
+        return str;
+    }else if([class isSubclassOfClass:[NSNumber class]]){
+        //NSNumber
+        return [NSNumber numberWithDouble:[str doubleValue]];
+    }else if([class isSubclassOfClass:[NSURL class]]){
+        //NSURL
+        return [[NSURL alloc]initWithString:str];
+    }else if([class isSubclassOfClass:[NSDate class]]){
+        //NSDate
+        return [NSDate dateWithTimeIntervalSince1970:[str doubleValue]];
+    }
+    return str;
+}
+-(NSString *)getReadValue:(long (^)(id<DBArhieverProtocol>))block value:(id)value{
+    NSString *temp = [self realValue:value];
+    return value ? temp : [Property nullValue];
+}
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     NSString *sqlv = [set stringForColumn:self.name];
     if([self dataBaseIsValue:sqlv]){
-        return sqlv;
+        id va  = [self valueWithstr:sqlv class:clazz];
+        return va;
     }
     return nil;
 }

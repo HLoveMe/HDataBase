@@ -9,7 +9,7 @@
 #import "StructProperty.h"
 #import <UIKit/UIKit.h>
 @implementation StructProperty
--(id)valueWithSet:(id<DBArhieverProtocol> (^)(NSString *, __unsafe_unretained Class))block set:(FMResultSet *)set{
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     NSString *sqlV = [set stringForColumn:self.name];
     NSString *cont = [[sqlV componentsSeparatedByString:@":"] lastObject];
     cont = [cont stringByReplacingOccurrencesOfString:@"{" withString:@""];

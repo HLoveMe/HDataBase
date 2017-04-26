@@ -1,14 +1,18 @@
 # HDataBase
 基于FMDB的封装   一行代码完成数据的读写
 
+* 协议
+	* DBBaseTargetProtocol
+   * @property(nonatomic,assign)long oneself;内部进行识别的标示
+        dbFileds     剔除不需要保存的属性
 * 属性:
 
 	* 1:只可以为 int long BOOL...基本数据类型
-   * 2:NSNumber NSString NSMutableString NSAttributedString
+   * 2:NSNumber NSString NSMutableString  NSURL NSDate NSAttributedString
    * 3:DBBaseTargetProtocol协议
    * 4:DBBaseTarget 子类
    * 5:数组
-           * NSNumber NSString NSMutableString NSAttributedString
+           * NSNumber NSString NSMutableString  NSAttributedString NSURL NSDate
            * DBBaseTargetProtocol协议
            * DBBaseTarget 子类
         
@@ -19,6 +23,9 @@ key:value(NSNumber NSString ... ,DBBaseTargetProtocol)
    
 * 注意
 
+        >你所需要保存数据库的模型 尽可能简单(不要包含逻辑代码)
+            如果你的某些逻辑代码 导致增加属性(如果不需要进行数据库保存 dbFileds进行处理)
+ 
         >如果数组字典  不必遵循泛型规则 @{@"name":@"ZZH",@"age":@(24),@"friend":[Student new]}
  
         >数组和字典不支持嵌套

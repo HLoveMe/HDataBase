@@ -17,7 +17,7 @@
     }
     return [Property nullValue];
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set{
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)claz{
     NSString *sqlvalue = [set stringForColumn:self.name];
     
     if(![self dataBaseIsValue:sqlvalue])

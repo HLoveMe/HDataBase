@@ -15,37 +15,35 @@
 		B206D75F1C819EEA00F66DE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B206D75D1C819EEA00F66DE7 /* LaunchScreen.storyboard */; };
 		B206D76A1C819EEA00F66DE7 /* HdataBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7691C819EEA00F66DE7 /* HdataBaseTests.m */; };
 		B206D7751C819EEA00F66DE7 /* HdataBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */; };
-		B206D7911C81A2B900F66DE7 /* student.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7901C81A2B900F66DE7 /* student.m */; };
-		B206D7941C81A45A00F66DE7 /* propertyViewControoler.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7931C81A45A00F66DE7 /* propertyViewControoler.m */; };
-		B206D7961C81A48500F66DE7 /* propertyViewControoler.xib in Resources */ = {isa = PBXBuildFile; fileRef = B206D7951C81A48500F66DE7 /* propertyViewControoler.xib */; };
-		B206D7991C81AA1E00F66DE7 /* resultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7981C81AA1E00F66DE7 /* resultTableViewController.m */; };
 		B206D79B1C81ACC400F66DE7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */; };
 		CA38D22BB8FB7B2F32295E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2104D617ACF2DF7CEA93C3 /* libPods.a */; };
-		DB02592A1D196FE100F6785B /* teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0259291D196FE100F6785B /* teacher.m */; };
-		DB196ECC1EAA0B6B002C0622 /* NSArray+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E971EAA0B6B002C0622 /* NSArray+class.m */; };
-		DB196ECD1EAA0B6B002C0622 /* NSDictionary+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E991EAA0B6B002C0622 /* NSDictionary+class.m */; };
-		DB196ECE1EAA0B6B002C0622 /* NSMutableArray+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E9B1EAA0B6B002C0622 /* NSMutableArray+class.m */; };
-		DB196ECF1EAA0B6B002C0622 /* NSMutableAttributedString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E9D1EAA0B6B002C0622 /* NSMutableAttributedString+class.m */; };
-		DB196ED01EAA0B6B002C0622 /* NSMutableDictionary+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196E9F1EAA0B6B002C0622 /* NSMutableDictionary+class.m */; };
-		DB196ED11EAA0B6B002C0622 /* NSMutableString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EA11EAA0B6B002C0622 /* NSMutableString+class.m */; };
-		DB196ED21EAA0B6B002C0622 /* NSNumber+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EA31EAA0B6B002C0622 /* NSNumber+class.m */; };
-		DB196ED31EAA0B6B002C0622 /* NSString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EA51EAA0B6B002C0622 /* NSString+class.m */; };
-		DB196ED41EAA0B6B002C0622 /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EA81EAA0B6B002C0622 /* DataBaseConnect.m */; };
-		DB196ED51EAA0B6B002C0622 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EAA1EAA0B6B002C0622 /* DBManager.m */; };
-		DB196ED61EAA0B6B002C0622 /* IvarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EAC1EAA0B6B002C0622 /* IvarInfomation.m */; };
-		DB196ED71EAA0B6B002C0622 /* NSObject+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EAE1EAA0B6B002C0622 /* NSObject+Base.m */; };
-		DB196ED81EAA0B6B002C0622 /* DBBaseTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EB21EAA0B6B002C0622 /* DBBaseTarget.m */; };
-		DB196ED91EAA0B6B002C0622 /* ArrayProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EB61EAA0B6B002C0622 /* ArrayProperty.m */; };
-		DB196EDA1EAA0B6B002C0622 /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EB81EAA0B6B002C0622 /* ClassProperty.m */; };
-		DB196EDB1EAA0B6B002C0622 /* DictionaryProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EBA1EAA0B6B002C0622 /* DictionaryProperty.m */; };
-		DB196EDC1EAA0B6B002C0622 /* GeneralProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EBC1EAA0B6B002C0622 /* GeneralProperty.m */; };
-		DB196EDD1EAA0B6B002C0622 /* IDProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EBE1EAA0B6B002C0622 /* IDProperty.m */; };
-		DB196EDE1EAA0B6B002C0622 /* NumberProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EC01EAA0B6B002C0622 /* NumberProperty.m */; };
-		DB196EDF1EAA0B6B002C0622 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EC21EAA0B6B002C0622 /* Property.m */; };
-		DB196EE01EAA0B6B002C0622 /* PropertyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EC41EAA0B6B002C0622 /* PropertyFactory.m */; };
-		DB196EE11EAA0B6B002C0622 /* SELProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EC71EAA0B6B002C0622 /* SELProperty.m */; };
-		DB196EE21EAA0B6B002C0622 /* StructProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196EC91EAA0B6B002C0622 /* StructProperty.m */; };
-		DB196EE31EAA0B6B002C0622 /* TargetProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB196ECB1EAA0B6B002C0622 /* TargetProperty.m */; };
+		DB3E459E1EB0E35E001C37AE /* NSArray+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45661EB0E35E001C37AE /* NSArray+class.m */; };
+		DB3E459F1EB0E35E001C37AE /* NSDate+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45681EB0E35E001C37AE /* NSDate+class.m */; };
+		DB3E45A01EB0E35E001C37AE /* NSDictionary+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E456A1EB0E35E001C37AE /* NSDictionary+class.m */; };
+		DB3E45A11EB0E35E001C37AE /* NSMutableArray+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E456C1EB0E35E001C37AE /* NSMutableArray+class.m */; };
+		DB3E45A21EB0E35E001C37AE /* NSMutableDictionary+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E456E1EB0E35E001C37AE /* NSMutableDictionary+class.m */; };
+		DB3E45A31EB0E35E001C37AE /* NSMutableString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45701EB0E35E001C37AE /* NSMutableString+class.m */; };
+		DB3E45A41EB0E35E001C37AE /* NSNumber+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45721EB0E35E001C37AE /* NSNumber+class.m */; };
+		DB3E45A51EB0E35E001C37AE /* NSString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45741EB0E35E001C37AE /* NSString+class.m */; };
+		DB3E45A61EB0E35E001C37AE /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */; };
+		DB3E45A71EB0E35E001C37AE /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45791EB0E35E001C37AE /* DBManager.m */; };
+		DB3E45A81EB0E35E001C37AE /* IvarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E457B1EB0E35E001C37AE /* IvarInfomation.m */; };
+		DB3E45A91EB0E35E001C37AE /* NSObject+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E457D1EB0E35E001C37AE /* NSObject+Base.m */; };
+		DB3E45AA1EB0E35E001C37AE /* NSObject+SEL.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E457F1EB0E35E001C37AE /* NSObject+SEL.m */; };
+		DB3E45AB1EB0E35E001C37AE /* DBBaseTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45831EB0E35E001C37AE /* DBBaseTarget.m */; };
+		DB3E45AC1EB0E35E001C37AE /* ArrayProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45871EB0E35E001C37AE /* ArrayProperty.m */; };
+		DB3E45AD1EB0E35E001C37AE /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45891EB0E35E001C37AE /* ClassProperty.m */; };
+		DB3E45AE1EB0E35E001C37AE /* DictionaryProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */; };
+		DB3E45AF1EB0E35E001C37AE /* GeneralProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */; };
+		DB3E45B01EB0E35E001C37AE /* IDProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45901EB0E35E001C37AE /* IDProperty.m */; };
+		DB3E45B11EB0E35E001C37AE /* NumberProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45921EB0E35E001C37AE /* NumberProperty.m */; };
+		DB3E45B21EB0E35E001C37AE /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45941EB0E35E001C37AE /* Property.m */; };
+		DB3E45B31EB0E35E001C37AE /* PropertyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45961EB0E35E001C37AE /* PropertyFactory.m */; };
+		DB3E45B41EB0E35E001C37AE /* SELProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45991EB0E35E001C37AE /* SELProperty.m */; };
+		DB3E45B51EB0E35E001C37AE /* StructProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E459B1EB0E35E001C37AE /* StructProperty.m */; };
+		DB3E45B61EB0E35E001C37AE /* TargetProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E459D1EB0E35E001C37AE /* TargetProperty.m */; };
+		DB3E45B91EB0E396001C37AE /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45B81EB0E396001C37AE /* Video.m */; };
+		DB3E45BC1EB0E505001C37AE /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45BB1EB0E505001C37AE /* Author.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,68 +83,65 @@
 		B206D7701C819EEA00F66DE7 /* HdataBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HdataBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HdataBaseUITests.m; sourceTree = "<group>"; };
 		B206D7761C819EEA00F66DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B206D78F1C81A2B900F66DE7 /* student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
-		B206D7901C81A2B900F66DE7 /* student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = student.m; sourceTree = "<group>"; };
-		B206D7921C81A45A00F66DE7 /* propertyViewControoler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = propertyViewControoler.h; sourceTree = "<group>"; };
-		B206D7931C81A45A00F66DE7 /* propertyViewControoler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = propertyViewControoler.m; sourceTree = "<group>"; };
-		B206D7951C81A48500F66DE7 /* propertyViewControoler.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = propertyViewControoler.xib; sourceTree = "<group>"; };
-		B206D7971C81AA1E00F66DE7 /* resultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultTableViewController.h; sourceTree = "<group>"; };
-		B206D7981C81AA1E00F66DE7 /* resultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultTableViewController.m; sourceTree = "<group>"; };
 		B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		DB0259281D196FE100F6785B /* teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teacher.h; sourceTree = "<group>"; };
-		DB0259291D196FE100F6785B /* teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teacher.m; sourceTree = "<group>"; };
-		DB196E951EAA0B6B002C0622 /* classExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classExtension.h; sourceTree = "<group>"; };
-		DB196E961EAA0B6B002C0622 /* NSArray+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+class.h"; sourceTree = "<group>"; };
-		DB196E971EAA0B6B002C0622 /* NSArray+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+class.m"; sourceTree = "<group>"; };
-		DB196E981EAA0B6B002C0622 /* NSDictionary+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+class.h"; sourceTree = "<group>"; };
-		DB196E991EAA0B6B002C0622 /* NSDictionary+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+class.m"; sourceTree = "<group>"; };
-		DB196E9A1EAA0B6B002C0622 /* NSMutableArray+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+class.h"; sourceTree = "<group>"; };
-		DB196E9B1EAA0B6B002C0622 /* NSMutableArray+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+class.m"; sourceTree = "<group>"; };
-		DB196E9C1EAA0B6B002C0622 /* NSMutableAttributedString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+class.h"; sourceTree = "<group>"; };
-		DB196E9D1EAA0B6B002C0622 /* NSMutableAttributedString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+class.m"; sourceTree = "<group>"; };
-		DB196E9E1EAA0B6B002C0622 /* NSMutableDictionary+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+class.h"; sourceTree = "<group>"; };
-		DB196E9F1EAA0B6B002C0622 /* NSMutableDictionary+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+class.m"; sourceTree = "<group>"; };
-		DB196EA01EAA0B6B002C0622 /* NSMutableString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+class.h"; sourceTree = "<group>"; };
-		DB196EA11EAA0B6B002C0622 /* NSMutableString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+class.m"; sourceTree = "<group>"; };
-		DB196EA21EAA0B6B002C0622 /* NSNumber+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+class.h"; sourceTree = "<group>"; };
-		DB196EA31EAA0B6B002C0622 /* NSNumber+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+class.m"; sourceTree = "<group>"; };
-		DB196EA41EAA0B6B002C0622 /* NSString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+class.h"; sourceTree = "<group>"; };
-		DB196EA51EAA0B6B002C0622 /* NSString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+class.m"; sourceTree = "<group>"; };
-		DB196EA71EAA0B6B002C0622 /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseConnect.h; sourceTree = "<group>"; };
-		DB196EA81EAA0B6B002C0622 /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseConnect.m; sourceTree = "<group>"; };
-		DB196EA91EAA0B6B002C0622 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
-		DB196EAA1EAA0B6B002C0622 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
-		DB196EAB1EAA0B6B002C0622 /* IvarInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IvarInfomation.h; sourceTree = "<group>"; };
-		DB196EAC1EAA0B6B002C0622 /* IvarInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IvarInfomation.m; sourceTree = "<group>"; };
-		DB196EAD1EAA0B6B002C0622 /* NSObject+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Base.h"; sourceTree = "<group>"; };
-		DB196EAE1EAA0B6B002C0622 /* NSObject+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Base.m"; sourceTree = "<group>"; };
-		DB196EAF1EAA0B6B002C0622 /* DBArhiever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBArhiever.h; sourceTree = "<group>"; };
-		DB196EB11EAA0B6B002C0622 /* DBBaseTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTarget.h; sourceTree = "<group>"; };
-		DB196EB21EAA0B6B002C0622 /* DBBaseTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBaseTarget.m; sourceTree = "<group>"; };
-		DB196EB31EAA0B6B002C0622 /* DBBaseTargetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTargetProtocol.h; sourceTree = "<group>"; };
-		DB196EB51EAA0B6B002C0622 /* ArrayProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayProperty.h; sourceTree = "<group>"; };
-		DB196EB61EAA0B6B002C0622 /* ArrayProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayProperty.m; sourceTree = "<group>"; };
-		DB196EB71EAA0B6B002C0622 /* ClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassProperty.h; sourceTree = "<group>"; };
-		DB196EB81EAA0B6B002C0622 /* ClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassProperty.m; sourceTree = "<group>"; };
-		DB196EB91EAA0B6B002C0622 /* DictionaryProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryProperty.h; sourceTree = "<group>"; };
-		DB196EBA1EAA0B6B002C0622 /* DictionaryProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryProperty.m; sourceTree = "<group>"; };
-		DB196EBB1EAA0B6B002C0622 /* GeneralProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralProperty.h; sourceTree = "<group>"; };
-		DB196EBC1EAA0B6B002C0622 /* GeneralProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralProperty.m; sourceTree = "<group>"; };
-		DB196EBD1EAA0B6B002C0622 /* IDProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDProperty.h; sourceTree = "<group>"; };
-		DB196EBE1EAA0B6B002C0622 /* IDProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDProperty.m; sourceTree = "<group>"; };
-		DB196EBF1EAA0B6B002C0622 /* NumberProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberProperty.h; sourceTree = "<group>"; };
-		DB196EC01EAA0B6B002C0622 /* NumberProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberProperty.m; sourceTree = "<group>"; };
-		DB196EC11EAA0B6B002C0622 /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
-		DB196EC21EAA0B6B002C0622 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
-		DB196EC31EAA0B6B002C0622 /* PropertyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyFactory.h; sourceTree = "<group>"; };
-		DB196EC41EAA0B6B002C0622 /* PropertyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyFactory.m; sourceTree = "<group>"; };
-		DB196EC51EAA0B6B002C0622 /* propertys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = propertys.h; sourceTree = "<group>"; };
-		DB196EC61EAA0B6B002C0622 /* SELProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELProperty.h; sourceTree = "<group>"; };
-		DB196EC71EAA0B6B002C0622 /* SELProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELProperty.m; sourceTree = "<group>"; };
-		DB196EC81EAA0B6B002C0622 /* StructProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructProperty.h; sourceTree = "<group>"; };
-		DB196EC91EAA0B6B002C0622 /* StructProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructProperty.m; sourceTree = "<group>"; };
-		DB196ECA1EAA0B6B002C0622 /* TargetProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetProperty.h; sourceTree = "<group>"; };
-		DB196ECB1EAA0B6B002C0622 /* TargetProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetProperty.m; sourceTree = "<group>"; };
+		DB3E45641EB0E35E001C37AE /* classExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classExtension.h; sourceTree = "<group>"; };
+		DB3E45651EB0E35E001C37AE /* NSArray+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+class.h"; sourceTree = "<group>"; };
+		DB3E45661EB0E35E001C37AE /* NSArray+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+class.m"; sourceTree = "<group>"; };
+		DB3E45671EB0E35E001C37AE /* NSDate+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+class.h"; sourceTree = "<group>"; };
+		DB3E45681EB0E35E001C37AE /* NSDate+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+class.m"; sourceTree = "<group>"; };
+		DB3E45691EB0E35E001C37AE /* NSDictionary+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+class.h"; sourceTree = "<group>"; };
+		DB3E456A1EB0E35E001C37AE /* NSDictionary+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+class.m"; sourceTree = "<group>"; };
+		DB3E456B1EB0E35E001C37AE /* NSMutableArray+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+class.h"; sourceTree = "<group>"; };
+		DB3E456C1EB0E35E001C37AE /* NSMutableArray+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+class.m"; sourceTree = "<group>"; };
+		DB3E456D1EB0E35E001C37AE /* NSMutableDictionary+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+class.h"; sourceTree = "<group>"; };
+		DB3E456E1EB0E35E001C37AE /* NSMutableDictionary+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+class.m"; sourceTree = "<group>"; };
+		DB3E456F1EB0E35E001C37AE /* NSMutableString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+class.h"; sourceTree = "<group>"; };
+		DB3E45701EB0E35E001C37AE /* NSMutableString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+class.m"; sourceTree = "<group>"; };
+		DB3E45711EB0E35E001C37AE /* NSNumber+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+class.h"; sourceTree = "<group>"; };
+		DB3E45721EB0E35E001C37AE /* NSNumber+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+class.m"; sourceTree = "<group>"; };
+		DB3E45731EB0E35E001C37AE /* NSString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+class.h"; sourceTree = "<group>"; };
+		DB3E45741EB0E35E001C37AE /* NSString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+class.m"; sourceTree = "<group>"; };
+		DB3E45761EB0E35E001C37AE /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseConnect.h; sourceTree = "<group>"; };
+		DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseConnect.m; sourceTree = "<group>"; };
+		DB3E45781EB0E35E001C37AE /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		DB3E45791EB0E35E001C37AE /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		DB3E457A1EB0E35E001C37AE /* IvarInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IvarInfomation.h; sourceTree = "<group>"; };
+		DB3E457B1EB0E35E001C37AE /* IvarInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IvarInfomation.m; sourceTree = "<group>"; };
+		DB3E457C1EB0E35E001C37AE /* NSObject+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Base.h"; sourceTree = "<group>"; };
+		DB3E457D1EB0E35E001C37AE /* NSObject+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Base.m"; sourceTree = "<group>"; };
+		DB3E457E1EB0E35E001C37AE /* NSObject+SEL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SEL.h"; sourceTree = "<group>"; };
+		DB3E457F1EB0E35E001C37AE /* NSObject+SEL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SEL.m"; sourceTree = "<group>"; };
+		DB3E45801EB0E35E001C37AE /* DBArhiever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBArhiever.h; sourceTree = "<group>"; };
+		DB3E45821EB0E35E001C37AE /* DBBaseTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTarget.h; sourceTree = "<group>"; };
+		DB3E45831EB0E35E001C37AE /* DBBaseTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBaseTarget.m; sourceTree = "<group>"; };
+		DB3E45841EB0E35E001C37AE /* DBBaseTargetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTargetProtocol.h; sourceTree = "<group>"; };
+		DB3E45861EB0E35E001C37AE /* ArrayProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayProperty.h; sourceTree = "<group>"; };
+		DB3E45871EB0E35E001C37AE /* ArrayProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayProperty.m; sourceTree = "<group>"; };
+		DB3E45881EB0E35E001C37AE /* ClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassProperty.h; sourceTree = "<group>"; };
+		DB3E45891EB0E35E001C37AE /* ClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassProperty.m; sourceTree = "<group>"; };
+		DB3E458A1EB0E35E001C37AE /* DictionaryProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryProperty.h; sourceTree = "<group>"; };
+		DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryProperty.m; sourceTree = "<group>"; };
+		DB3E458D1EB0E35E001C37AE /* GeneralProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralProperty.h; sourceTree = "<group>"; };
+		DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralProperty.m; sourceTree = "<group>"; };
+		DB3E458F1EB0E35E001C37AE /* IDProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDProperty.h; sourceTree = "<group>"; };
+		DB3E45901EB0E35E001C37AE /* IDProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDProperty.m; sourceTree = "<group>"; };
+		DB3E45911EB0E35E001C37AE /* NumberProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberProperty.h; sourceTree = "<group>"; };
+		DB3E45921EB0E35E001C37AE /* NumberProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberProperty.m; sourceTree = "<group>"; };
+		DB3E45931EB0E35E001C37AE /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
+		DB3E45941EB0E35E001C37AE /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
+		DB3E45951EB0E35E001C37AE /* PropertyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyFactory.h; sourceTree = "<group>"; };
+		DB3E45961EB0E35E001C37AE /* PropertyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyFactory.m; sourceTree = "<group>"; };
+		DB3E45971EB0E35E001C37AE /* propertys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = propertys.h; sourceTree = "<group>"; };
+		DB3E45981EB0E35E001C37AE /* SELProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELProperty.h; sourceTree = "<group>"; };
+		DB3E45991EB0E35E001C37AE /* SELProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELProperty.m; sourceTree = "<group>"; };
+		DB3E459A1EB0E35E001C37AE /* StructProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructProperty.h; sourceTree = "<group>"; };
+		DB3E459B1EB0E35E001C37AE /* StructProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructProperty.m; sourceTree = "<group>"; };
+		DB3E459C1EB0E35E001C37AE /* TargetProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetProperty.h; sourceTree = "<group>"; };
+		DB3E459D1EB0E35E001C37AE /* TargetProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetProperty.m; sourceTree = "<group>"; };
+		DB3E45B71EB0E396001C37AE /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		DB3E45B81EB0E396001C37AE /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		DB3E45BA1EB0E505001C37AE /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		DB3E45BB1EB0E505001C37AE /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,13 +205,15 @@
 		B206D74E1C819EE900F66DE7 /* HdataBase */ = {
 			isa = PBXGroup;
 			children = (
-				DB196E931EAA0B6B002C0622 /* HDataArhiever */,
+				DB3E45621EB0E35E001C37AE /* HDataArhiever */,
 				B206D7521C819EEA00F66DE7 /* AppDelegate.h */,
 				B206D7531C819EEA00F66DE7 /* AppDelegate.m */,
 				B206D7551C819EEA00F66DE7 /* ViewController.h */,
 				B206D7561C819EEA00F66DE7 /* ViewController.m */,
-				B206D78E1C81A2AB00F66DE7 /* model */,
-				B206D78C1C81A29100F66DE7 /* controller */,
+				DB3E45B71EB0E396001C37AE /* Video.h */,
+				DB3E45B81EB0E396001C37AE /* Video.m */,
+				DB3E45BA1EB0E505001C37AE /* Author.h */,
+				DB3E45BB1EB0E505001C37AE /* Author.m */,
 				B206D7581C819EEA00F66DE7 /* Main.storyboard */,
 				B206D75B1C819EEA00F66DE7 /* Assets.xcassets */,
 				B206D75D1C819EEA00F66DE7 /* LaunchScreen.storyboard */,
@@ -252,29 +249,6 @@
 			path = HdataBaseUITests;
 			sourceTree = "<group>";
 		};
-		B206D78C1C81A29100F66DE7 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				B206D7921C81A45A00F66DE7 /* propertyViewControoler.h */,
-				B206D7931C81A45A00F66DE7 /* propertyViewControoler.m */,
-				B206D7951C81A48500F66DE7 /* propertyViewControoler.xib */,
-				B206D7971C81AA1E00F66DE7 /* resultTableViewController.h */,
-				B206D7981C81AA1E00F66DE7 /* resultTableViewController.m */,
-			);
-			name = controller;
-			sourceTree = "<group>";
-		};
-		B206D78E1C81A2AB00F66DE7 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				B206D78F1C81A2B900F66DE7 /* student.h */,
-				B206D7901C81A2B900F66DE7 /* student.m */,
-				DB0259281D196FE100F6785B /* teacher.h */,
-				DB0259291D196FE100F6785B /* teacher.m */,
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
 		BD350D15827568977EB0488C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,93 +258,95 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DB196E931EAA0B6B002C0622 /* HDataArhiever */ = {
+		DB3E45621EB0E35E001C37AE /* HDataArhiever */ = {
 			isa = PBXGroup;
 			children = (
-				DB196E941EAA0B6B002C0622 /* class */,
-				DB196EA61EAA0B6B002C0622 /* core */,
-				DB196EAF1EAA0B6B002C0622 /* DBArhiever.h */,
-				DB196EB01EAA0B6B002C0622 /* model */,
-				DB196EB41EAA0B6B002C0622 /* propertys */,
+				DB3E45631EB0E35E001C37AE /* class */,
+				DB3E45751EB0E35E001C37AE /* core */,
+				DB3E45801EB0E35E001C37AE /* DBArhiever.h */,
+				DB3E45811EB0E35E001C37AE /* model */,
+				DB3E45851EB0E35E001C37AE /* propertys */,
 			);
 			path = HDataArhiever;
 			sourceTree = "<group>";
 		};
-		DB196E941EAA0B6B002C0622 /* class */ = {
+		DB3E45631EB0E35E001C37AE /* class */ = {
 			isa = PBXGroup;
 			children = (
-				DB196E951EAA0B6B002C0622 /* classExtension.h */,
-				DB196E961EAA0B6B002C0622 /* NSArray+class.h */,
-				DB196E971EAA0B6B002C0622 /* NSArray+class.m */,
-				DB196E981EAA0B6B002C0622 /* NSDictionary+class.h */,
-				DB196E991EAA0B6B002C0622 /* NSDictionary+class.m */,
-				DB196E9A1EAA0B6B002C0622 /* NSMutableArray+class.h */,
-				DB196E9B1EAA0B6B002C0622 /* NSMutableArray+class.m */,
-				DB196E9C1EAA0B6B002C0622 /* NSMutableAttributedString+class.h */,
-				DB196E9D1EAA0B6B002C0622 /* NSMutableAttributedString+class.m */,
-				DB196E9E1EAA0B6B002C0622 /* NSMutableDictionary+class.h */,
-				DB196E9F1EAA0B6B002C0622 /* NSMutableDictionary+class.m */,
-				DB196EA01EAA0B6B002C0622 /* NSMutableString+class.h */,
-				DB196EA11EAA0B6B002C0622 /* NSMutableString+class.m */,
-				DB196EA21EAA0B6B002C0622 /* NSNumber+class.h */,
-				DB196EA31EAA0B6B002C0622 /* NSNumber+class.m */,
-				DB196EA41EAA0B6B002C0622 /* NSString+class.h */,
-				DB196EA51EAA0B6B002C0622 /* NSString+class.m */,
+				DB3E45641EB0E35E001C37AE /* classExtension.h */,
+				DB3E45651EB0E35E001C37AE /* NSArray+class.h */,
+				DB3E45661EB0E35E001C37AE /* NSArray+class.m */,
+				DB3E45671EB0E35E001C37AE /* NSDate+class.h */,
+				DB3E45681EB0E35E001C37AE /* NSDate+class.m */,
+				DB3E45691EB0E35E001C37AE /* NSDictionary+class.h */,
+				DB3E456A1EB0E35E001C37AE /* NSDictionary+class.m */,
+				DB3E456B1EB0E35E001C37AE /* NSMutableArray+class.h */,
+				DB3E456C1EB0E35E001C37AE /* NSMutableArray+class.m */,
+				DB3E456D1EB0E35E001C37AE /* NSMutableDictionary+class.h */,
+				DB3E456E1EB0E35E001C37AE /* NSMutableDictionary+class.m */,
+				DB3E456F1EB0E35E001C37AE /* NSMutableString+class.h */,
+				DB3E45701EB0E35E001C37AE /* NSMutableString+class.m */,
+				DB3E45711EB0E35E001C37AE /* NSNumber+class.h */,
+				DB3E45721EB0E35E001C37AE /* NSNumber+class.m */,
+				DB3E45731EB0E35E001C37AE /* NSString+class.h */,
+				DB3E45741EB0E35E001C37AE /* NSString+class.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
 		};
-		DB196EA61EAA0B6B002C0622 /* core */ = {
+		DB3E45751EB0E35E001C37AE /* core */ = {
 			isa = PBXGroup;
 			children = (
-				DB196EA71EAA0B6B002C0622 /* DataBaseConnect.h */,
-				DB196EA81EAA0B6B002C0622 /* DataBaseConnect.m */,
-				DB196EA91EAA0B6B002C0622 /* DBManager.h */,
-				DB196EAA1EAA0B6B002C0622 /* DBManager.m */,
-				DB196EAB1EAA0B6B002C0622 /* IvarInfomation.h */,
-				DB196EAC1EAA0B6B002C0622 /* IvarInfomation.m */,
-				DB196EAD1EAA0B6B002C0622 /* NSObject+Base.h */,
-				DB196EAE1EAA0B6B002C0622 /* NSObject+Base.m */,
+				DB3E45761EB0E35E001C37AE /* DataBaseConnect.h */,
+				DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */,
+				DB3E45781EB0E35E001C37AE /* DBManager.h */,
+				DB3E45791EB0E35E001C37AE /* DBManager.m */,
+				DB3E457A1EB0E35E001C37AE /* IvarInfomation.h */,
+				DB3E457B1EB0E35E001C37AE /* IvarInfomation.m */,
+				DB3E457C1EB0E35E001C37AE /* NSObject+Base.h */,
+				DB3E457D1EB0E35E001C37AE /* NSObject+Base.m */,
+				DB3E457E1EB0E35E001C37AE /* NSObject+SEL.h */,
+				DB3E457F1EB0E35E001C37AE /* NSObject+SEL.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
 		};
-		DB196EB01EAA0B6B002C0622 /* model */ = {
+		DB3E45811EB0E35E001C37AE /* model */ = {
 			isa = PBXGroup;
 			children = (
-				DB196EB11EAA0B6B002C0622 /* DBBaseTarget.h */,
-				DB196EB21EAA0B6B002C0622 /* DBBaseTarget.m */,
-				DB196EB31EAA0B6B002C0622 /* DBBaseTargetProtocol.h */,
+				DB3E45821EB0E35E001C37AE /* DBBaseTarget.h */,
+				DB3E45831EB0E35E001C37AE /* DBBaseTarget.m */,
+				DB3E45841EB0E35E001C37AE /* DBBaseTargetProtocol.h */,
 			);
 			path = model;
 			sourceTree = "<group>";
 		};
-		DB196EB41EAA0B6B002C0622 /* propertys */ = {
+		DB3E45851EB0E35E001C37AE /* propertys */ = {
 			isa = PBXGroup;
 			children = (
-				DB196EB51EAA0B6B002C0622 /* ArrayProperty.h */,
-				DB196EB61EAA0B6B002C0622 /* ArrayProperty.m */,
-				DB196EB71EAA0B6B002C0622 /* ClassProperty.h */,
-				DB196EB81EAA0B6B002C0622 /* ClassProperty.m */,
-				DB196EB91EAA0B6B002C0622 /* DictionaryProperty.h */,
-				DB196EBA1EAA0B6B002C0622 /* DictionaryProperty.m */,
-				DB196EBB1EAA0B6B002C0622 /* GeneralProperty.h */,
-				DB196EBC1EAA0B6B002C0622 /* GeneralProperty.m */,
-				DB196EBD1EAA0B6B002C0622 /* IDProperty.h */,
-				DB196EBE1EAA0B6B002C0622 /* IDProperty.m */,
-				DB196EBF1EAA0B6B002C0622 /* NumberProperty.h */,
-				DB196EC01EAA0B6B002C0622 /* NumberProperty.m */,
-				DB196EC11EAA0B6B002C0622 /* Property.h */,
-				DB196EC21EAA0B6B002C0622 /* Property.m */,
-				DB196EC31EAA0B6B002C0622 /* PropertyFactory.h */,
-				DB196EC41EAA0B6B002C0622 /* PropertyFactory.m */,
-				DB196EC51EAA0B6B002C0622 /* propertys.h */,
-				DB196EC61EAA0B6B002C0622 /* SELProperty.h */,
-				DB196EC71EAA0B6B002C0622 /* SELProperty.m */,
-				DB196EC81EAA0B6B002C0622 /* StructProperty.h */,
-				DB196EC91EAA0B6B002C0622 /* StructProperty.m */,
-				DB196ECA1EAA0B6B002C0622 /* TargetProperty.h */,
-				DB196ECB1EAA0B6B002C0622 /* TargetProperty.m */,
+				DB3E45861EB0E35E001C37AE /* ArrayProperty.h */,
+				DB3E45871EB0E35E001C37AE /* ArrayProperty.m */,
+				DB3E45881EB0E35E001C37AE /* ClassProperty.h */,
+				DB3E45891EB0E35E001C37AE /* ClassProperty.m */,
+				DB3E458A1EB0E35E001C37AE /* DictionaryProperty.h */,
+				DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */,
+				DB3E458D1EB0E35E001C37AE /* GeneralProperty.h */,
+				DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */,
+				DB3E458F1EB0E35E001C37AE /* IDProperty.h */,
+				DB3E45901EB0E35E001C37AE /* IDProperty.m */,
+				DB3E45911EB0E35E001C37AE /* NumberProperty.h */,
+				DB3E45921EB0E35E001C37AE /* NumberProperty.m */,
+				DB3E45931EB0E35E001C37AE /* Property.h */,
+				DB3E45941EB0E35E001C37AE /* Property.m */,
+				DB3E45951EB0E35E001C37AE /* PropertyFactory.h */,
+				DB3E45961EB0E35E001C37AE /* PropertyFactory.m */,
+				DB3E45971EB0E35E001C37AE /* propertys.h */,
+				DB3E45981EB0E35E001C37AE /* SELProperty.h */,
+				DB3E45991EB0E35E001C37AE /* SELProperty.m */,
+				DB3E459A1EB0E35E001C37AE /* StructProperty.h */,
+				DB3E459B1EB0E35E001C37AE /* StructProperty.m */,
+				DB3E459C1EB0E35E001C37AE /* TargetProperty.h */,
+				DB3E459D1EB0E35E001C37AE /* TargetProperty.m */,
 			);
 			path = propertys;
 			sourceTree = "<group>";
@@ -445,6 +421,7 @@
 				TargetAttributes = {
 					B206D74B1C819EE900F66DE7 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = KJ2S48C9J9;
 					};
 					B206D7641C819EEA00F66DE7 = {
 						CreatedOnToolsVersion = 7.1;
@@ -483,7 +460,6 @@
 			files = (
 				B206D75F1C819EEA00F66DE7 /* LaunchScreen.storyboard in Resources */,
 				B206D75C1C819EEA00F66DE7 /* Assets.xcassets in Resources */,
-				B206D7961C81A48500F66DE7 /* propertyViewControoler.xib in Resources */,
 				B206D75A1C819EEA00F66DE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,37 +533,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB196ED01EAA0B6B002C0622 /* NSMutableDictionary+class.m in Sources */,
-				DB196ED11EAA0B6B002C0622 /* NSMutableString+class.m in Sources */,
-				B206D7941C81A45A00F66DE7 /* propertyViewControoler.m in Sources */,
-				DB196ED91EAA0B6B002C0622 /* ArrayProperty.m in Sources */,
-				DB196ED61EAA0B6B002C0622 /* IvarInfomation.m in Sources */,
-				B206D7911C81A2B900F66DE7 /* student.m in Sources */,
-				DB196ED51EAA0B6B002C0622 /* DBManager.m in Sources */,
-				DB196ED21EAA0B6B002C0622 /* NSNumber+class.m in Sources */,
-				DB196ED71EAA0B6B002C0622 /* NSObject+Base.m in Sources */,
-				DB196ECE1EAA0B6B002C0622 /* NSMutableArray+class.m in Sources */,
-				DB196EDD1EAA0B6B002C0622 /* IDProperty.m in Sources */,
-				DB196EDE1EAA0B6B002C0622 /* NumberProperty.m in Sources */,
+				DB3E45AC1EB0E35E001C37AE /* ArrayProperty.m in Sources */,
+				DB3E45B01EB0E35E001C37AE /* IDProperty.m in Sources */,
+				DB3E45B21EB0E35E001C37AE /* Property.m in Sources */,
+				DB3E45B61EB0E35E001C37AE /* TargetProperty.m in Sources */,
+				DB3E45AB1EB0E35E001C37AE /* DBBaseTarget.m in Sources */,
+				DB3E45B31EB0E35E001C37AE /* PropertyFactory.m in Sources */,
+				DB3E45AF1EB0E35E001C37AE /* GeneralProperty.m in Sources */,
+				DB3E45AA1EB0E35E001C37AE /* NSObject+SEL.m in Sources */,
+				DB3E45A21EB0E35E001C37AE /* NSMutableDictionary+class.m in Sources */,
 				B206D7571C819EEA00F66DE7 /* ViewController.m in Sources */,
-				DB196EE31EAA0B6B002C0622 /* TargetProperty.m in Sources */,
-				DB196ECC1EAA0B6B002C0622 /* NSArray+class.m in Sources */,
-				B206D7991C81AA1E00F66DE7 /* resultTableViewController.m in Sources */,
-				DB196EE21EAA0B6B002C0622 /* StructProperty.m in Sources */,
-				DB196EE11EAA0B6B002C0622 /* SELProperty.m in Sources */,
-				DB196ECD1EAA0B6B002C0622 /* NSDictionary+class.m in Sources */,
-				DB196ED81EAA0B6B002C0622 /* DBBaseTarget.m in Sources */,
-				DB196EDA1EAA0B6B002C0622 /* ClassProperty.m in Sources */,
-				DB196ECF1EAA0B6B002C0622 /* NSMutableAttributedString+class.m in Sources */,
-				DB196ED41EAA0B6B002C0622 /* DataBaseConnect.m in Sources */,
+				DB3E45B91EB0E396001C37AE /* Video.m in Sources */,
+				DB3E45A41EB0E35E001C37AE /* NSNumber+class.m in Sources */,
 				B206D7541C819EEA00F66DE7 /* AppDelegate.m in Sources */,
+				DB3E45A51EB0E35E001C37AE /* NSString+class.m in Sources */,
+				DB3E45BC1EB0E505001C37AE /* Author.m in Sources */,
 				B206D7511C819EEA00F66DE7 /* main.m in Sources */,
-				DB02592A1D196FE100F6785B /* teacher.m in Sources */,
-				DB196ED31EAA0B6B002C0622 /* NSString+class.m in Sources */,
-				DB196EDB1EAA0B6B002C0622 /* DictionaryProperty.m in Sources */,
-				DB196EE01EAA0B6B002C0622 /* PropertyFactory.m in Sources */,
-				DB196EDC1EAA0B6B002C0622 /* GeneralProperty.m in Sources */,
-				DB196EDF1EAA0B6B002C0622 /* Property.m in Sources */,
+				DB3E459E1EB0E35E001C37AE /* NSArray+class.m in Sources */,
+				DB3E45B11EB0E35E001C37AE /* NumberProperty.m in Sources */,
+				DB3E45AE1EB0E35E001C37AE /* DictionaryProperty.m in Sources */,
+				DB3E45A81EB0E35E001C37AE /* IvarInfomation.m in Sources */,
+				DB3E45AD1EB0E35E001C37AE /* ClassProperty.m in Sources */,
+				DB3E45A61EB0E35E001C37AE /* DataBaseConnect.m in Sources */,
+				DB3E459F1EB0E35E001C37AE /* NSDate+class.m in Sources */,
+				DB3E45A91EB0E35E001C37AE /* NSObject+Base.m in Sources */,
+				DB3E45A11EB0E35E001C37AE /* NSMutableArray+class.m in Sources */,
+				DB3E45A01EB0E35E001C37AE /* NSDictionary+class.m in Sources */,
+				DB3E45A31EB0E35E001C37AE /* NSMutableString+class.m in Sources */,
+				DB3E45B51EB0E35E001C37AE /* StructProperty.m in Sources */,
+				DB3E45A71EB0E35E001C37AE /* DBManager.m in Sources */,
+				DB3E45B41EB0E35E001C37AE /* SELProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +702,7 @@
 			baseConfigurationReference = 7B6F547DC1F87277E026EF33 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KJ2S48C9J9;
 				INFOPLIST_FILE = HdataBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spacecg.HdataBase;
@@ -739,6 +715,7 @@
 			baseConfigurationReference = 5B7EF3FFCC998DA823D20152 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KJ2S48C9J9;
 				INFOPLIST_FILE = HdataBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spacecg.HdataBase;

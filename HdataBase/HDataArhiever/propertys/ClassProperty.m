@@ -12,7 +12,7 @@
 -(NSString *)getReadValue:(long (^)(id<DBArhieverProtocol>))block value:(id)value{
     return NSStringFromClass(value);
 }
--(id)valueWithSet:(id<DBArhieverProtocol> (^)(NSString *, __unsafe_unretained Class))block set:(FMResultSet *)set{
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     NSString *sqlvalue = [set stringForColumn:self.name];
     return NSClassFromString(sqlvalue);
 }

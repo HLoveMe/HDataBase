@@ -14,7 +14,7 @@
     return (value ? [value description] : @"0");
 }
 
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set{
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
         NSNumber *value;
         char first = [self.type characterAtIndex:0];
         switch (first) {

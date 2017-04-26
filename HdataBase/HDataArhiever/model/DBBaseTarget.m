@@ -10,9 +10,12 @@
 @interface DBBaseTarget()
 @end
 @implementation DBBaseTarget
--(NSArray *)dbFileds{
+-(NSArray *)ignoreFileds{
     //return nil @[] 都是容许所有属性
     return @[];
+}
+-(NSString *)uniqueness{
+    return @"oneself";
 }
 /**
  -(SEL)test{
