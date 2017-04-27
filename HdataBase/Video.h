@@ -16,4 +16,6 @@
 @property(nonatomic,strong)NSURL *url;
 @property(nonatomic,strong)Author *author;
 @property(nonatomic,strong)id test;
+@property(nonatomic,strong)NSDictionary *info;
+@property(nonatomic,strong)NSDate *date;
 @end

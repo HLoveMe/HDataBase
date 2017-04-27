@@ -7,7 +7,7 @@
 //
 
 
-#import "classExtension.h"
+#import "ClassManager.h"
 #import "NSObject+Base.h"
 #import "DBBaseTargetProtocol.h"
 #import "propertys.h"
@@ -45,7 +45,7 @@
                     }else{
                         NSAssert(NO, @"该数组属性  值 不可保存");
                     }
-                    [clas addObject:[tar class]];
+                    [clas addObject:[ClassManager valueClass:tar]];
                 }
                 arrP.vTypes = types;
                 arrP.valuesClazzs = clas;
@@ -77,7 +77,7 @@
                     }else{
                         NSAssert(NO, @"该数组属性  值 不可保存");
                     }
-                    [clas addObject:[obj class]];
+                    [clas addObject:[ClassManager valueClass:obj]];
                 }];
                 dicp.vTypes = types;
                 dicp.valuesClazzs = clas;
@@ -121,7 +121,7 @@
             BOOL code = [value isEnCode];
             Property *_pro ;
             if(base || code){
-                Class _clazz = [value class];
+                Class _clazz = [ClassManager valueClass:value];
                 if (base) {
                     _pro = [[TargetProperty alloc]init];
                 }else{

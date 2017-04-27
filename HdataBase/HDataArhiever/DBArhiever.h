@@ -15,8 +15,6 @@
 
 #import "IvarInfomation.h"
 
-#import "classExtension.h"
-
 #import "propertys.h"
 
 #import "DBBaseTargetProtocol.h"

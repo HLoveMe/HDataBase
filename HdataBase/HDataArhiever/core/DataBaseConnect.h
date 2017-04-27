@@ -124,8 +124,9 @@ typedef enum {
 +(BOOL)rename:(Class)oldClass useClass:(Class)newClass;
 
 /**
- 更新数据库 更新表为新的表
-
+ 更新数据库 更新表为新的表 内部已经做了
+ 更新失败机制如果失败  就会会退到之前数据
+ 
  @param old 旧的Class
  @param newC 新的Class
  @param handle 处理器
@@ -136,7 +137,8 @@ typedef enum {
 
 /**
  更新 当前表数据
-
+ 更新失败机制如果失败  就会会退到之前数据
+ 
  @param clazz 当前class
  @param handle 处理器
  @return 是否成功

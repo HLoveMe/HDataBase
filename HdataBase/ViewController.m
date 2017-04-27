@@ -26,17 +26,20 @@
         这是由于 Video  实现了uniqueness 来确定其的唯一性
      
      */
-    [DataBaseConnect update:[Video class] dataChange:^id<DBArhieverProtocol>(id value) {
-        Video *vi = value;
-        vi.test = @"SBTEST";
-        return vi;
-    }];
+    
+//    [DataBaseConnect update:[Video class] dataChange:^id<DBArhieverProtocol>(id value) {
+//        return value;
+//    }];
     
     Video *v = [[Video alloc] init];
-    v.name = @"爱情公寓";
+    NSMutableString *aaaaa = [[NSMutableString alloc]initWithString:@"爱情公寓"];
+    v.name = aaaaa;
     v.url = [NSURL URLWithString:@"http://www.baidu.com"];
     v.time = 3000.3;
     v.ID = @"100001";
+    v.info = @{@"AA":@(100),@"BB":[[NSURL alloc]initWithString:@"http://a.b.c"]};
+    v.date = [NSDate new];
+    
     
     Author *au = [[Author alloc]init];
     au.name = @"咸菜";

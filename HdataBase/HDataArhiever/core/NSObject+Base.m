@@ -8,7 +8,7 @@
 
 #import "NSObject+Base.h"
 #import "IvarInfomation.h"
-#import "classExtension.h"
+#import "ClassManager.h"
 #import "DBBaseTarget.h"
 #import "PropertyFactory.h"
 @implementation NSObject (Base)
@@ -160,10 +160,11 @@
     return flag;
 }
 -(BOOL)isEnCode{
-    if ([self isKindOfClass:[NSString class]] || [self isKindOfClass:[NSNumber class]] || [NSURL class]||[NSDate class]){
-        return YES;
-    }
-    return NO;
+    return [ClassManager isEnCode:self];
+//    if ([self isKindOfClass:[NSString class]] || [self isKindOfClass:[NSNumber class]] || [NSURL class]||[NSDate class]){
+//        return YES;
+//    }
+//    return NO;
 }
 +(BOOL)isEnCode{
     return [[[self alloc]init]isEnCode];

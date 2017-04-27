@@ -17,14 +17,6 @@
 		B206D7751C819EEA00F66DE7 /* HdataBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */; };
 		B206D79B1C81ACC400F66DE7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */; };
 		CA38D22BB8FB7B2F32295E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2104D617ACF2DF7CEA93C3 /* libPods.a */; };
-		DB3E459E1EB0E35E001C37AE /* NSArray+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45661EB0E35E001C37AE /* NSArray+class.m */; };
-		DB3E459F1EB0E35E001C37AE /* NSDate+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45681EB0E35E001C37AE /* NSDate+class.m */; };
-		DB3E45A01EB0E35E001C37AE /* NSDictionary+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E456A1EB0E35E001C37AE /* NSDictionary+class.m */; };
-		DB3E45A11EB0E35E001C37AE /* NSMutableArray+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E456C1EB0E35E001C37AE /* NSMutableArray+class.m */; };
-		DB3E45A21EB0E35E001C37AE /* NSMutableDictionary+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E456E1EB0E35E001C37AE /* NSMutableDictionary+class.m */; };
-		DB3E45A31EB0E35E001C37AE /* NSMutableString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45701EB0E35E001C37AE /* NSMutableString+class.m */; };
-		DB3E45A41EB0E35E001C37AE /* NSNumber+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45721EB0E35E001C37AE /* NSNumber+class.m */; };
-		DB3E45A51EB0E35E001C37AE /* NSString+class.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45741EB0E35E001C37AE /* NSString+class.m */; };
 		DB3E45A61EB0E35E001C37AE /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */; };
 		DB3E45A71EB0E35E001C37AE /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45791EB0E35E001C37AE /* DBManager.m */; };
 		DB3E45A81EB0E35E001C37AE /* IvarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E457B1EB0E35E001C37AE /* IvarInfomation.m */; };
@@ -44,6 +36,7 @@
 		DB3E45B61EB0E35E001C37AE /* TargetProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E459D1EB0E35E001C37AE /* TargetProperty.m */; };
 		DB3E45B91EB0E396001C37AE /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45B81EB0E396001C37AE /* Video.m */; };
 		DB3E45BC1EB0E505001C37AE /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45BB1EB0E505001C37AE /* Author.m */; };
+		DB3E461B1EB1ED3C001C37AE /* ClassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E461A1EB1ED3C001C37AE /* ClassManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,23 +77,6 @@
 		B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HdataBaseUITests.m; sourceTree = "<group>"; };
 		B206D7761C819EEA00F66DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		DB3E45641EB0E35E001C37AE /* classExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classExtension.h; sourceTree = "<group>"; };
-		DB3E45651EB0E35E001C37AE /* NSArray+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+class.h"; sourceTree = "<group>"; };
-		DB3E45661EB0E35E001C37AE /* NSArray+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+class.m"; sourceTree = "<group>"; };
-		DB3E45671EB0E35E001C37AE /* NSDate+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+class.h"; sourceTree = "<group>"; };
-		DB3E45681EB0E35E001C37AE /* NSDate+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+class.m"; sourceTree = "<group>"; };
-		DB3E45691EB0E35E001C37AE /* NSDictionary+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+class.h"; sourceTree = "<group>"; };
-		DB3E456A1EB0E35E001C37AE /* NSDictionary+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+class.m"; sourceTree = "<group>"; };
-		DB3E456B1EB0E35E001C37AE /* NSMutableArray+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+class.h"; sourceTree = "<group>"; };
-		DB3E456C1EB0E35E001C37AE /* NSMutableArray+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+class.m"; sourceTree = "<group>"; };
-		DB3E456D1EB0E35E001C37AE /* NSMutableDictionary+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+class.h"; sourceTree = "<group>"; };
-		DB3E456E1EB0E35E001C37AE /* NSMutableDictionary+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+class.m"; sourceTree = "<group>"; };
-		DB3E456F1EB0E35E001C37AE /* NSMutableString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+class.h"; sourceTree = "<group>"; };
-		DB3E45701EB0E35E001C37AE /* NSMutableString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+class.m"; sourceTree = "<group>"; };
-		DB3E45711EB0E35E001C37AE /* NSNumber+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+class.h"; sourceTree = "<group>"; };
-		DB3E45721EB0E35E001C37AE /* NSNumber+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+class.m"; sourceTree = "<group>"; };
-		DB3E45731EB0E35E001C37AE /* NSString+class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+class.h"; sourceTree = "<group>"; };
-		DB3E45741EB0E35E001C37AE /* NSString+class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+class.m"; sourceTree = "<group>"; };
 		DB3E45761EB0E35E001C37AE /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseConnect.h; sourceTree = "<group>"; };
 		DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseConnect.m; sourceTree = "<group>"; };
 		DB3E45781EB0E35E001C37AE /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -142,6 +118,8 @@
 		DB3E45B81EB0E396001C37AE /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		DB3E45BA1EB0E505001C37AE /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
 		DB3E45BB1EB0E505001C37AE /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
+		DB3E46191EB1ED3C001C37AE /* ClassManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassManager.h; sourceTree = "<group>"; };
+		DB3E461A1EB1ED3C001C37AE /* ClassManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,37 +239,13 @@
 		DB3E45621EB0E35E001C37AE /* HDataArhiever */ = {
 			isa = PBXGroup;
 			children = (
-				DB3E45631EB0E35E001C37AE /* class */,
+				DB3E46181EB1ED25001C37AE /* class */,
 				DB3E45751EB0E35E001C37AE /* core */,
 				DB3E45801EB0E35E001C37AE /* DBArhiever.h */,
 				DB3E45811EB0E35E001C37AE /* model */,
 				DB3E45851EB0E35E001C37AE /* propertys */,
 			);
 			path = HDataArhiever;
-			sourceTree = "<group>";
-		};
-		DB3E45631EB0E35E001C37AE /* class */ = {
-			isa = PBXGroup;
-			children = (
-				DB3E45641EB0E35E001C37AE /* classExtension.h */,
-				DB3E45651EB0E35E001C37AE /* NSArray+class.h */,
-				DB3E45661EB0E35E001C37AE /* NSArray+class.m */,
-				DB3E45671EB0E35E001C37AE /* NSDate+class.h */,
-				DB3E45681EB0E35E001C37AE /* NSDate+class.m */,
-				DB3E45691EB0E35E001C37AE /* NSDictionary+class.h */,
-				DB3E456A1EB0E35E001C37AE /* NSDictionary+class.m */,
-				DB3E456B1EB0E35E001C37AE /* NSMutableArray+class.h */,
-				DB3E456C1EB0E35E001C37AE /* NSMutableArray+class.m */,
-				DB3E456D1EB0E35E001C37AE /* NSMutableDictionary+class.h */,
-				DB3E456E1EB0E35E001C37AE /* NSMutableDictionary+class.m */,
-				DB3E456F1EB0E35E001C37AE /* NSMutableString+class.h */,
-				DB3E45701EB0E35E001C37AE /* NSMutableString+class.m */,
-				DB3E45711EB0E35E001C37AE /* NSNumber+class.h */,
-				DB3E45721EB0E35E001C37AE /* NSNumber+class.m */,
-				DB3E45731EB0E35E001C37AE /* NSString+class.h */,
-				DB3E45741EB0E35E001C37AE /* NSString+class.m */,
-			);
-			path = class;
 			sourceTree = "<group>";
 		};
 		DB3E45751EB0E35E001C37AE /* core */ = {
@@ -349,6 +303,15 @@
 				DB3E459D1EB0E35E001C37AE /* TargetProperty.m */,
 			);
 			path = propertys;
+			sourceTree = "<group>";
+		};
+		DB3E46181EB1ED25001C37AE /* class */ = {
+			isa = PBXGroup;
+			children = (
+				DB3E46191EB1ED3C001C37AE /* ClassManager.h */,
+				DB3E461A1EB1ED3C001C37AE /* ClassManager.m */,
+			);
+			path = class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,25 +504,18 @@
 				DB3E45B31EB0E35E001C37AE /* PropertyFactory.m in Sources */,
 				DB3E45AF1EB0E35E001C37AE /* GeneralProperty.m in Sources */,
 				DB3E45AA1EB0E35E001C37AE /* NSObject+SEL.m in Sources */,
-				DB3E45A21EB0E35E001C37AE /* NSMutableDictionary+class.m in Sources */,
 				B206D7571C819EEA00F66DE7 /* ViewController.m in Sources */,
 				DB3E45B91EB0E396001C37AE /* Video.m in Sources */,
-				DB3E45A41EB0E35E001C37AE /* NSNumber+class.m in Sources */,
 				B206D7541C819EEA00F66DE7 /* AppDelegate.m in Sources */,
-				DB3E45A51EB0E35E001C37AE /* NSString+class.m in Sources */,
 				DB3E45BC1EB0E505001C37AE /* Author.m in Sources */,
 				B206D7511C819EEA00F66DE7 /* main.m in Sources */,
-				DB3E459E1EB0E35E001C37AE /* NSArray+class.m in Sources */,
 				DB3E45B11EB0E35E001C37AE /* NumberProperty.m in Sources */,
 				DB3E45AE1EB0E35E001C37AE /* DictionaryProperty.m in Sources */,
 				DB3E45A81EB0E35E001C37AE /* IvarInfomation.m in Sources */,
 				DB3E45AD1EB0E35E001C37AE /* ClassProperty.m in Sources */,
 				DB3E45A61EB0E35E001C37AE /* DataBaseConnect.m in Sources */,
-				DB3E459F1EB0E35E001C37AE /* NSDate+class.m in Sources */,
+				DB3E461B1EB1ED3C001C37AE /* ClassManager.m in Sources */,
 				DB3E45A91EB0E35E001C37AE /* NSObject+Base.m in Sources */,
-				DB3E45A11EB0E35E001C37AE /* NSMutableArray+class.m in Sources */,
-				DB3E45A01EB0E35E001C37AE /* NSDictionary+class.m in Sources */,
-				DB3E45A31EB0E35E001C37AE /* NSMutableString+class.m in Sources */,
 				DB3E45B51EB0E35E001C37AE /* StructProperty.m in Sources */,
 				DB3E45A71EB0E35E001C37AE /* DBManager.m in Sources */,
 				DB3E45B41EB0E35E001C37AE /* SELProperty.m in Sources */,
