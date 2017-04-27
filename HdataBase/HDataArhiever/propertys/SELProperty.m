@@ -18,6 +18,7 @@
 }
 -(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     NSString *sqlV = [set stringForColumn:self.name];
+    if(!sqlV)return nil;
     SEL asel = NSSelectorFromString(sqlV);
     return  [NSValue value:&asel withObjCType:@encode(SEL)];
 }

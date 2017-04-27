@@ -35,8 +35,9 @@
 -(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     
     NSString *sqlvalue = [set stringForColumn:self.name];
-    if(![self dataBaseIsValue:sqlvalue])
-        return nil;
+    
+    if(!sqlvalue)return nil;
+    if(![self dataBaseIsValue:sqlvalue])return nil;
     
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     

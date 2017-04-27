@@ -43,6 +43,7 @@
 }
 -(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     NSString *sqlv = [set stringForColumn:self.name];
+    if(!sqlv)return nil;
     if([self dataBaseIsValue:sqlv]){
         id va  = [self valueWithstr:sqlv class:clazz];
         return va;

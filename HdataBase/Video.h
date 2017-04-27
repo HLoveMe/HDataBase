@@ -15,4 +15,5 @@
 @property(nonatomic,assign)long time;
 @property(nonatomic,strong)NSURL *url;
 @property(nonatomic,strong)Author *author;
+@property(nonatomic,strong)id test;
 @end

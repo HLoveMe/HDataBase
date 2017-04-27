@@ -134,8 +134,8 @@
             }
             pro = _pro;
         }else{
-            //默认为实现协议的
-            pro = [[TargetProperty alloc]init];
+            //默认字符串
+            pro = [[GeneralProperty alloc]init];
         }
     }else if([encode containsString:@"#"]){
         //Class

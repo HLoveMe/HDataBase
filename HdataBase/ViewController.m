@@ -17,6 +17,7 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    NSLog(@"%@",NSHomeDirectory());
     [super viewDidLoad];
     /**
         需要注意的是 如果你多次运行这段代码 
@@ -25,7 +26,12 @@
         这是由于 Video  实现了uniqueness 来确定其的唯一性
      
      */
-    NSLog(@"%@",NSHomeDirectory());
+    [DataBaseConnect update:[Video class] dataChange:^id<DBArhieverProtocol>(id value) {
+        Video *vi = value;
+        vi.test = @"SBTEST";
+        return vi;
+    }];
+    
     Video *v = [[Video alloc] init];
     v.name = @"爱情公寓";
     v.url = [NSURL URLWithString:@"http://www.baidu.com"];

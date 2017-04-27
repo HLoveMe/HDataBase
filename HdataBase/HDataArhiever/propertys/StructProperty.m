@@ -11,6 +11,7 @@
 @implementation StructProperty
 -(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
     NSString *sqlV = [set stringForColumn:self.name];
+    if(!sqlV)return nil;
     NSString *cont = [[sqlV componentsSeparatedByString:@":"] lastObject];
     cont = [cont stringByReplacingOccurrencesOfString:@"{" withString:@""];
     cont = [cont stringByReplacingOccurrencesOfString:@"}" withString:@""];

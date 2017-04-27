@@ -93,21 +93,8 @@
     
     return flag;
 }
-/***删除数据*/
-+(BOOL)deleteObject:(NSString *)oneself class:(Class)clazz;{
-    return [self deleteObjectBy:[[clazz alloc]init]];
-}
-+(BOOL)deleteObjectBy:(NSObject<DBArhieverProtocol>*)target{
-    DBManager *manager = [DBManager shareDBManager];
-    NSString *sql = [self sqlStringWith:FMDBDelete object:target clazz:target.class];
-    __block BOOL flag = NO;
-    [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
-        flag=[database executeUpdate:sql];
-        return YES;
-    }];
-    return flag;
-}
-+(BOOL)deleteObject:(Class)class dic:(NSDictionary *)dic{
+
++(BOOL)deleteObject:(Class)class Argms:(NSDictionary<NSString *,NSString*> *)dic{
     id obj = [[class alloc]init];
     objc_setAssociatedObject(obj, "dic", dic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     __block BOOL flag = NO;
@@ -124,7 +111,9 @@
     DBManager *manager = [DBManager shareDBManager];
     NSString *sql = [NSString stringWithFormat:@"delete from t_%@ where '1' = '1'",clazz];
     [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+        [database beginTransaction];
         flag=[database executeUpdate:sql];
+        flag ? [database commit] : [database rollback];
         return YES;
     }];
     return  flag;
@@ -147,7 +136,14 @@
 }
 /**字段保存   查找满足oneself 修改为obj*/
 +(BOOL)updateObject:(NSObject<DBArhieverProtocol> *)obj oneself:(NSString *)oneself{
-    return [self updataObject:obj Agrms:@{@"oneself":oneself}];
+    SEL asel = @selector(uniqueness);
+    NSString *name = @"oneself";
+    if([obj respondsToSelector:asel]){
+        NSString *_name = [obj performSelector:asel];
+        if(_name)
+            name = _name;
+    }
+    return [self updataObject:obj Agrms:@{name:oneself}];
 }
 //查找
 +(NSArray *)objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic resultClazz:(Class)clazz{
@@ -236,30 +232,69 @@
     return flag;
 }
 +(BOOL)dataUpdate:(Class)old new:(Class)newC dataChange:(id<DBArhieverProtocol>(^)(id value))handle deleteOld:(BOOL)flag{
-    
-    FMDatabase *database = [[DBManager shareDBManager] dataBase];
-    
+    if(!handle)return NO;
     __block BOOL _flag = NO;
+    DBManager *manager =[DBManager shareDBManager];
     
-    if (handle == nil){return NO;}
-    
-    [self createTable:newC];
-    
-    [database beginTransaction];
-    
-    [[self objectsWithClass:old] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        id<DBArhieverProtocol> target = handle(obj);
-        NSString *sql = [self sqlStringWith:FMDBInsert object:target clazz:[target class]];
-        _flag = [database executeUpdate:sql];
+    [manager connectDatabaseOperationNoClose:^(FMDatabase *database) {
+        [manager dataUpdate:^BOOL(FMDatabase *database) {
+            @try {
+                NSArray *models = [self objectsWithClass:old];
+                
+                [self createTable:newC];
+                
+                [models enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    id target = handle(obj);
+                    
+                    NSString *sql = [self sqlStringWith:FMDBInsert object:target clazz:newC];
+                    
+                    _flag = [database executeUpdate:sql];
+                    *stop = !_flag;
+                }];
+                if(flag)
+                    _flag = [self dropTable:old];
+            } @catch (NSException *exception) {
+                _flag = NO;
+                return NO;
+            }
+            return _flag;
+        }];
     }];
-    _flag ? [database commit] : [database rollback];
-    if (flag && _flag){[self dropTable:old];}
-    [database close];
+    return _flag;
+}
++(BOOL)update:(Class)clazz dataChange:(id<DBArhieverProtocol>(^)(id value))handle{
+    if(!handle)return NO;
+    __block BOOL _flag = NO;
+    DBManager *manager =[DBManager shareDBManager];
+    
+    [manager connectDatabaseOperationNoClose:^(FMDatabase *database) {
+        [manager dataUpdate:^BOOL(FMDatabase *database) {
+            @try {
+                NSArray *models = [self objectsWithClass:clazz];
+                
+                NSString *dropsql=[self sqlStringWith:FMDBDrop  object:nil clazz:clazz];
+                _flag = [database executeUpdate:dropsql];
+                if(!_flag)
+                    return NO;
+                [self createTable:clazz];
+                [models enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    id target = handle(obj);
+                    //这一步牵扯到数据的插入 / 更新
+                    NSString *sql = [self sqlStringWith:FMDBInsert object:target clazz:[target class]];
+                    _flag = [database executeUpdate:sql];
+                    *stop = !_flag;
+                }];
+            } @catch (NSException *exception) {
+                _flag = NO;
+                return NO;
+            }
+            return _flag;
+        }]; 
+    }];
+    
     return _flag;
 }
 
-
-//为解决继承问题  增加参数clazz 表明你要处理的类型 （self super）
 +(NSString *)sqlStringWith:(FMDBType)type object:(NSObject<DBArhieverProtocol> *)obj clazz:(Class)clazz{
     
     NSMutableString *sql=[NSMutableString string];
