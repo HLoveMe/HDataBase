@@ -13,15 +13,14 @@
     if (block && value){
         long ID = block(value);
         NSString *clas = NSStringFromClass([value class]);
-        return [@[@(ID),clas] componentsJoinedByString:@"---"];
+        return [@[@(ID),clas] componentsJoinedByString:[Property separatedString]];
     }
     return [Property nullValue];
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)claz{
-    NSString *sqlvalue = [set stringForColumn:self.name];
-    if(!sqlvalue)return nil;
-    if(![self dataBaseIsValue:sqlvalue])return nil;
-    NSArray *va = [sqlvalue componentsSeparatedByString:@"---"];
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)cla{
+    if(!sqlV)return nil;
+    if(![Property dataBaseIsValue:sqlV])return nil;
+    NSArray *va = [sqlV componentsSeparatedByString:[Property separatedString]];
     if([va count]==1){
         return [va lastObject];
     }

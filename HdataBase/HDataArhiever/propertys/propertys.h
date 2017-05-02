@@ -25,7 +25,5 @@
 
 #import "StructProperty.h"
 
-#import "IDProperty.h"
-
 #import "DictionaryProperty.h"
 

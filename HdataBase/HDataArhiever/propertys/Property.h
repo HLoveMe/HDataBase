@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, ValueType) {
     isBaseTarget = 2
 };
 @interface Property : NSObject
+
 @property(nonatomic,copy)NSString *type;
 
 @property(nonatomic,copy)NSString *name;
@@ -28,12 +29,13 @@ typedef NS_ENUM(NSInteger, ValueType) {
 
 
 //判断数据库的值是否有效 __NULL__  _ARRAY_NULL_ 无效
--(BOOL)dataBaseIsValue:(NSString *)current;
++(BOOL)dataBaseIsValue:(NSString *)current;
+
 //得到值为null  替换的值
 +(NSString *)nullValue;
 +(NSString *)arraynullValue;
 +(NSString *)dictionarynullValue;
-
++(NSString *)separatedString;
 //用于获取值  用于保存数据库
 /**
     block 为了解决 属性不是可直接保存的情况
@@ -43,9 +45,7 @@ typedef NS_ENUM(NSInteger, ValueType) {
 /**
     解析数据库的值
  */
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz;
-
-
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)clazz;
 
 
 /***

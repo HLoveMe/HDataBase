@@ -13,4 +13,6 @@
 #import "DBBaseTargetProtocol.h"
 @interface PropertyFactory : NSObject
 +(Property *)propertyWith:(objc_property_t) t value:(id)value;
+
++(id)valueForString:(NSString *)sql block:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block;
 @end

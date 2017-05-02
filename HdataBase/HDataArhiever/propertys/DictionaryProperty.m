@@ -7,7 +7,7 @@
 //
 
 #import "DictionaryProperty.h"
-
+#import "GeneralProperty.h"
 @implementation DictionaryProperty
 -(NSString *)getReadValue:(long(^)(id<DBArhieverProtocol> obj))block value:(id)value{
     if (block&&value&&[value isKindOfClass:[NSDictionary class]]){
@@ -28,31 +28,30 @@
             [res addObject:clas];
             count++;
         }];
-        return [res componentsJoinedByString:@"---"];
+        [res addObject:@"Dictionary"];
+        return [res componentsJoinedByString:[Property separatedString]];
     }
     return [Property dictionarynullValue];
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)cla{
     
-    NSString *sqlvalue = [set stringForColumn:self.name];
-    
-    if(!sqlvalue)return nil;
-    if(![self dataBaseIsValue:sqlvalue])return nil;
+    if(!sqlV)return nil;
+    if(![Property dataBaseIsValue:sqlV])return nil;
     
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     
-    NSArray *va = [sqlvalue componentsSeparatedByString:@"---"];
+    NSArray *va = [sqlV componentsSeparatedByString:[Property separatedString]];
     
-    for (int i=0; i<va.count; i+=3) {
-        NSString *key  = va[i];
-        NSString* oneself = va[i+1];
-        Class clazz = NSClassFromString(va[i+2]);
+    for (int i=0; i<va.count-1; i+=3) {
+        NSString *key  = va[i]; //key
+        NSString* oneself = va[i+1];//value
+        Class clazz = NSClassFromString(va[i+2]);//class
         NSAssert(clazz != nil, @"数据库值 无法获取class");
         if([clazz isBaseTarget]){
             id value = block(oneself,clazz);
             [result setValue:value forKey:key];
         }else{
-            id value = [self value:oneself class:clazz];
+            id value = [GeneralProperty valueWithstr:oneself class:clazz];
             [result setValue:value forKey:key];
         }
     }

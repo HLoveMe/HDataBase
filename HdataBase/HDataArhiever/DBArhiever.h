@@ -26,7 +26,7 @@
     DBBaseTargetProtocol
         @property(nonatomic,assign)long oneself;仅仅内部进行识别的标示
         ignoreFileds     剔除不需要保存的属性
-        -(NSString *)uniqueness;  指定你的Model 唯一性 的属性名称
+        -(NSString *)uniqueness;  指定你的Model 唯一性 的属性名称 可选
  
     1:只可以为 int long BOOL...基本数据类型
     2:NSNumber NSString NSMutableString NSURL NSDate
@@ -63,7 +63,7 @@
                     GETSELMETHOD(ASEL)
                 }
  
-        >支持 id  one (从数据库读取时  无法判断类型)
+        >支持 id  one (从数据库读取时  无法判断类型) 
             所以仅仅支持（NSString , DBBaseTargetProtocol）
  
         >支持 结构体 NSRange   CGRECT CGSize CGPoint  

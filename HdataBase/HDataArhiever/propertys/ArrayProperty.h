@@ -17,8 +17,6 @@
 @property(nonatomic,strong)NSArray<NSNumber *> *vTypes;
 @property(nonatomic,strong)NSArray<Class> *valuesClazzs;
 
--(id)value:(NSString *)value class:(Class)class;
-
 //数组 字典不支持嵌套
 -(BOOL)isCanSave:(id)value;
 

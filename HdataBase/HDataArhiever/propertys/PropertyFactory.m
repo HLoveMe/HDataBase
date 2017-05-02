@@ -157,5 +157,41 @@
     NSAssert(pro != nil,@"只是不支持属性");
     return pro;
 }
-
++(id)valueForString:(NSString *)sql block:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block{
+    //数组  字典 Target 结构体   GeneralProperty
+    NSArray *result  = [sql componentsSeparatedByString:[Property separatedString]];
+    NSUInteger count = [result count];
+    if(count % 3 == 1 && [(NSString *)[result lastObject] containsString:@"Dictionary"]){
+        //字典
+        DictionaryProperty *pro = [[DictionaryProperty alloc]init];
+        return [pro valueWithSet:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
+            if(block)
+                return block(onself,class);
+            return nil;
+        } set:nil sqlV:sql class:nil];
+    }else if(count % 2 == 1 && [(NSString *)[result lastObject] containsString:@"Array"]){
+        //数组
+        return [[ArrayProperty new] valueWithSet:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
+            if(block)
+                return block(onself,class);
+            return nil;
+        } set:nil sqlV:sql class:nil];
+    }else if(count % 2 ==0){
+        //  Target
+        return [[TargetProperty new] valueWithSet:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
+            if(block)
+                return block(onself,class);
+            return nil;
+        } set:nil sqlV:sql class:nil];
+    }else if([sql containsString:@"{"]){
+        //结构
+        return [StructProperty valueWithString:sql];
+    }else if([(NSString *)[result lastObject] containsString:@"SEL"]){
+        //SEL
+        return [[SELProperty new] valueWithSet:nil set:nil sqlV:sql class:nil];
+    }else{
+        //NSString
+        return sql;
+    }
+}
 @end

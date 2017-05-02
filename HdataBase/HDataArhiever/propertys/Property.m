@@ -9,7 +9,9 @@
 
 #import "Property.h"
 @implementation Property
-
++(NSString *)separatedString{
+    return @"-|-|-|-";
+}
 +(NSString *)nullValue{
     static NSString *null;
     static dispatch_once_t onceToken;
@@ -35,7 +37,7 @@
     return null;
 }
 
--(BOOL)dataBaseIsValue:(NSString *)current{
++(BOOL)dataBaseIsValue:(NSString *)current{
     if ([current isEqualToString:[Property nullValue]] || [current isEqualToString:[Property arraynullValue]] || [current isEqualToString:[Property dictionarynullValue]] ){
         return NO;
     }
@@ -46,9 +48,8 @@
 -(NSString *)getReadValue:(long(^)(id<DBArhieverProtocol> obj))block value:(id)value{
     return (value ? [value description] : [Property nullValue]);
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
-    NSString *value = [set stringForColumn:self.name];
-    if(!value)return nil;
-    return ([self dataBaseIsValue:value] ? value : nil);
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)clazz{
+    if(!sqlV)return nil;
+    return ([Property dataBaseIsValue:sqlV] ? sqlV : nil);
 }
 @end

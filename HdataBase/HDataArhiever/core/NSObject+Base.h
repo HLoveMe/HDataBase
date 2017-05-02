@@ -14,7 +14,7 @@
 //判断是否为
 +(BOOL)isBaseTarget;
 -(BOOL)isBaseTarget;
-//判断是否可以序列换
+//判断是否可以转换保存
 -(BOOL)isEnCode;
 +(BOOL)isEnCode;
 
@@ -26,7 +26,7 @@
 +(void)enumerateIvar:(void(^)(NSString *proName))Block;
 
 
-//辅助函数
+//辅助函数 
 
 -(void)db_enumerateClazz:(Class)clazz propertys:(void(^)(objc_property_t t,NSString *name,id value))block;
 
@@ -35,4 +35,6 @@
 +(void)db_enumeratePropertys:(void(^)(objc_property_t t,NSString *name))block;
 
 +(void)db_enumerateIvars:(void(^)(Ivar t,NSString *name))block;
+//是否实现摸个协议
++(BOOL)isimplementationProtocol:(NSString *)name;
 @end

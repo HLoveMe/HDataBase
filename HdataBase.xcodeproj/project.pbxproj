@@ -27,7 +27,6 @@
 		DB3E45AD1EB0E35E001C37AE /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45891EB0E35E001C37AE /* ClassProperty.m */; };
 		DB3E45AE1EB0E35E001C37AE /* DictionaryProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */; };
 		DB3E45AF1EB0E35E001C37AE /* GeneralProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */; };
-		DB3E45B01EB0E35E001C37AE /* IDProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45901EB0E35E001C37AE /* IDProperty.m */; };
 		DB3E45B11EB0E35E001C37AE /* NumberProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45921EB0E35E001C37AE /* NumberProperty.m */; };
 		DB3E45B21EB0E35E001C37AE /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45941EB0E35E001C37AE /* Property.m */; };
 		DB3E45B31EB0E35E001C37AE /* PropertyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45961EB0E35E001C37AE /* PropertyFactory.m */; };
@@ -37,6 +36,9 @@
 		DB3E45B91EB0E396001C37AE /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45B81EB0E396001C37AE /* Video.m */; };
 		DB3E45BC1EB0E505001C37AE /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45BB1EB0E505001C37AE /* Author.m */; };
 		DB3E461B1EB1ED3C001C37AE /* ClassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E461A1EB1ED3C001C37AE /* ClassManager.m */; };
+		DB3E46231EB2D109001C37AE /* DBPlugBox.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E46221EB2D109001C37AE /* DBPlugBox.m */; };
+		DB3E46261EB2D14F001C37AE /* DBPlug.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E46251EB2D14F001C37AE /* DBPlug.m */; };
+		DBE955E01EB8194800844A27 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE955DF1EB8194800844A27 /* Dog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,8 +101,6 @@
 		DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryProperty.m; sourceTree = "<group>"; };
 		DB3E458D1EB0E35E001C37AE /* GeneralProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralProperty.h; sourceTree = "<group>"; };
 		DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralProperty.m; sourceTree = "<group>"; };
-		DB3E458F1EB0E35E001C37AE /* IDProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDProperty.h; sourceTree = "<group>"; };
-		DB3E45901EB0E35E001C37AE /* IDProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDProperty.m; sourceTree = "<group>"; };
 		DB3E45911EB0E35E001C37AE /* NumberProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberProperty.h; sourceTree = "<group>"; };
 		DB3E45921EB0E35E001C37AE /* NumberProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberProperty.m; sourceTree = "<group>"; };
 		DB3E45931EB0E35E001C37AE /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
@@ -120,6 +120,12 @@
 		DB3E45BB1EB0E505001C37AE /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 		DB3E46191EB1ED3C001C37AE /* ClassManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassManager.h; sourceTree = "<group>"; };
 		DB3E461A1EB1ED3C001C37AE /* ClassManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassManager.m; sourceTree = "<group>"; };
+		DB3E46211EB2D109001C37AE /* DBPlugBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPlugBox.h; sourceTree = "<group>"; };
+		DB3E46221EB2D109001C37AE /* DBPlugBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPlugBox.m; sourceTree = "<group>"; };
+		DB3E46241EB2D14F001C37AE /* DBPlug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPlug.h; sourceTree = "<group>"; };
+		DB3E46251EB2D14F001C37AE /* DBPlug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPlug.m; sourceTree = "<group>"; };
+		DBE955DE1EB8194800844A27 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		DBE955DF1EB8194800844A27 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,8 @@
 				DB3E45B81EB0E396001C37AE /* Video.m */,
 				DB3E45BA1EB0E505001C37AE /* Author.h */,
 				DB3E45BB1EB0E505001C37AE /* Author.m */,
+				DBE955DE1EB8194800844A27 /* Dog.h */,
+				DBE955DF1EB8194800844A27 /* Dog.m */,
 				B206D7581C819EEA00F66DE7 /* Main.storyboard */,
 				B206D75B1C819EEA00F66DE7 /* Assets.xcassets */,
 				B206D75D1C819EEA00F66DE7 /* LaunchScreen.storyboard */,
@@ -239,6 +247,7 @@
 		DB3E45621EB0E35E001C37AE /* HDataArhiever */ = {
 			isa = PBXGroup;
 			children = (
+				DB3E46201EB2D0EA001C37AE /* plug */,
 				DB3E46181EB1ED25001C37AE /* class */,
 				DB3E45751EB0E35E001C37AE /* core */,
 				DB3E45801EB0E35E001C37AE /* DBArhiever.h */,
@@ -286,8 +295,6 @@
 				DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */,
 				DB3E458D1EB0E35E001C37AE /* GeneralProperty.h */,
 				DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */,
-				DB3E458F1EB0E35E001C37AE /* IDProperty.h */,
-				DB3E45901EB0E35E001C37AE /* IDProperty.m */,
 				DB3E45911EB0E35E001C37AE /* NumberProperty.h */,
 				DB3E45921EB0E35E001C37AE /* NumberProperty.m */,
 				DB3E45931EB0E35E001C37AE /* Property.h */,
@@ -312,6 +319,17 @@
 				DB3E461A1EB1ED3C001C37AE /* ClassManager.m */,
 			);
 			path = class;
+			sourceTree = "<group>";
+		};
+		DB3E46201EB2D0EA001C37AE /* plug */ = {
+			isa = PBXGroup;
+			children = (
+				DB3E46211EB2D109001C37AE /* DBPlugBox.h */,
+				DB3E46221EB2D109001C37AE /* DBPlugBox.m */,
+				DB3E46241EB2D14F001C37AE /* DBPlug.h */,
+				DB3E46251EB2D14F001C37AE /* DBPlug.m */,
+			);
+			path = plug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,17 +515,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB3E45AC1EB0E35E001C37AE /* ArrayProperty.m in Sources */,
-				DB3E45B01EB0E35E001C37AE /* IDProperty.m in Sources */,
 				DB3E45B21EB0E35E001C37AE /* Property.m in Sources */,
 				DB3E45B61EB0E35E001C37AE /* TargetProperty.m in Sources */,
 				DB3E45AB1EB0E35E001C37AE /* DBBaseTarget.m in Sources */,
+				DB3E46231EB2D109001C37AE /* DBPlugBox.m in Sources */,
 				DB3E45B31EB0E35E001C37AE /* PropertyFactory.m in Sources */,
+				DB3E46261EB2D14F001C37AE /* DBPlug.m in Sources */,
 				DB3E45AF1EB0E35E001C37AE /* GeneralProperty.m in Sources */,
 				DB3E45AA1EB0E35E001C37AE /* NSObject+SEL.m in Sources */,
 				B206D7571C819EEA00F66DE7 /* ViewController.m in Sources */,
 				DB3E45B91EB0E396001C37AE /* Video.m in Sources */,
 				B206D7541C819EEA00F66DE7 /* AppDelegate.m in Sources */,
 				DB3E45BC1EB0E505001C37AE /* Author.m in Sources */,
+				DBE955E01EB8194800844A27 /* Dog.m in Sources */,
 				B206D7511C819EEA00F66DE7 /* main.m in Sources */,
 				DB3E45B11EB0E35E001C37AE /* NumberProperty.m in Sources */,
 				DB3E45AE1EB0E35E001C37AE /* DictionaryProperty.m in Sources */,

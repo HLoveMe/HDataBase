@@ -10,5 +10,5 @@
 //用于处理系统可保存类型
 //NSString NSNumber  NSURL NSDate
 @interface GeneralProperty : Property
-
++(id)valueWithstr:(NSString *)str class:(Class)class;
 @end

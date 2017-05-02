@@ -7,14 +7,13 @@
 //
 
 #import "ClassProperty.h"
-
+#import "ClassManager.h"
 @implementation ClassProperty
 -(NSString *)getReadValue:(long (^)(id<DBArhieverProtocol>))block value:(id)value{
-    return NSStringFromClass(value);
+    return NSStringFromClass([ClassManager valueClass:value]);
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
-    NSString *sqlvalue = [set stringForColumn:self.name];
-    if(!sqlvalue)return nil;
-    return NSClassFromString(sqlvalue);
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)clazz{
+    if(!sqlV)return nil;
+    return NSClassFromString(sqlV);
 }
 @end

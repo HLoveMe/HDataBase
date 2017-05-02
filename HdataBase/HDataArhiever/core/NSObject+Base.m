@@ -11,21 +11,32 @@
 #import "ClassManager.h"
 #import "DBBaseTarget.h"
 #import "PropertyFactory.h"
+#import "DBPlugBox.h"
+#import "DBPlug.h"
 @implementation NSObject (Base)
 -(void)enumerateObjectsUsingBlock:(void(^)(IvarInfomation *info))Block{
     void(^oneStep)(Class temp)=^(Class temp){
+        DBPlugBox *box = [DBPlugBox shareBox];
+        DBPlug *plug = [box plugFor:temp];
         [self db_enumerateClazz:temp propertys:^(objc_property_t t, NSString *name, id value) {
             IvarInfomation *ivar = [[IvarInfomation alloc]init];
             ivar.value = value;
             Property *property = [PropertyFactory propertyWith:t value:value];
             ivar.property = property;
-            if (Block)
-                Block(ivar);
+            if (Block){
+                if(plug){
+                    if([plug isCanSaveToDB:ivar class:temp])
+                        Block(ivar);
+                }else{
+                    Block(ivar);
+                }
+            }
+            
         }];
     };
     BOOL go=YES;
     Class clazz=[self class];
-    while (go) {
+    while (go&&clazz) {
         if ([clazz isBaseTarget]) {
             oneStep(clazz);
             clazz=[clazz superclass];
@@ -44,7 +55,7 @@
     };
     BOOL go=YES;
     Class clazz=[self class];
-    while (go) {
+    while (go&&clazz) {
         if ([clazz isBaseTarget]) {
             oneStep(clazz);
             clazz=[clazz superclass];
@@ -122,52 +133,49 @@
 }
 //判断是否满足写入数据库条件
 -(BOOL)isBaseTarget{
-    if ([self isKindOfClass:[DBBaseTarget class]]){
-        return YES;
-    }
-    
-    unsigned int num;
-    Protocol * __unsafe_unretained *pros = class_copyProtocolList([self class], &num);
-    BOOL flag = NO;
-    for (int i=0; i<num; i++) {
-        Protocol *one = pros[i];
-        NSString *name = [NSString stringWithUTF8String:protocol_getName(one)];
-        if ([name isEqualToString:@"DBArhieverProtocol"]){
-            flag = YES;
-            break;
-        }
-    }
-    free(pros);
-    return flag;
+    return [[self class] isBaseTarget];
 }
 +(BOOL)isBaseTarget{
+    return [self isimplementationProtocol:@"DBArhieverProtocol"];
+}
++(BOOL)isimplementationProtocol:(NSString *)proName{
     if ([self isSubclassOfClass:[DBBaseTarget class]]){
         return YES;
     }
+    BOOL(^oneStep)(Class this) = ^BOOL(Class this){
+        unsigned int num;
+        Protocol * __unsafe_unretained *pros = class_copyProtocolList([self class], &num);
+        BOOL flag = NO;
+        for (int i=0; i<num; i++) {
+            Protocol *one = pros[i];
+            NSString *name = [NSString stringWithUTF8String:protocol_getName(one)];
+            if ([name isEqualToString:proName]){
+                flag = YES;
+                break;
+            }
+        }
+        free(pros);
+        return flag;
+    };
     
-    unsigned int num;
-    Protocol * __unsafe_unretained *pros = class_copyProtocolList([self class], &num);
-    BOOL flag = NO;
-    for (int i=0; i<num; i++) {
-        Protocol *one = pros[i];
-        NSString *name = [NSString stringWithUTF8String:protocol_getName(one)];
-        if ([name isEqualToString:@"DBArhieverProtocol"]){
-            flag = YES;
-            break;
+    BOOL go=YES;
+    BOOL result = NO;
+    Class clazz=[self class];
+    while (go&&clazz) {
+        BOOL result = oneStep(clazz);
+        if(result){
+            go = NO;
+        }else{
+            clazz = [clazz superclass];
         }
     }
-    free(pros);
-    return flag;
+    return result;
 }
 -(BOOL)isEnCode{
     return [ClassManager isEnCode:self];
-//    if ([self isKindOfClass:[NSString class]] || [self isKindOfClass:[NSNumber class]] || [NSURL class]||[NSDate class]){
-//        return YES;
-//    }
-//    return NO;
 }
 +(BOOL)isEnCode{
-    return [[[self alloc]init]isEnCode];
+    return [ClassManager isEnCode:[self new]];
 }
 +(NSArray*)autoIgnores{
     static  NSArray *fileds;

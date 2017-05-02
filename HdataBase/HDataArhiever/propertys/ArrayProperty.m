@@ -7,7 +7,7 @@
 //
 
 #import "ArrayProperty.h"
-
+#import "GeneralProperty.h"
 @implementation ArrayProperty
 
 -(NSString *)getReadValue:(long(^)(id<DBArhieverProtocol> obj))block value:(id)value{
@@ -25,29 +25,29 @@
             }
             [res addObject:clas];
         }];
-        return [res componentsJoinedByString:@"---"];
+        [res addObject:@"Array"];
+        return [res componentsJoinedByString:[Property separatedString]];
     }else{
         return [Property arraynullValue];
     }
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
-    if(block){return @[];}
-    NSString *sqlvalue = [set stringForColumn:self.name];
-    if(!sqlvalue)return nil;
-    if(![self dataBaseIsValue:sqlvalue])
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)c{
+    if(!block){return @[];}
+    if(!sqlV)return nil;
+    if(![Property dataBaseIsValue:sqlV])
         return nil;
     
     NSMutableArray *array = [NSMutableArray array];
-    NSArray *va = [sqlvalue componentsSeparatedByString:@"---"];
+    NSArray *va = [sqlV componentsSeparatedByString:[Property separatedString]];
     
-    for (int i=0; i<va.count; i+=2) {
+    for (int i=0; i<va.count-1; i+=2) {
         Class clazz = NSClassFromString(va[i+1]);
         NSAssert(clazz != nil, @"数据库值 无法获取class");
         if([clazz isBaseTarget]){
             id value = block(va[i],clazz);
             [array addObject:value];
         }else{
-            id value = [self value:va[i] class:clazz];
+            id value = [GeneralProperty valueWithstr:va[i] class:clazz];
             [array addObject:value];
         }
     }
@@ -62,16 +62,4 @@
     return YES;
 }
 
--(id)value:(NSString *)value class:(Class)class{
-    //将数据库字符串存储的值 转为真实 类型
-    id real_value;
-    if ([class isSubclassOfClass:[NSString class]]){
-        real_value = value;
-    }else if ([class isSubclassOfClass:[NSNumber class]]){
-        real_value = @([value doubleValue]);
-    }else{
-        //.....
-    }
-    return real_value;
-}
 @end

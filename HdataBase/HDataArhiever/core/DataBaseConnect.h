@@ -20,7 +20,14 @@ typedef enum {
 
 @interface DataBaseConnect : NSObject
 
+/**
+ 提供类在数据库对于的表名
 
+ @param clazz class
+ @return name
+ */
++(NSString *)tableName:(Class)clazz;
++(void)createTable:(Class)class;
 /**
  字段保存   保存对象所有属性为字段
 
@@ -122,12 +129,15 @@ typedef enum {
  @return success
  */
 +(BOOL)rename:(Class)oldClass useClass:(Class)newClass;
+@end
 
+@interface DataBaseConnect (updateBase)
 /**
- 更新数据库 更新表为新的表 内部已经做了
+ 更新数据库 更新表为新的表
  更新失败机制如果失败  就会会退到之前数据
  
- @param old 旧的Class
+ >这里使用的文件复制 保证失败后撤销   (没有选择事务机制)
+ @param old 旧的Class (无任何修改)
  @param newC 新的Class
  @param handle 处理器
  @param flag 是否删除旧表
@@ -137,11 +147,44 @@ typedef enum {
 
 /**
  更新 当前表数据
- 更新失败机制如果失败  就会会退到之前数据
+ 适用：
+    仅仅 属性增加和删除
+ 不适用：
+    还未完善 还不支持数据属性修改  无法获取原始属性名称 和 类型
+    无法更新 级联对象
  
+ 更新失败机制如果失败  就会会退到之前数据  保证主线程同步操作
+ >这里使用的文件复制 保证失败后撤销   (没有选择事务机制)
  @param clazz 当前class
  @param handle 处理器
  @return 是否成功
+ 
+ [DataBaseConnect update:[Friend class] dataChange:^id<DBArhieverProtocol>(Friend *value) {
+    if(增加属性)
+        value.lasttime = [[NSDate new] timeIntervalSince1970];
+        return value;
+    if(删除属性)
+        return value;
+ }];
  */
 +(BOOL)update:(Class)clazz dataChange:(id<DBArhieverProtocol>(^)(id value))handle;
+
+/**
+ 更新数据
+ 更新失败机制如果失败  就会会退到之前数据
+ 之前的数据将会被删除
+ >这里使用的文件复制 保证失败后撤销   (没有选择事务机制)
+ @param clazz 更新的表
+ @param handle 用于回调  返回更新之后的数据  会把数据当前数据全部读出 传递 由于无法判断你是否修改该属性类型和名称 所以无法判断的全部用字符串返回{
+        NSURL: "http://.....",
+        NSNumber:"1821202.12"
+        NSDate:"1970时间戳"
+ }
+ @return 是否成功
+ */
++(BOOL)update2:(Class)clazz dataChange:(id<DBArhieverProtocol>(^)(NSDictionary *value))handle;
+@end
+
+@interface DataBaseConnect (operation)
+
 @end

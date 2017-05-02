@@ -9,5 +9,5 @@
 #import "Property.h"
 
 @interface StructProperty : Property
-
++(id)valueWithString:(NSString *)sqlV;
 @end

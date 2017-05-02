@@ -8,19 +8,23 @@
 
 #import "GeneralProperty.h"
 @implementation GeneralProperty
--(NSString *)realValue:(id)va{
+//得到插入数据库的值
++(NSString *)realValue:(id)va{
     if([va isKindOfClass:[NSString class]]||[va isKindOfClass:[NSNumber class]]){
+        //NSString NSNumber
         return [[NSString alloc]initWithFormat:@"%@",va];
     }else if([va isKindOfClass:[NSURL class]]){
+        //NSURL
         return [(NSURL *)va absoluteString];
     }else if([va isKindOfClass:[NSDate class]]){
+        //NSDate
         return [[NSString alloc]initWithFormat:@"%f",[(NSDate *)va timeIntervalSince1970]];
     }
-//    ... 增加isEnCode
+//    ...ClassManager  增加isEnCode
 //    ... 增加 解析
     return [Property nullValue];
 }
--(id)valueWithstr:(NSString *)str class:(Class)class{
++(id)valueWithstr:(NSString *)str class:(Class)class{
     if(!class)return nil;
     if([class isSubclassOfClass:[NSString class]]){
         //NSString
@@ -37,15 +41,15 @@
     }
     return str;
 }
+
+
 -(NSString *)getReadValue:(long (^)(id<DBArhieverProtocol>))block value:(id)value{
-    NSString *temp = [self realValue:value];
-    return value ? temp : [Property nullValue];
+    return value ? [GeneralProperty realValue:value] : [Property nullValue];
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
-    NSString *sqlv = [set stringForColumn:self.name];
-    if(!sqlv)return nil;
-    if([self dataBaseIsValue:sqlv]){
-        id va  = [self valueWithstr:sqlv class:clazz];
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)clazz{
+    if(!sqlV)return nil;
+    if([Property dataBaseIsValue:sqlV]){
+        id va  = [GeneralProperty valueWithstr:sqlV class:clazz];
         return va;
     }
     return nil;

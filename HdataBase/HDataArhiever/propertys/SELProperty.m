@@ -13,13 +13,14 @@
     SEL asel;
     NSValue *temp = value;
     [temp getValue:&asel];
-    NSString *selstr = NSStringFromSelector(asel);
-    return selstr ? selstr : [Property nullValue];
+    NSString *ss = NSStringFromSelector(asel);
+    NSString *selstr = [NSString stringWithFormat:@"%@%@%@",ss,[Property separatedString],@"SEL"];
+    return ss ? selstr : [Property nullValue];
 }
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
-    NSString *sqlV = [set stringForColumn:self.name];
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)clazz{
     if(!sqlV)return nil;
-    SEL asel = NSSelectorFromString(sqlV);
+    NSArray *res = [sqlV componentsSeparatedByString:[Property separatedString]];
+    SEL asel = NSSelectorFromString(res[0]);
     return  [NSValue value:&asel withObjCType:@encode(SEL)];
 }
 @end

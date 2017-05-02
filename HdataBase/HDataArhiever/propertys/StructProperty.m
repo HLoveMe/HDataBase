@@ -9,9 +9,8 @@
 #import "StructProperty.h"
 #import <UIKit/UIKit.h>
 @implementation StructProperty
--(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set class:(Class)clazz{
-    NSString *sqlV = [set stringForColumn:self.name];
-    if(!sqlV)return nil;
++(id)valueWithString:(NSString *)sqlV{
+    
     NSString *cont = [[sqlV componentsSeparatedByString:@":"] lastObject];
     cont = [cont stringByReplacingOccurrencesOfString:@"{" withString:@""];
     cont = [cont stringByReplacingOccurrencesOfString:@"}" withString:@""];
@@ -41,5 +40,10 @@
         NSAssert(NO, @"结构体解析失败");
     }
     return nil;
+}
+
+-(id)valueWithSet:(id<DBArhieverProtocol>(^)(NSString * onself,Class class))block set:(FMResultSet *)set sqlV:(NSString *)sqlV class:(Class)clazz{
+    if(!sqlV)return nil;
+    return [StructProperty valueWithString:sqlV];
 }
 @end

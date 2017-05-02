@@ -20,21 +20,29 @@ if([self respondsToSelector:asel]){\
 return nil;
 
 @protocol DBArhieverProtocol<NSObject>
+
 /**
-    拥有该属性即可 仅仅用于内部唯一标识 不要进行任何修改
+    拥有该属性即可 仅仅用于内部唯一标识
     值在数据中中为主键 且自动增长
     从  1 开始
+    使用者 无需关系内部联系
  */
+@required
 @property(nonatomic,assign)long oneself;
 
-//用于 限制存储的属性范围   
+//用于 限制存储的属性范围
+@optional
 -(NSArray *)ignoreFileds;
-
 
 /**
   如果你的类有唯一标示  可以指定
  @return 指定作为唯一标示属性
  */
-@optional
 -(NSString *)uniqueness;
+@end
+
+@class UpdateAction;
+@protocol DataBaseUpdateProtocol <NSObject>
+@required
+-(NSDictionary<NSString *,UpdateAction*>*)dataBaseUpdate;
 @end

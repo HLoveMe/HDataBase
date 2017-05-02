@@ -10,6 +10,7 @@
 #import "DataBaseConnect.h"
 #import "Video.h"
 #import "Author.h"
+#import "Dog.h"
 @interface ViewController ()
 
 @end
@@ -18,6 +19,9 @@
 
 - (void)viewDidLoad {
     NSLog(@"%@",NSHomeDirectory());
+    [DataBaseConnect createTable:[Dog class]];
+    [DataBaseConnect createTable:[Dog class]];
+    
     [super viewDidLoad];
     /**
         需要注意的是 如果你多次运行这段代码 
@@ -26,10 +30,10 @@
         这是由于 Video  实现了uniqueness 来确定其的唯一性
      
      */
-    
-//    [DataBaseConnect update:[Video class] dataChange:^id<DBArhieverProtocol>(id value) {
-//        return value;
-//    }];
+    [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
+        
+        return nil;
+    }];
     
     Video *v = [[Video alloc] init];
     NSMutableString *aaaaa = [[NSMutableString alloc]initWithString:@"爱情公寓"];
@@ -57,7 +61,7 @@
     //查找
     id obj = [DataBaseConnect objectWithClass:[Video class] filed:@"ID" value:@"100001"];
     NSArray *aus = [DataBaseConnect objectsWithClass:[Author class]];
-    int a = 1;
+    int wwa = 1;
     
 }
 
