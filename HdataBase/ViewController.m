@@ -30,10 +30,10 @@
         这是由于 Video  实现了uniqueness 来确定其的唯一性
      
      */
-    [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
-        
-        return nil;
-    }];
+//    [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
+//        
+//        return nil;
+//    }];
     
     Video *v = [[Video alloc] init];
     NSMutableString *aaaaa = [[NSMutableString alloc]initWithString:@"爱情公寓"];
