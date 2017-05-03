@@ -24,3 +24,8 @@
 -(id)valuesForArray;
 -(id)valuesForDictionary;
 @end
+
+@interface PrepareStatus (simple)
+
+@property(nonatomic,copy,readonly)PrepareStatus*(^AddOperation)(DBOperation * opera);
+@end

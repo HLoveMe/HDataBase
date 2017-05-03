@@ -544,4 +544,14 @@ typedef enum {
     status.valueC = clazz;
     return status;
 }
++(PrepareStatus *(^)(Class clazz))prepare{
+    return ^PrepareStatus *(Class clazz){
+        return [DataBaseConnect _objectsWithClass:clazz];
+    };
+}
++(PrepareStatus *(^)(Class clazz,NSDictionary *args))prepare2{
+    return ^PrepareStatus *(Class clazz,NSDictionary *args){
+        return [DataBaseConnect _objectsForAgrms:args resultClazz:clazz];
+    };
+}
 @end

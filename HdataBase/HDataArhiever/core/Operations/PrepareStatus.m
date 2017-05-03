@@ -145,6 +145,10 @@
     return _sql;
 }
 -(id)values{
+    if(!self.valueC){
+        NSLog(@"必须指定 valueC 属性");
+        return nil;
+    }
     if(self.valueOps.count == 0){
         if(self.funcs.count == 0)
             return [DataBaseConnect objectsWithSQL:self.sql resultClass:self.valueC];
@@ -229,5 +233,21 @@
     id va = [self values];
     self.ValueArry = YES;
     return va;
+}
+@end
+
+@implementation PrepareStatus (simple)
+-(instancetype)initWithClass:(Class)clazz{
+    if (self = [super init]) {
+        self.valueC = clazz;
+    }
+    return self;
+}
+-(PrepareStatus * (^)(DBOperation * opera))AddOperation{
+    __weak typeof(self) this  = self;
+    return ^PrepareStatus *(DBOperation * opera){
+        [this addOperation:opera];
+        return self;
+    };
 }
 @end

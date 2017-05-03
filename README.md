@@ -75,6 +75,23 @@
  
         [DataBaseConnect objectsWithClass:[Teacher class]];
  
-        .......
+	     。。。。
+	```
+	
+* 操作符使用
+	
+	```
+	//我仅仅想关心工资 和 姓名  按照工资降序 排列
+    
+    id valu  = [[[[DataBaseConnect _objectsWithClass:[People class]] addOperation:[ValueOperation Operation:@[@"name",@"alalry"]]] addOperation:[ORDEROperation Operation:@"-alalry"]] values];
+    
+    //简便方式
+    id valu2 = DataBaseConnect.prepare([People class])
+    .AddOperation([ValueOperation Operation:@[@"name",@"alalry"]])
+    .AddOperation([ORDEROperation Operation:@"-alalry"])
+    .values;
+    
+    
+    看Dome
 	```
 	

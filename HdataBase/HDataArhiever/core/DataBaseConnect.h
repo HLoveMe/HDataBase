@@ -181,4 +181,9 @@
 +(PrepareStatus *)_objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic resultClazz:(Class)clazz;
 
 +(PrepareStatus *)_objectsWithClass:(Class)clazz;
+
+
+
++(PrepareStatus *(^)(Class clazz))prepare;
++(PrepareStatus *(^)(Class clazz,NSDictionary *args))prepare2;
 @end

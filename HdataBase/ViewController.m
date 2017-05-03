@@ -93,6 +93,11 @@
     
     id valu  = [[[[DataBaseConnect _objectsWithClass:[People class]] addOperation:[ValueOperation Operation:@[@"name",@"alalry"]]] addOperation:[ORDEROperation Operation:@"-alalry"]] values];
     
+    //简便方式
+    id valu2 = DataBaseConnect.prepare([People class]).AddOperation([ValueOperation Operation:@[@"name",@"alalry"]]).AddOperation([ORDEROperation Operation:@"-alalry"]).values;
+    
+    ;
+    
     Video *v = [[Video alloc] init];
     NSMutableString *aaaaa = [[NSMutableString alloc]initWithString:@"爱情公寓"];
     v.name = aaaaa;
