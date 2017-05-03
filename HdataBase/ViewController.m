@@ -39,15 +39,6 @@
      BOOL asasa = [DataBaseConnect saveObjscts:ae];
      */
     
-    
-    
-    /**
-        需要注意的是 如果你多次运行这段代码 
-        数据库会Video没有出现多次记录
-        而 Author 出现多次
-        这是由于 Video  实现了uniqueness 来确定其的唯一性
-     
-     */
 /**
  
     [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
@@ -94,10 +85,17 @@
     id valu  = [[[[DataBaseConnect _objectsWithClass:[People class]] addOperation:[ValueOperation Operation:@[@"name",@"alalry"]]] addOperation:[ORDEROperation Operation:@"-alalry"]] values];
     
     //简便方式
-    id valu2 = DataBaseConnect.prepare([People class]).AddOperation([ValueOperation Operation:@[@"name",@"alalry"]]).AddOperation([ORDEROperation Operation:@"-alalry"]).values;
+    id valu2 = DataBaseConnect.prepare([People class]).AddOperation([ValueOperation Operation:@[@"name",@"alalry"]]).AddOperation([ORDEROperation Operation:@"-alalry"]).AddOperation([LimitOperation Operation:NSMakeRange(0, 3)]).values;
+   
     
-    ;
     
+    /**
+     需要注意的是 如果你多次运行这段代码
+     数据库会Video没有出现多次记录
+     而 Author 出现多次
+     这是由于 Video  实现了uniqueness 来确定其的唯一性
+     
+     */
     Video *v = [[Video alloc] init];
     NSMutableString *aaaaa = [[NSMutableString alloc]initWithString:@"爱情公寓"];
     v.name = aaaaa;

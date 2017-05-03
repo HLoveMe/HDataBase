@@ -40,9 +40,3 @@ return nil;
  */
 -(NSString *)uniqueness;
 @end
-
-@class UpdateAction;
-@protocol DataBaseUpdateProtocol <NSObject>
-@required
--(NSDictionary<NSString *,UpdateAction*>*)dataBaseUpdate;
-@end
