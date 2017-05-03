@@ -22,6 +22,25 @@
 #import "DBBaseTarget.h"
 
 
+#import "PrepareStatus.h"
+
+#import "GROUPOperation.h"
+#import "ORDEROperation.h"
+#import "LimitOperation.h"
+
+#import "CompareOperation.h"
+#import "LIKEOperation.h"
+#import "GLOBOperation.h"
+
+#import "ValueOperation.h"
+#import "DISTINOTOperation.h"
+
+#import "CountOperation.h"
+#import "MAXOperation.h"
+#import "MINOperation.h"
+#import "AVGOperation.h"
+#import "SUMOperation.h"
+
 /**
     DBBaseTargetProtocol
         @property(nonatomic,assign)long oneself;仅仅内部进行识别的标示

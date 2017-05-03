@@ -8,16 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DBBaseTargetProtocol.h"
-typedef enum {
-    FMDBCreate,//创建表
-    FMDBDrop, //删除表
-    
-    FMDBInsert,
-    FMDBUpdate,
-    FMDBDelete,
-    FMDBSelect
-}FMDBType;
-
+@class PrepareStatus;
 @interface DataBaseConnect : NSObject
 
 /**
@@ -187,4 +178,6 @@ typedef enum {
 
 @interface DataBaseConnect (operation)
 
++(PrepareStatus *)_objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic resultClazz:(Class)clazz;
++(PrepareStatus *)_objectsWithClass:(Class)clazz;
 @end

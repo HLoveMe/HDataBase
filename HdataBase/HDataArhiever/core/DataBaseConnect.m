@@ -17,8 +17,17 @@
 #import "propertys.h"
 #import "DBPlugBox.h"
 #import "DBPlug.h"
+#import "PrepareStatus.h"
+typedef enum {
+    FMDBCreate,//创建表
+    FMDBDrop, //删除表
+    
+    FMDBInsert,
+    FMDBUpdate,
+    FMDBDelete,
+    FMDBSelect
+}FMDBType;
 @interface DataBaseConnect()
-
 @end
 @implementation DataBaseConnect
 +(NSString *)tableName:(Class)clazz{
@@ -37,7 +46,7 @@
     DBManager *manager = [DBManager shareDBManager];
     [self createTable:[obj class]];
     //防止一个 oneself/ID 对象多次保存
-    __block BOOL isExits;
+    __block BOOL isExits = NO;
     __block BOOL flag = NO;
     SEL asel = @selector(uniqueness);
     NSString *IDName = @"onnself";
@@ -65,7 +74,9 @@
         return YES;
     }];
     
-    if(isExits){return flag;}
+    if(isExits){
+        return flag;
+    }
     
     //无记录继续保存
     
@@ -317,7 +328,7 @@
             break;
         }
         case FMDBSelect:{
-            [sql appendFormat:@" select * from %@ where '1' = '1' and ",[self tableName:clazz]];
+            [sql appendFormat:@"select * from %@ where '1' = '1' and ",[self tableName:clazz]];
             NSDictionary *dic =  objc_getAssociatedObject(obj, @"dic");
             objc_removeAssociatedObjects(obj);
             if (dic  != nil){
@@ -517,6 +528,20 @@
 @end
 
 @implementation DataBaseConnect (operation)
-
-
++(PrepareStatus *)_objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic resultClazz:(Class)clazz{
+    id obj = [[clazz alloc]init];
+    objc_setAssociatedObject(obj, @"dic", dic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSString * sql =  [self sqlStringWith:FMDBSelect object:obj clazz:clazz];
+    PrepareStatus *status = [[PrepareStatus alloc]init];
+    status.sql = [sql mutableCopy];
+    status.valueC = clazz;
+    return status;
+}
++(PrepareStatus *)_objectsWithClass:(Class)clazz{
+    NSString * sql =  [self sqlStringWith:FMDBSelect object:nil clazz:clazz];
+    PrepareStatus *status = [[PrepareStatus alloc]init];
+    status.sql = [sql mutableCopy];
+    status.valueC = clazz;
+    return status;
+}
 @end
