@@ -60,9 +60,9 @@
 	|GLOBOperation.h|模糊查询|where name GLOB '朱*'|
 	|||
 	|ValueOperation.h|查询字段指定|select name from table|
-	|DISTINOTOperation.h|字段去重|select name from table|
+	|DISTINOTOperation.h|字段去重|select DISTINOT name from table|
 	|||
-	|CountOperation.h|数目|select count(age) from table|
+	|CountOperation.h|数目|select count( * ) from table|
 	|MAXOperation.h|最大值|select MAX(age) from table|
 	|MINOperation.h|最小值|select MIN(age) from table|
 	|AVGOperation.h|平均值|select AVG(age) from table|
