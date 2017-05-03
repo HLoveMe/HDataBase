@@ -15,10 +15,10 @@
     ORDEROperation *operation = [[ORDEROperation alloc]init];
     operation.level = 9;
     BOOL up = [name hasPrefix:@"-"];
-    if(up){
-        name = [name substringFromIndex:1];
+    if(!up){
         operation.content = [NSString stringWithFormat:@" ORDER BY %@ ASC",name];
     }else{
+        name = [name substringFromIndex:1];
         operation.content = [NSString stringWithFormat:@" ORDER BY %@ DESC",name];
     }
     return operation;

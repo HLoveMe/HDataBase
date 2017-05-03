@@ -26,8 +26,16 @@
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *prepres;
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *assists;
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *funcs;
+
+@property(nonatomic,assign)BOOL ValueArry;
 @end
 @implementation PrepareStatus
+-(instancetype)init{
+    if(self= [super init]){
+        self.ValueArry = YES;
+    }
+    return self;
+}
 -(NSMutableArray *)valueOps{
     if (nil==_valueOps) {
         _valueOps=[NSMutableArray array];
@@ -160,35 +168,66 @@
     }else{
         DBManager *manager = [DBManager shareDBManager];
         __block ValueOperation *valuesOpera;
-        [self.operas enumerateObjectsUsingBlock:^(DBOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.valueOps enumerateObjectsUsingBlock:^(DBOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj isMemberOfClass:[ValueOperation class]]) {
                 valuesOpera = (ValueOperation *)obj;
             };
         }];
-        
-        NSMutableDictionary<NSString *,NSMutableArray*> *result = [NSMutableDictionary dictionary];
-        
-        [valuesOpera.names enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL * _Nonnull stop) {
-            result[key] = [NSMutableArray array];
-        }];
-        
-        [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
-            FMResultSet *set = [database executeQuery:self.sql];
-            int count = [set columnCount];
-            while ([set next]) {
-                for (int i=0; i<count; i++) {
-                    NSString *name = [set columnNameForIndex:i];
-                    NSString *value = [set stringForColumnIndex:i];
-                    id one  = [PropertyFactory valueForString:value block:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
-                        return [DataBaseConnect objectWithClass:class filed:@"oneself" value:onself];;
-                    }];
-                    [result[name] addObject:one];
+        //返回数组  [[a,b,c],[a,b,c],[a,b,c]]
+        if(self.ValueArry){
+            NSMutableArray<NSMutableArray *> *result = [NSMutableArray array];
+            [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+                FMResultSet *set = [database executeQuery:self.sql];
+                int count = [set columnCount];
+                while ([set next]) {
+                    NSMutableArray *current = [NSMutableArray array];
+                    for (int i=0; i<count; i++) {
+                        NSString *value = [set stringForColumnIndex:i];
+                        id one  = [PropertyFactory valueForString:value block:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
+                            return [DataBaseConnect objectWithClass:class filed:@"oneself" value:onself];;
+                        }];
+                        [current addObject:one];
+                    }
+                    [result addObject:current];
                 }
-            }
-            return YES;
-        }];
-        return  result;
+                return YES;
+            }];
+            return result;
+        }else{
+            /** 返回字典  {@"key1":[...],@"key2":[....]}*/
+            NSMutableDictionary<NSString *,NSMutableArray*> *result = [NSMutableDictionary dictionary];
+            
+            [valuesOpera.names enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL * _Nonnull stop) {
+                result[key] = [NSMutableArray array];
+            }];
+            
+            [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+                FMResultSet *set = [database executeQuery:self.sql];
+                int count = [set columnCount];
+                while ([set next]) {
+                    for (int i=0; i<count; i++) {
+                        NSString *name = [set columnNameForIndex:i];
+                        NSString *value = [set stringForColumnIndex:i];
+                        id one  = [PropertyFactory valueForString:value block:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
+                            return [DataBaseConnect objectWithClass:class filed:@"oneself" value:onself];;
+                        }];
+                        [result[name] addObject:one];
+                    }
+                }
+                return YES;
+            }];
+            return  result;
+        }
     }
     return nil;
+}
+-(id)valuesForArray{
+    return [self values];
+}
+-(id)valuesForDictionary{
+    self.ValueArry = NO;
+    id va = [self values];
+    self.ValueArry = YES;
+    return va;
 }
 @end

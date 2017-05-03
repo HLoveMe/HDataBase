@@ -16,4 +16,11 @@
 -(PrepareStatus *)addOperation:(DBOperation*)operation;
 //得到值
 -(id)values;
+
+/**
+ 当你指定关注的值 可以选择返回值类型
+ @return
+ */
+-(id)valuesForArray;
+-(id)valuesForDictionary;
 @end

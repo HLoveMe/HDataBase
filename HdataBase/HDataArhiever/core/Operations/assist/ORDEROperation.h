@@ -11,7 +11,7 @@
 @interface ORDEROperation : AssistOperation
 
 /**
- 排序属性
+    降序和升序
 
  @param content @"age" 升序  @"-age" 降序
  @return self

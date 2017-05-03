@@ -89,7 +89,9 @@
     id va10 = [[[DataBaseConnect _objectsWithClass:[People class]] addOperation:[SUMOperation Operation:@"alalry"]] values];
     
     */
+    //我仅仅想关心工资 和 姓名  按照工资降序 排列
     
+    id valu  = [[[[DataBaseConnect _objectsWithClass:[People class]] addOperation:[ValueOperation Operation:@[@"name",@"alalry"]]] addOperation:[ORDEROperation Operation:@"-alalry"]] values];
     
     Video *v = [[Video alloc] init];
     NSMutableString *aaaaa = [[NSMutableString alloc]initWithString:@"爱情公寓"];

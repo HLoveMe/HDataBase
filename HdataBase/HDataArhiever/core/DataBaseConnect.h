@@ -179,5 +179,6 @@
 @interface DataBaseConnect (operation)
 
 +(PrepareStatus *)_objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic resultClazz:(Class)clazz;
+
 +(PrepareStatus *)_objectsWithClass:(Class)clazz;
 @end
