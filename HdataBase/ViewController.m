@@ -24,6 +24,13 @@
 - (void)viewDidLoad {
     NSLog(@"%@",NSHomeDirectory());
     [super viewDidLoad];
+    //数据库更新
+    
+    [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
+//       返回新的对象
+        return [Video new];
+    }];
+    
     
 //    NSArray *ae = @[
 //                   [People people:@"Paul" age:32 address:@"California" sl:20000.0],

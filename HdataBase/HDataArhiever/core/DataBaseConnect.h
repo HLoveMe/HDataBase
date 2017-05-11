@@ -123,9 +123,11 @@
 +(BOOL)rename:(Class)oldClass useClass:(Class)newClass;
 @end
 
+
+
 @interface DataBaseConnect (updateBase)
 /**
- 更新数据库 更新表为新的表
+ 更新数据库      更新表为新的表
  更新失败机制如果失败  就会会退到之前数据
  
  >这里使用的文件复制 保证失败后撤销   (没有选择事务机制)

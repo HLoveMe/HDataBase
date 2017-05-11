@@ -30,9 +30,30 @@ static DBManager *single;
     if (single == nil){
         self = [super init];
         single = self;
+        [self clearTempFile];
         self.database = [FMDatabase databaseWithPath:[self dbPath]];
     }
     return single;
+}
+-(BOOL)clearTempFile{
+    NSString *temp = [self temppath];
+    NSString *db = [self dbPath];
+    NSFileManager *file = [NSFileManager defaultManager];
+    NSError *err;
+    //临时文件存在  处理方式 替换
+    if([file fileExistsAtPath:temp]){
+        if(self.database &&self.dataBase.goodConnection){
+            NSLog(@"当前数据库已经处于打开状态，不能进行复原操作");
+            return NO;
+        }
+        [file removeItemAtPath:db error:&err];
+        [file copyItemAtPath:temp toPath:db error:&err];
+        [file removeItemAtPath:temp error:&err];
+        if(err){
+            NSLog(@"%@",[NSString stringWithFormat:@"临时文件存在  处理方式 替换 失败"]);
+        }
+    }
+    return err == nil;
 }
 -(FMDatabase *)dataBase{
     [self.database open];
@@ -66,41 +87,40 @@ static DBManager *single;
     [self.database close];
 }
 -(void)dataUpdate:(BOOL(^)(FMDatabase *data))block{
-    NSString *temp = [self temppath];
-    NSString *db = [self dbPath];
-    NSFileManager *file = [NSFileManager defaultManager];
-    NSError *err;
-    //临时文件存在  处理方式 替换
-    if([file fileExistsAtPath:temp]){
-        [file removeItemAtPath:db error:&err];
-        [file copyItemAtPath:temp toPath:db error:&err];
+    void(^HANDLE)(void)=^(){
+        NSString *temp = [self temppath];
+        NSString *db = [self dbPath];
+        NSFileManager *file = [NSFileManager defaultManager];
+        NSError *err;
+        //临时文件存在  处理方式 替换
+        if(![self clearTempFile]){return;}
+        err = nil;
+        //保存零时文件
+        [file copyItemAtPath:db toPath:temp error:&err];
         if(err){
-            NSLog(@"%@",[NSString stringWithFormat:@"临时文件存在  处理方式 替换 失败"]);
+            NSLog(@"%@",[NSString stringWithFormat:@"创建临时文件失败"]);
+            return;
         }
-    }
-    err = nil;
-    //保存零时文件
-    [file copyItemAtPath:db toPath:temp error:&err];
-    if(err){
-        NSLog(@"%@",[NSString stringWithFormat:@"创建临时文件失败"]);
+        [self.database open];
+        
+        BOOL flag;
+        if(block)
+            flag = block(self.database);
+        
+        [self.database close];
+        //操作后续处理
+        if(flag){
+            [file removeItemAtPath:temp error:nil];
+        }else{
+            [self clearTempFile];
+        }
+    };
+    if(![[NSThread currentThread] isMainThread]){
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            HANDLE();
+        });
         return;
     }
-    [self.database open];
-    BOOL flag;
-    if(block)
-        flag = block(self.database);
-    
-    //操作后续处理
-    err = nil;
-    if(flag){
-        [file removeItemAtPath:temp error:nil];
-    }else{
-        NSLog(@"更新失败 数据回原");
-        [file removeItemAtPath:db error:nil];
-        [file copyItemAtPath:temp toPath:db error:&err];
-        [file removeItemAtPath:temp error:nil];
-        if(err)
-            NSLog(@"%@",[NSString stringWithFormat:@"更新失败 数据回原失败"]);
-    }
+    HANDLE();
 }
 @end

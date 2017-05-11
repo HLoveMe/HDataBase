@@ -35,9 +35,10 @@
 
 /**
  提供数据库升级环境 
- 数据库升级 保证失败后撤销  必须保证为同步操作
+ 数据库升级 保证失败后撤销  
+ 必须保证为同步操作  自动切换到主线程完成
  事务机制可完全替代
- @param block
+ @param block YES 操作是否成功
  */
 -(void)dataUpdate:(BOOL(^)(FMDatabase *data))block;
 
