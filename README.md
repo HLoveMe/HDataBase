@@ -67,6 +67,10 @@
 	|MINOperation.h|最小值|select MIN(age) from table|
 	|AVGOperation.h|平均值|select AVG(age) from table|
 	|SUMOperation.h|求和|select SUM(成绩) from table|
+	|||
+	|INNEROPeration|内联| A INNER JOIN B|
+	|CROSSOperation|交叉| A CROSS JOIN B|
+	|LeftOUTEROperation|左外联| A LEFT OUTER JOIN B|
 
 * 使用:
 
@@ -83,7 +87,7 @@
 	```
 	//我仅仅想关心工资 和 姓名  按照工资降序 排列
     
-    id valu  = [[[[DataBaseConnect _objectsWithClass:[People class]] addOperation:[ValueOperation Operation:@[@"name",@"alalry"]]] addOperation:[ORDEROperation Operation:@"-alalry"]] values];
+    id valu  = [[[[DataBaseConnect objectsWithTarget:[People class]] addOperation:[ValueOperation Operation:@[@"name",@"alalry"]]] addOperation:[ORDEROperation Operation:@"-alalry"]] values];
     
     //简便方式
     id valu2 = DataBaseConnect.prepare([People class])
