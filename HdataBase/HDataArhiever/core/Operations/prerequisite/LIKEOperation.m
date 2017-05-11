@@ -10,15 +10,10 @@
 @interface LIKEOperation()
 @end
 @implementation LIKEOperation
-+(instancetype)Operation:(NSString *)proName like:(NSString *)content{
++(instancetype)Operation:(id)msg like:(NSString *)content and:(BOOL)isAnd{
     LIKEOperation *opera = [[LIKEOperation alloc]init];
-    opera.content = [NSString stringWithFormat:@" %@ LIKE '%@'",proName,content];
+    opera.content = [NSString stringWithFormat:@" %@ LIKE '%@'",msg,content];
     opera.level = 5;
-    opera.isAnd = YES;
-    return opera;
-}
-+(instancetype)Operation:(NSString *)proName like:(NSString *)content and:(BOOL)isAnd{
-    LIKEOperation *opera = [LIKEOperation Operation:proName like:content];
     opera.isAnd = isAnd;
     return opera;
 }

@@ -15,6 +15,8 @@
 
  @param content @"age" 升序  @"-age" 降序
  @return self
+ //msg 为 NSString(属性名称) or  PropertyCondition
+ //PropertyCondition  针对join
  */
-+(instancetype)Operation:(NSString *)name;
++(instancetype)Operation:(id)msg;
 @end

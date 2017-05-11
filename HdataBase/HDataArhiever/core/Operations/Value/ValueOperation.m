@@ -11,10 +11,9 @@
 @end
 @implementation ValueOperation
 +(instancetype)Operation:(NSArray *)proNames{
-    
     ValueOperation *op = [ValueOperation new];
     op.level  = 1;
-    op.names = [proNames mutableCopy];
+    op.pros = [proNames mutableCopy];
     return op;
 }
 

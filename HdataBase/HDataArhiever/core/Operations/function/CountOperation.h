@@ -11,5 +11,8 @@
 @interface CountOperation : FUNCOperation
 //@"age" @"*"
 //select count(*) from table;
-+(instancetype)Operation:(NSString*)name;
+
+//msg 为 NSString(属性名称) or  PropertyCondition
+//PropertyCondition  针对join
++(instancetype)Operation:(id)msg;
 @end

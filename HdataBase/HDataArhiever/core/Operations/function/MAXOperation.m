@@ -9,10 +9,14 @@
 #import "MAXOperation.h"
 
 @implementation MAXOperation
-+(instancetype)Operation:(NSString*)name{
++(instancetype)Operation:(id)msg{
     MAXOperation *max = [MAXOperation new];
     max.level = 3;
-    max.content = [NSString stringWithFormat:@" MAX(%@) ",name];
+    if([msg isKindOfClass:[PropertyCondition class]]){
+        max.content = [NSString stringWithFormat:@"MAX(%@)",[(PropertyCondition *)msg tableProName]];
+    }else{
+        max.content = [NSString stringWithFormat:@"MAX(%@)",msg];
+    }
     return max;
 }
 @end

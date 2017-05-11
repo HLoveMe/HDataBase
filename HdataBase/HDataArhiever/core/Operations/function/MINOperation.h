@@ -10,5 +10,8 @@
 
 @interface MINOperation : FUNCOperation
 //select MIN(name) from table
-+(instancetype)Operation:(NSString*)name;
+
+//msg 为 NSString(属性名称) or  PropertyCondition
+//PropertyCondition  针对join
++(instancetype)Operation:(id)msg;
 @end

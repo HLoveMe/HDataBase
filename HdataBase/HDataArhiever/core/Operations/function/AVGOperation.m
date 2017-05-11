@@ -9,10 +9,14 @@
 #import "AVGOperation.h"
 
 @implementation AVGOperation
-+(instancetype)Operation:(NSString*)name{
++(instancetype)Operation:(id)msg{
     AVGOperation *max = [AVGOperation new];
     max.level = 3;
-    max.content = [NSString stringWithFormat:@" AVG(%@) ",name];
+    if([msg isKindOfClass:[PropertyCondition class]]){
+        max.content = [NSString stringWithFormat:@"AVG(%@)",[(PropertyCondition *)msg tableProName]];
+    }else{
+        max.content =[NSString stringWithFormat:@"AVG(%@)",msg];
+    }
     return max;
 }
 @end

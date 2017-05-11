@@ -350,18 +350,19 @@ typedef enum {
 +(NSString *)option:(Class)clazz withType:(FMDBType)type{
     NSMutableString *sql=[NSMutableString stringWithString:@"("];
     NSMutableArray *array=[NSMutableArray array];
-    [clazz enumerateIvar:^(NSString *name) {
-        if (type==FMDBCreate)
+    [clazz enumerateIvar2:^(NSString *name, NSString *vtype) {
+        if (type==FMDBCreate){
             if ([name isEqualToString:@"oneself"]){
                 [array addObject:[NSString stringWithFormat:@"%@ INTEGER PRIMARY KEY",name]];
             }else{
-                [array addObject:[NSString stringWithFormat:@"%@ text",name]];
+                [array addObject:[NSString stringWithFormat:@"%@ %@",name,[self dbType:vtype]]];
             }
-            else{
-                if (![name isEqualToString:@"oneself"]){
-                    [array addObject:[NSString stringWithFormat:@"%@ ",name]];
-                }
+        }
+        else{
+            if (![name isEqualToString:@"oneself"]){
+                [array addObject:[NSString stringWithFormat:@"%@ ",name]];
             }
+        }
     }];
     [sql appendString:[array componentsJoinedByString:@","]];
     [sql appendString:@" )"];
@@ -414,6 +415,19 @@ typedef enum {
     }
     NSString *str=[NSString stringWithFormat:@" %@ ",[array componentsJoinedByString:@","]];
     return str;
+}
+// 由数据类型转为 数据库保存的类型
++(NSString *)dbType:(NSString *)type{
+    //INTEGER  FLOAT  DOUBLE BOOLEAN TEXT DATE
+    if([type isEqualToString:@"B"]){
+        return @"BOOLEAN";
+    }else if([@"fdD" containsString:type]){
+        return @"DOUBLE";
+    }else if([@"sSiIqQL" containsString:type]){
+        return @"INTEGER";
+    }else{
+        return @"TEXT";
+    }
 }
 @end
 
@@ -528,7 +542,7 @@ typedef enum {
 @end
 
 @implementation DataBaseConnect (operation)
-+(PrepareStatus *)_objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic resultClazz:(Class)clazz{
++(PrepareStatus *)objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic target:(Class)clazz{
     id obj = [[clazz alloc]init];
     objc_setAssociatedObject(obj, @"dic", dic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     NSString * sql =  [self sqlStringWith:FMDBSelect object:obj clazz:clazz];
@@ -537,7 +551,7 @@ typedef enum {
     status.valueC = clazz;
     return status;
 }
-+(PrepareStatus *)_objectsWithClass:(Class)clazz{
++(PrepareStatus *)objectsWithTarget:(Class)clazz{
     NSString * sql =  [self sqlStringWith:FMDBSelect object:nil clazz:clazz];
     PrepareStatus *status = [[PrepareStatus alloc]init];
     status.sql = [sql mutableCopy];
@@ -546,12 +560,12 @@ typedef enum {
 }
 +(PrepareStatus *(^)(Class clazz))prepare{
     return ^PrepareStatus *(Class clazz){
-        return [DataBaseConnect _objectsWithClass:clazz];
+        return [DataBaseConnect objectsWithTarget:clazz];
     };
 }
 +(PrepareStatus *(^)(Class clazz,NSDictionary *args))prepare2{
     return ^PrepareStatus *(Class clazz,NSDictionary *args){
-        return [DataBaseConnect _objectsForAgrms:args resultClazz:clazz];
+        return [DataBaseConnect objectsForAgrms:args target:clazz];
     };
 }
 @end

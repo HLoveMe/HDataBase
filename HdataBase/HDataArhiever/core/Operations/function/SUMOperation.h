@@ -10,5 +10,7 @@
 
 @interface SUMOperation : FUNCOperation
 //求和
-+(instancetype)Operation:(NSString*)name;
+//msg 为 NSString(属性名称) or  PropertyCondition
+//PropertyCondition  针对join
++(instancetype)Operation:(id)msg;
 @end

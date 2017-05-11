@@ -20,11 +20,9 @@
     "*H*"  包含H    并且字符至少为3
     "?H*"  H为第一个后者第二个字符 并且后面有字符  (HSB,0H_UDU)
  
- @param name 属性名
+ @param msg NSString(属性名称) or  PropertyCondition
  @param com 条件
  @return self
  */
-+(instancetype)Operation:(NSString *)name compera:(NSString *)com;
-// where A and/or B
-+(instancetype)Operation:(NSString *)name compera:(NSString *)com and:(BOOL)isAnd;
++(instancetype)Operation:(id)msg compera:(NSString *)com and:(BOOL)isAnd;
 @end

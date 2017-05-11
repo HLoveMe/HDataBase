@@ -10,5 +10,8 @@
 
 @interface MAXOperation : FUNCOperation
 //select MAX(name) from table
-+(instancetype)Operation:(NSString*)name;
+//msg 为 NSString(属性名称)
+//join  PropertyCondition
+//PropertyCondition  针对join
++(instancetype)Operation:(id)msg;
 @end

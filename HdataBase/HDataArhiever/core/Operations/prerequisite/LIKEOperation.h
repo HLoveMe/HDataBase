@@ -22,11 +22,10 @@
  WHERE SALARY LIKE '2_%_%'	查找以 2 开头，且长度至少为 3 个字符的任意值
  WHERE SALARY LIKE '_2%3'	查找第二位为 2，且以 3 结尾的任意值
  
- @param proName 属性名
+ @param msg NSString(属性名称) or  PropertyCondition
  @param content 条件
  @return self
  */
-+(instancetype)Operation:(NSString *)proName like:(NSString *)content;
 // where  A and/or b
-+(instancetype)Operation:(NSString *)proName like:(NSString *)content and:(BOOL)isAnd;
++(instancetype)Operation:(id)msg like:(NSString *)content and:(BOOL)isAnd;
 @end

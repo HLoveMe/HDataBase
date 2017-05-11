@@ -18,6 +18,7 @@
  @return name
  */
 +(NSString *)tableName:(Class)clazz;
+
 +(void)createTable:(Class)class;
 /**
  字段保存   保存对象所有属性为字段
@@ -178,9 +179,9 @@
 
 @interface DataBaseConnect (operation)
 
-+(PrepareStatus *)_objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic resultClazz:(Class)clazz;
++(PrepareStatus *)objectsForAgrms:(NSDictionary<NSString*,NSString*>*)dic target:(Class)clazz;
 
-+(PrepareStatus *)_objectsWithClass:(Class)clazz;
++(PrepareStatus *)objectsWithTarget:(Class)clazz;
 
 
 

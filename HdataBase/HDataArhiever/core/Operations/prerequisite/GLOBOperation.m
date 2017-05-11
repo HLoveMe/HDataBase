@@ -9,17 +9,12 @@
 #import "GLOBOperation.h"
 
 @implementation GLOBOperation
-+(instancetype)Operation:(NSString *)name compera:(NSString *)com{
+
++(instancetype)Operation:(id)msg compera:(NSString *)com and:(BOOL)isAnd{
     GLOBOperation *op = [GLOBOperation new];
     op.level = 6;
-    op.isAnd = YES;
-    op.content = [NSString stringWithFormat:@" %@ GLOB '%@'",name,com];
-    return op;
-}
-+(instancetype)Operation:(NSString *)name compera:(NSString *)com and:(BOOL)isAnd{
-    GLOBOperation *op = [GLOBOperation Operation:name compera:com];
     op.isAnd = isAnd;
+    op.content = [NSString stringWithFormat:@" %@ GLOB '%@'",msg,com];
     return op;
-
 }
 @end

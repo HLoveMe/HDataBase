@@ -41,3 +41,9 @@
 #import "AVGOperation.h"
 #import "SUMOperation.h"
 
+
+#import "PropertyCondition.h"
+#import "INNEROPeration.h"
+#import "CROSSOperation.h"
+#import "LeftOUTEROperation.h"
+

@@ -9,5 +9,8 @@
 #import "FUNCOperation.h"
 
 @interface AVGOperation : FUNCOperation
-+(instancetype)Operation:(NSString*)name;
+//平均值
+//msg 为 NSString(属性名称) or  PropertyCondition
+//PropertyCondition  针对join
++(instancetype)Operation:(id)msg;
 @end

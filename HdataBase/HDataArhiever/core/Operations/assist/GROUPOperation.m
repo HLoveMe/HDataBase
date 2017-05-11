@@ -8,14 +8,12 @@
 
 #import "GROUPOperation.h"
 @interface GROUPOperation()
-@property(nonatomic,copy)NSString *name;
 @end
 @implementation GROUPOperation
-+(instancetype)Operation:(NSString *)name{
++(instancetype)Operation:(id)msg{
     GROUPOperation *opera = [[GROUPOperation alloc]init];
-    opera.name = name;
     opera.level = 8;
-    opera.content = [NSString stringWithFormat:@" GROUP BY %@ ",name];
+    opera.content = [NSString stringWithFormat:@" GROUP BY %@ ",msg];
     return opera;
 }
 @end

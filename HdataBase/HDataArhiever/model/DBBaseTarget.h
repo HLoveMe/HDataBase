@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "DBBaseTargetProtocol.h"
-
 @class IvarInfomation;
 @interface DBBaseTarget : NSObject<DBArhieverProtocol>
 @property(nonatomic,assign)long oneself;

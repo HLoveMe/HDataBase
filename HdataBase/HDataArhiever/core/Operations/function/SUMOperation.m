@@ -9,10 +9,15 @@
 #import "SUMOperation.h"
 
 @implementation SUMOperation
-+(instancetype)Operation:(NSString *)name{
++(instancetype)Operation:(id)msg{
     SUMOperation *max = [SUMOperation new];
     max.level = 3;
-    max.content = [NSString stringWithFormat:@" SUM(%@) ",name];
+    if([msg isKindOfClass:[PropertyCondition class]]){
+        max.content = [NSString stringWithFormat:@"SUM(%@)",[(PropertyCondition *)msg tableProName]];
+    }else{
+        max.content = [NSString stringWithFormat:@"SUM(%@)",msg];
+    }
+    
     return max;
 }
 @end

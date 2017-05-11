@@ -9,10 +9,14 @@
 #import "MINOperation.h"
 
 @implementation MINOperation
-+(instancetype)Operation:(NSString*)name{
++(instancetype)Operation:(id)msg{
     MINOperation *max = [MINOperation new];
     max.level = 3;
-    max.content = [NSString stringWithFormat:@" MAX(%@) ",name];
+    if([msg isKindOfClass:[PropertyCondition class]]){
+        max.content = [NSString stringWithFormat:@"MIN(%@)",[(PropertyCondition *)msg tableProName]];
+    }else{
+        max.content = [NSString stringWithFormat:@"MIN(%@)",msg];
+    }
     return max;
 }
 @end

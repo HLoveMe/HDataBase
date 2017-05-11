@@ -7,7 +7,7 @@
 //
 
 #import "DBOperation.h"
-
+#import "PropertyCondition.h"
 @interface FUNCOperation : DBOperation
 @property(nonatomic,copy)NSString *content;
 @end

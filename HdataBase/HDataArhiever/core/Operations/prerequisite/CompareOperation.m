@@ -9,10 +9,10 @@
 #import "CompareOperation.h"
 
 @implementation CompareOperation
-+(instancetype)Operation:(NSString *)name compare:(FMDBCompare)compare value:(double)va{
++(instancetype)Operation:(id)msg compare:(FMDBCompare)compare value:(double)va and:(BOOL)isAnd{
     CompareOperation *op = [CompareOperation new];
     op.level = 4;
-    op.isAnd = YES;
+    op.isAnd = isAnd;
     NSString *com;
     switch (compare) {
         case A:
@@ -33,12 +33,7 @@
         default:
             break;
     }
-    op.content = [NSString stringWithFormat:@" %@ %@ %f ",name,com,va];
-    return op;
-}
-+(instancetype)Operation:(NSString *)name compare:(FMDBCompare)compare value:(double)va and:(BOOL)AndOR{
-    CompareOperation *op = [CompareOperation Operation:name compare:compare value:va];
-    op.isAnd = AndOR;
+    op.content = [NSString stringWithFormat:@" %@ %@ %f ",msg,com,va];
     return op;
 }
 @end

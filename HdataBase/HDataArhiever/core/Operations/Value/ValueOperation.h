@@ -10,9 +10,10 @@
 
 @interface ValueOperation : DBOperation
 //表示想要查询的属性
-@property(nonatomic,strong)NSMutableArray *names;
-
-+(instancetype)Operation:(NSArray *)proNames;
+@property(nonatomic,strong)NSMutableArray *pros;
+//查询的字段
+// pros 元素  NSString(属性名称) or  PropertyCondition
++(instancetype)Operation:(NSArray *)pros;
 
 ////名字 别名
 //@property(nonatomic,strong)NSMutableArray *asNames;

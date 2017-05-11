@@ -25,6 +25,7 @@
 
 +(void)enumerateIvar:(void(^)(NSString *proName))Block;
 
++(void)enumerateIvar2:(void (^)(NSString *name,NSString *type))Block;
 
 //辅助函数 
 

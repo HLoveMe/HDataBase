@@ -64,6 +64,28 @@
         }
     }
 }
++(void)enumerateIvar2:(void (^)(NSString *name,NSString *type))Block{
+    if(!Block){return;}
+    id va = [[self alloc]init];
+    void(^oneStep)(Class temp)=^(Class temp){
+        [va db_enumerateClazz:temp propertys:^(objc_property_t t, NSString *name, id value) {
+            NSString *att =[NSString stringWithUTF8String:property_getAttributes(t)];
+            NSString *onepart = [[att componentsSeparatedByString:@","] firstObject];
+            NSString *encode = [onepart substringWithRange:NSMakeRange(1, onepart.length-1)];
+            Block(name,encode);
+        }];
+    };
+    BOOL go=YES;
+    Class clazz=[self class];
+    while (go&&clazz) {
+        if ([clazz isBaseTarget]) {
+            oneStep(clazz);
+            clazz=[clazz superclass];
+        }else{
+            go=NO;
+        }
+    }
+}
 +(void)enumerateIvar:(void(^)(NSString *proName))Block{
     [[[self alloc]init] enumeratePropertyValue:^(NSString *proName, id value) {
         if (Block)

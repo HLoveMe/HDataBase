@@ -16,20 +16,40 @@
 #import "ORDEROperation.h"
 #import "LimitOperation.h"
 #import "FUNCOperation.h"
+#import "JoinOperation.h"
 #import "FMDB.h"
 #import "PropertyFactory.h"
+#import "PropertyCondition.h"
+#import "NSObject+Base.h"
 @interface PrepareStatus()
 //所有
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *operas;
-
+//only one  select */(name,age..)
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *valueOps;
+// 查找条件   where name Like xx or/and age >= 18
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *prepres;
+
+// 辅助    limit 排序 分组
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *assists;
+
+//jons
+@property(nonatomic,strong)JoinOperation *joins;
+//函数 MAX
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *funcs;
 
 @property(nonatomic,assign)BOOL ValueArry;
+
+@property(nonatomic,assign)BOOL hasParser;
 @end
+//static Class clazz;
 @implementation PrepareStatus
+//+(Class)valueC{
+//    return clazz;
+//}
+-(void)setValueC:(Class)valueC{
+    _valueC = valueC;
+//    clazz = valueC;
+}
 -(instancetype)init{
     if(self= [super init]){
         self.ValueArry = YES;
@@ -81,6 +101,10 @@
     }else if([operation isKindOfClass:[FUNCOperation class]]){
         [self.funcs addObject:operation];
         
+    }else if([operation isKindOfClass:[JoinOperation class]]){
+        
+        self.joins = (JoinOperation *)operation;
+        
     }else{
         if([operation isKindOfClass:[GROUPOperation class]]){
             [self.assists replaceObjectAtIndex:0 withObject:operation];
@@ -89,21 +113,25 @@
         }else if([operation isKindOfClass:[LimitOperation class]]){
             [self.assists replaceObjectAtIndex:2 withObject:operation];
         }else{
-            NSAssert(NO, @"你是什么类型");
+            NSAssert(NO, @"operation 你是什么类型");
         }
     }
     return self;
 }
 -(NSString *)sql{
+    if(_hasParser){return _sql;}
     NSArray *tempSQLS = [_sql componentsSeparatedByString:@"where"];
+    //select * from t_table
     NSString *befor = [tempSQLS firstObject];
+    // '1' = '1'
     NSString *last = [tempSQLS lastObject];
     
+    //字段 * / name,age,MAX(age),AVG(age)...
     NSMutableArray *vas = [NSMutableArray array];
     [self.valueOps  enumerateObjectsUsingBlock:^(DBOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if(!obj.isUse){
             obj.isUse = YES;
-            [vas addObjectsFromArray:[(ValueOperation *)obj names]];
+            [vas addObjectsFromArray:[(ValueOperation *)obj pros]];
         }
     }];
     [self.funcs enumerateObjectsUsingBlock:^(DBOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -113,11 +141,18 @@
             [vas addObject:func.content];
         }
     }];
+    
     if(vas.count>=1){
         NSString *vastr = [vas componentsJoinedByString:@","];
         befor = [befor stringByReplacingOccurrencesOfString:@"*" withString:vastr];
     }
-    //
+    //join
+    if(self.joins && !self.joins.isUse){
+        befor = [NSString stringWithFormat:@"%@ %@ ",befor,[self.joins content:self.valueC]];
+        self.joins.isUse = YES;
+    }
+    
+    // 条件 name like 'sas'
     NSMutableString *preStr = [NSMutableString string];
     [self.prepres enumerateObjectsUsingBlock:^(DBOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if(!obj.isUse){
@@ -127,8 +162,7 @@
         }
     }];
     last = [last stringByAppendingString:preStr];
-    
-    //
+    // 辅助
     NSMutableString *asS = [NSMutableString string];
     [self.assists enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if([obj isKindOfClass:[AssistOperation class]]){
@@ -140,8 +174,25 @@
         }
     }];
     last = [last stringByAppendingString:asS];
-    _sql = [NSString stringWithFormat:@" %@ where %@",befor,last];
     
+    if([befor containsString:@"*"] && self.joins){
+        //由于 外连 不指定属性名 并且两张表 有相同名字的属性  导致后续 无法解析结果
+        NSMutableArray *temp = [NSMutableArray array];
+        [self.valueC enumerateIvar:^(NSString *proName) {
+            [temp addObject:[PropertyCondition Condition:proName clazz:self.valueC]];
+        }];
+        befor = [befor stringByReplacingOccurrencesOfString:@"*" withString:[temp componentsJoinedByString:@","]];
+    }
+    
+    _sql = [NSString stringWithFormat:@" %@ where %@",befor,last];
+    _hasParser = YES;
+    
+    if([_sql containsString:@"'1' = '1'  and"]){
+       _sql = [_sql stringByReplacingOccurrencesOfString:@"'1' = '1'  and  " withString:@""];
+    }
+    else{
+        _sql = [_sql stringByReplacingOccurrencesOfString:@"where '1' = '1' " withString:@""];
+    }
     return _sql;
 }
 -(id)values{
@@ -149,11 +200,39 @@
         NSLog(@"必须指定 valueC 属性");
         return nil;
     }
+
     if(self.valueOps.count == 0){
+        //没有指定查找字段
         if(self.funcs.count == 0)
-            return [DataBaseConnect objectsWithSQL:self.sql resultClass:self.valueC];
+            if(!self.joins)
+                return [DataBaseConnect objectsWithSQL:self.sql resultClass:self.valueC];
+            else{
+                DBManager *manager = [DBManager shareDBManager];
+                NSMutableArray *result = [NSMutableArray array];
+                [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+                    FMResultSet *set = [database executeQuery:self.sql];
+                    int count = [set columnCount];
+                    while ([set next]) {
+                        NSMutableDictionary *current = [NSMutableDictionary dictionary];
+                        for (int i=0; i<count; i++) {
+                            NSString *name = [set columnNameForIndex:i];
+                            NSString *value = [set stringForColumnIndex:i];
+                            id one  = [PropertyFactory valueForString:value block:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
+                                return [DataBaseConnect objectWithClass:class filed:@"oneself" value:onself];;
+                            }];
+                            current[[name componentsSeparatedByString:[PropertyCondition spearaStr]].lastObject]=one;
+                        }
+                        NSObject *one = [[self.valueC alloc]init];
+                        [one setValuesForKeysWithDictionary:current];
+                        [result addObject:one];
+
+                    }
+                    return YES;
+                }];
+                return result;//是个问题
+            }
         else{
-            //count sum max min
+            //指定函数  count sum max min
             DBManager *manager = [DBManager shareDBManager];
             NSMutableDictionary *dic = [NSMutableDictionary dictionary];
             [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
@@ -170,6 +249,7 @@
             return dic;
         }
     }else{
+        //指定查找字段
         DBManager *manager = [DBManager shareDBManager];
         __block ValueOperation *valuesOpera;
         [self.valueOps enumerateObjectsUsingBlock:^(DBOperation * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -201,8 +281,8 @@
             /** 返回字典  {@"key1":[...],@"key2":[....]}*/
             NSMutableDictionary<NSString *,NSMutableArray*> *result = [NSMutableDictionary dictionary];
             
-            [valuesOpera.names enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL * _Nonnull stop) {
-                result[key] = [NSMutableArray array];
+            [valuesOpera.pros enumerateObjectsUsingBlock:^(id key, NSUInteger idx, BOOL * _Nonnull stop) {
+                result[[key isKindOfClass:[NSString class]] ? key : [(PropertyCondition *)key propertyName]] = [NSMutableArray array];
             }];
             
             [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {

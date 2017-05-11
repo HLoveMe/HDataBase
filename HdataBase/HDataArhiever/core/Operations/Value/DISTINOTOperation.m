@@ -9,14 +9,14 @@
 #import "DISTINOTOperation.h"
 
 @implementation DISTINOTOperation
-+(instancetype)Operation:(NSArray *)proNames{
++(instancetype)Operation:(NSArray *)pros{
     DISTINOTOperation *op = [DISTINOTOperation new];
     op.level  = 2;
     NSMutableArray *temp = [NSMutableArray array];
-    [proNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [pros enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [temp addObject:[NSString stringWithFormat:@"DISTINCT %@",obj]];
     }];
-    op.names = temp;
+    op.pros = temp;
     return op;
 }
 @end

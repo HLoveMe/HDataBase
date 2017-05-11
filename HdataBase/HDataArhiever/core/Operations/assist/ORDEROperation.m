@@ -11,9 +11,10 @@
 
 @end
 @implementation ORDEROperation
-+(instancetype)Operation:(NSString *)name{
++(instancetype)Operation:(id)msg{
     ORDEROperation *operation = [[ORDEROperation alloc]init];
     operation.level = 9;
+    NSString *name = [NSString stringWithFormat:@"%@",msg];
     BOOL up = [name hasPrefix:@"-"];
     if(!up){
         operation.content = [NSString stringWithFormat:@" ORDER BY %@ ASC",name];

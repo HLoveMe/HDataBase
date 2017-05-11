@@ -7,12 +7,18 @@
 //
 
 #import "CountOperation.h"
-
+#import "PropertyCondition.h"
+#import "DataBaseConnect.h"
 @implementation CountOperation
-+(instancetype)Operation:(NSString*)name{
++(instancetype)Operation:(id)msg{
     CountOperation *op = [CountOperation new];
     op.level = 3;
-    op.content = [NSString stringWithFormat:@"count(%@)",name];
+    if([msg isKindOfClass:[PropertyCondition class]]){
+        op.content = [NSString stringWithFormat:@"COUNT(%@)",[(PropertyCondition *)msg tableProName]];
+    }else{
+        op.content = [NSString stringWithFormat:@"COUNT(%@)",msg];
+    }
+    
     return op;
 }
 @end

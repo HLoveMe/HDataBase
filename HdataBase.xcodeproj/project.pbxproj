@@ -17,6 +17,11 @@
 		B206D7751C819EEA00F66DE7 /* HdataBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */; };
 		B206D79B1C81ACC400F66DE7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */; };
 		CA38D22BB8FB7B2F32295E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2104D617ACF2DF7CEA93C3 /* libPods.a */; };
+		DB2D65731EC2B57E00C330BE /* JoinOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D65721EC2B57E00C330BE /* JoinOperation.m */; };
+		DB2D65761EC2B5B000C330BE /* INNEROPeration.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D65751EC2B5B000C330BE /* INNEROPeration.m */; };
+		DB2D65791EC2B5C400C330BE /* CROSSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D65781EC2B5C400C330BE /* CROSSOperation.m */; };
+		DB2D657C1EC2B5EC00C330BE /* LeftOUTEROperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D657B1EC2B5EC00C330BE /* LeftOUTEROperation.m */; };
+		DB2D657F1EC2BF3900C330BE /* PropertyCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D657E1EC2BF3900C330BE /* PropertyCondition.m */; };
 		DB3E45A61EB0E35E001C37AE /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */; };
 		DB3E45A71EB0E35E001C37AE /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45791EB0E35E001C37AE /* DBManager.m */; };
 		DB3E45A81EB0E35E001C37AE /* IvarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E457B1EB0E35E001C37AE /* IvarInfomation.m */; };
@@ -98,6 +103,16 @@
 		B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HdataBaseUITests.m; sourceTree = "<group>"; };
 		B206D7761C819EEA00F66DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		DB2D65711EC2B57E00C330BE /* JoinOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinOperation.h; sourceTree = "<group>"; };
+		DB2D65721EC2B57E00C330BE /* JoinOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinOperation.m; sourceTree = "<group>"; };
+		DB2D65741EC2B5B000C330BE /* INNEROPeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INNEROPeration.h; sourceTree = "<group>"; };
+		DB2D65751EC2B5B000C330BE /* INNEROPeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INNEROPeration.m; sourceTree = "<group>"; };
+		DB2D65771EC2B5C400C330BE /* CROSSOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROSSOperation.h; sourceTree = "<group>"; };
+		DB2D65781EC2B5C400C330BE /* CROSSOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROSSOperation.m; sourceTree = "<group>"; };
+		DB2D657A1EC2B5EC00C330BE /* LeftOUTEROperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftOUTEROperation.h; sourceTree = "<group>"; };
+		DB2D657B1EC2B5EC00C330BE /* LeftOUTEROperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftOUTEROperation.m; sourceTree = "<group>"; };
+		DB2D657D1EC2BF3900C330BE /* PropertyCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyCondition.h; sourceTree = "<group>"; };
+		DB2D657E1EC2BF3900C330BE /* PropertyCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyCondition.m; sourceTree = "<group>"; };
 		DB3E45761EB0E35E001C37AE /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseConnect.h; sourceTree = "<group>"; };
 		DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseConnect.m; sourceTree = "<group>"; };
 		DB3E45781EB0E35E001C37AE /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -303,6 +318,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB2D65701EC2B32400C330BE /* join */ = {
+			isa = PBXGroup;
+			children = (
+				DB2D65711EC2B57E00C330BE /* JoinOperation.h */,
+				DB2D65721EC2B57E00C330BE /* JoinOperation.m */,
+				DB2D65741EC2B5B000C330BE /* INNEROPeration.h */,
+				DB2D65751EC2B5B000C330BE /* INNEROPeration.m */,
+				DB2D65771EC2B5C400C330BE /* CROSSOperation.h */,
+				DB2D65781EC2B5C400C330BE /* CROSSOperation.m */,
+				DB2D657A1EC2B5EC00C330BE /* LeftOUTEROperation.h */,
+				DB2D657B1EC2B5EC00C330BE /* LeftOUTEROperation.m */,
+			);
+			path = join;
+			sourceTree = "<group>";
+		};
 		DB3E45621EB0E35E001C37AE /* HDataArhiever */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +429,9 @@
 				DBE956171EB9665000844A27 /* DBOperation.m */,
 				DBE9561E1EB9665000844A27 /* PrepareStatus.h */,
 				DBE9561F1EB9665000844A27 /* PrepareStatus.m */,
+				DB2D657D1EC2BF3900C330BE /* PropertyCondition.h */,
+				DB2D657E1EC2BF3900C330BE /* PropertyCondition.m */,
+				DB2D65701EC2B32400C330BE /* join */,
 				DBE9564A1EB98F7600844A27 /* function */,
 				DBE956341EB9669B00844A27 /* assist */,
 				DBE956201EB9665000844A27 /* prerequisite */,
@@ -649,14 +682,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2D65761EC2B5B000C330BE /* INNEROPeration.m in Sources */,
 				DBE956311EB9665000844A27 /* LIKEOperation.m in Sources */,
 				DB3E45AC1EB0E35E001C37AE /* ArrayProperty.m in Sources */,
 				DB3E45B21EB0E35E001C37AE /* Property.m in Sources */,
 				DB3E45B61EB0E35E001C37AE /* TargetProperty.m in Sources */,
 				DB3E45AB1EB0E35E001C37AE /* DBBaseTarget.m in Sources */,
+				DB2D65791EC2B5C400C330BE /* CROSSOperation.m in Sources */,
 				DBE956331EB9665000844A27 /* ValueOperation.m in Sources */,
 				DB3E46231EB2D109001C37AE /* DBPlugBox.m in Sources */,
 				DB3E45B31EB0E35E001C37AE /* PropertyFactory.m in Sources */,
+				DB2D657C1EC2B5EC00C330BE /* LeftOUTEROperation.m in Sources */,
 				DBE956401EB966CF00844A27 /* DISTINOTOperation.m in Sources */,
 				DB3E46261EB2D14F001C37AE /* DBPlug.m in Sources */,
 				DBE9563B1EB9669B00844A27 /* GROUPOperation.m in Sources */,
@@ -684,6 +720,7 @@
 				DB3E45A61EB0E35E001C37AE /* DataBaseConnect.m in Sources */,
 				DBE956491EB97ED100844A27 /* People.m in Sources */,
 				DBE956301EB9665000844A27 /* CompareOperation.m in Sources */,
+				DB2D657F1EC2BF3900C330BE /* PropertyCondition.m in Sources */,
 				DBE956591EB98FCA00844A27 /* SUMOperation.m in Sources */,
 				DB3E461B1EB1ED3C001C37AE /* ClassManager.m in Sources */,
 				DB3E45A91EB0E35E001C37AE /* NSObject+Base.m in Sources */,
@@ -693,6 +730,7 @@
 				DBE9563C1EB9669B00844A27 /* LimitOperation.m in Sources */,
 				DBE9562F1EB9665000844A27 /* PrepareStatus.m in Sources */,
 				DB3E45B41EB0E35E001C37AE /* SELProperty.m in Sources */,
+				DB2D65731EC2B57E00C330BE /* JoinOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

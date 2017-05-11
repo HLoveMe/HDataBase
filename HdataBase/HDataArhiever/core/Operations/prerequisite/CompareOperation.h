@@ -15,9 +15,12 @@ typedef enum {
     E//<=
 }FMDBCompare;
 @interface CompareOperation : PrerequisiteOperation
-//select * from Author where age > 1
-+(instancetype)Operation:(NSString *)name compare:(FMDBCompare)compare value:(double)va;
+/**
+    where age > 18
+    where tableName.age > 18  针对内联
+ */
+//msg 为 NSString(属性名称) or  PropertyCondition
+//PropertyCondition  针对join
++(instancetype)Operation:(id)msg compare:(FMDBCompare)compare value:(double)va and:(BOOL)isAnd;
 
-// where  A and/or b
-+(instancetype)Operation:(NSString *)name compare:(FMDBCompare)compare value:(double)va and:(BOOL)isAnd;
 @end
