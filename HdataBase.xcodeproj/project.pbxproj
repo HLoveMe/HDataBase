@@ -17,52 +17,53 @@
 		B206D7751C819EEA00F66DE7 /* HdataBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */; };
 		B206D79B1C81ACC400F66DE7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */; };
 		CA38D22BB8FB7B2F32295E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2104D617ACF2DF7CEA93C3 /* libPods.a */; };
-		DB2D65731EC2B57E00C330BE /* JoinOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D65721EC2B57E00C330BE /* JoinOperation.m */; };
-		DB2D65761EC2B5B000C330BE /* INNEROPeration.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D65751EC2B5B000C330BE /* INNEROPeration.m */; };
-		DB2D65791EC2B5C400C330BE /* CROSSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D65781EC2B5C400C330BE /* CROSSOperation.m */; };
-		DB2D657C1EC2B5EC00C330BE /* LeftOUTEROperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D657B1EC2B5EC00C330BE /* LeftOUTEROperation.m */; };
-		DB2D657F1EC2BF3900C330BE /* PropertyCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D657E1EC2BF3900C330BE /* PropertyCondition.m */; };
-		DB3E45A61EB0E35E001C37AE /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */; };
-		DB3E45A71EB0E35E001C37AE /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45791EB0E35E001C37AE /* DBManager.m */; };
-		DB3E45A81EB0E35E001C37AE /* IvarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E457B1EB0E35E001C37AE /* IvarInfomation.m */; };
-		DB3E45A91EB0E35E001C37AE /* NSObject+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E457D1EB0E35E001C37AE /* NSObject+Base.m */; };
-		DB3E45AA1EB0E35E001C37AE /* NSObject+SEL.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E457F1EB0E35E001C37AE /* NSObject+SEL.m */; };
-		DB3E45AB1EB0E35E001C37AE /* DBBaseTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45831EB0E35E001C37AE /* DBBaseTarget.m */; };
-		DB3E45AC1EB0E35E001C37AE /* ArrayProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45871EB0E35E001C37AE /* ArrayProperty.m */; };
-		DB3E45AD1EB0E35E001C37AE /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45891EB0E35E001C37AE /* ClassProperty.m */; };
-		DB3E45AE1EB0E35E001C37AE /* DictionaryProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */; };
-		DB3E45AF1EB0E35E001C37AE /* GeneralProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */; };
-		DB3E45B11EB0E35E001C37AE /* NumberProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45921EB0E35E001C37AE /* NumberProperty.m */; };
-		DB3E45B21EB0E35E001C37AE /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45941EB0E35E001C37AE /* Property.m */; };
-		DB3E45B31EB0E35E001C37AE /* PropertyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45961EB0E35E001C37AE /* PropertyFactory.m */; };
-		DB3E45B41EB0E35E001C37AE /* SELProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45991EB0E35E001C37AE /* SELProperty.m */; };
-		DB3E45B51EB0E35E001C37AE /* StructProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E459B1EB0E35E001C37AE /* StructProperty.m */; };
-		DB3E45B61EB0E35E001C37AE /* TargetProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E459D1EB0E35E001C37AE /* TargetProperty.m */; };
 		DB3E45B91EB0E396001C37AE /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45B81EB0E396001C37AE /* Video.m */; };
 		DB3E45BC1EB0E505001C37AE /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E45BB1EB0E505001C37AE /* Author.m */; };
-		DB3E461B1EB1ED3C001C37AE /* ClassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E461A1EB1ED3C001C37AE /* ClassManager.m */; };
-		DB3E46231EB2D109001C37AE /* DBPlugBox.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E46221EB2D109001C37AE /* DBPlugBox.m */; };
-		DB3E46261EB2D14F001C37AE /* DBPlug.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E46251EB2D14F001C37AE /* DBPlug.m */; };
+		DB8936611F3C5D6E00083FF8 /* ClassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8935FF1F3C5D6E00083FF8 /* ClassManager.m */; };
+		DB8936621F3C5D6E00083FF8 /* BaseModelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936021F3C5D6E00083FF8 /* BaseModelUtil.m */; };
+		DB8936631F3C5D6E00083FF8 /* DataBaseConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936041F3C5D6E00083FF8 /* DataBaseConnect.m */; };
+		DB8936641F3C5D6E00083FF8 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936061F3C5D6E00083FF8 /* DBManager.m */; };
+		DB8936651F3C5D6E00083FF8 /* IvarInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936081F3C5D6E00083FF8 /* IvarInfomation.m */; };
+		DB8936661F3C5D6E00083FF8 /* NSObject+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89360A1F3C5D6E00083FF8 /* NSObject+Base.m */; };
+		DB8936671F3C5D6E00083FF8 /* NSObject+SEL.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89360C1F3C5D6E00083FF8 /* NSObject+SEL.m */; };
+		DB8936681F3C5D6E00083FF8 /* AssistOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936101F3C5D6E00083FF8 /* AssistOperation.m */; };
+		DB8936691F3C5D6E00083FF8 /* GROUPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936121F3C5D6E00083FF8 /* GROUPOperation.m */; };
+		DB89366A1F3C5D6E00083FF8 /* LimitOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936141F3C5D6E00083FF8 /* LimitOperation.m */; };
+		DB89366B1F3C5D6E00083FF8 /* ORDEROperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936161F3C5D6E00083FF8 /* ORDEROperation.m */; };
+		DB89366C1F3C5D6E00083FF8 /* DBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936181F3C5D6E00083FF8 /* DBOperation.m */; };
+		DB89366D1F3C5D6E00083FF8 /* AVGOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89361B1F3C5D6E00083FF8 /* AVGOperation.m */; };
+		DB89366E1F3C5D6E00083FF8 /* CountOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89361D1F3C5D6E00083FF8 /* CountOperation.m */; };
+		DB89366F1F3C5D6E00083FF8 /* FUNCOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89361F1F3C5D6E00083FF8 /* FUNCOperation.m */; };
+		DB8936701F3C5D6E00083FF8 /* MAXOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936211F3C5D6E00083FF8 /* MAXOperation.m */; };
+		DB8936711F3C5D6E00083FF8 /* MINOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936231F3C5D6E00083FF8 /* MINOperation.m */; };
+		DB8936721F3C5D6E00083FF8 /* SUMOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936251F3C5D6E00083FF8 /* SUMOperation.m */; };
+		DB8936731F3C5D6E00083FF8 /* CROSSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936281F3C5D6E00083FF8 /* CROSSOperation.m */; };
+		DB8936741F3C5D6E00083FF8 /* INNEROPeration.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89362A1F3C5D6E00083FF8 /* INNEROPeration.m */; };
+		DB8936751F3C5D6E00083FF8 /* JoinOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89362C1F3C5D6E00083FF8 /* JoinOperation.m */; };
+		DB8936761F3C5D6E00083FF8 /* LeftOUTEROperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89362E1F3C5D6E00083FF8 /* LeftOUTEROperation.m */; };
+		DB8936771F3C5D6E00083FF8 /* PrepareStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936301F3C5D6E00083FF8 /* PrepareStatus.m */; };
+		DB8936781F3C5D6E00083FF8 /* CompareOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936331F3C5D6E00083FF8 /* CompareOperation.m */; };
+		DB8936791F3C5D6E00083FF8 /* GLOBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936351F3C5D6E00083FF8 /* GLOBOperation.m */; };
+		DB89367A1F3C5D6E00083FF8 /* LIKEOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936371F3C5D6E00083FF8 /* LIKEOperation.m */; };
+		DB89367B1F3C5D6E00083FF8 /* PrerequisiteOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936391F3C5D6E00083FF8 /* PrerequisiteOperation.m */; };
+		DB89367C1F3C5D6E00083FF8 /* PropertyCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89363B1F3C5D6E00083FF8 /* PropertyCondition.m */; };
+		DB89367D1F3C5D6E00083FF8 /* DISTINOTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89363E1F3C5D6E00083FF8 /* DISTINOTOperation.m */; };
+		DB89367E1F3C5D6E00083FF8 /* ValueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936401F3C5D6E00083FF8 /* ValueOperation.m */; };
+		DB89367F1F3C5D6E00083FF8 /* DBBaseTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936441F3C5D6E00083FF8 /* DBBaseTarget.m */; };
+		DB8936801F3C5D6E00083FF8 /* DBPlug.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936481F3C5D6E00083FF8 /* DBPlug.m */; };
+		DB8936811F3C5D6E00083FF8 /* DBPlugBox.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89364A1F3C5D6E00083FF8 /* DBPlugBox.m */; };
+		DB8936821F3C5D6E00083FF8 /* ArrayProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89364D1F3C5D6E00083FF8 /* ArrayProperty.m */; };
+		DB8936831F3C5D6E00083FF8 /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89364F1F3C5D6E00083FF8 /* ClassProperty.m */; };
+		DB8936841F3C5D6E00083FF8 /* DictionaryProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936511F3C5D6E00083FF8 /* DictionaryProperty.m */; };
+		DB8936851F3C5D6E00083FF8 /* GeneralProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936531F3C5D6E00083FF8 /* GeneralProperty.m */; };
+		DB8936861F3C5D6E00083FF8 /* NumberProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936551F3C5D6E00083FF8 /* NumberProperty.m */; };
+		DB8936871F3C5D6E00083FF8 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936571F3C5D6E00083FF8 /* Property.m */; };
+		DB8936881F3C5D6E00083FF8 /* PropertyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936591F3C5D6E00083FF8 /* PropertyFactory.m */; };
+		DB8936891F3C5D6E00083FF8 /* SELProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89365C1F3C5D6E00083FF8 /* SELProperty.m */; };
+		DB89368A1F3C5D6E00083FF8 /* StructProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89365E1F3C5D6E00083FF8 /* StructProperty.m */; };
+		DB89368B1F3C5D6E00083FF8 /* TargetProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8936601F3C5D6E00083FF8 /* TargetProperty.m */; };
 		DBE955E01EB8194800844A27 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE955DF1EB8194800844A27 /* Dog.m */; };
-		DBE9562B1EB9665000844A27 /* DBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956171EB9665000844A27 /* DBOperation.m */; };
-		DBE9562F1EB9665000844A27 /* PrepareStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9561F1EB9665000844A27 /* PrepareStatus.m */; };
-		DBE956301EB9665000844A27 /* CompareOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956221EB9665000844A27 /* CompareOperation.m */; };
-		DBE956311EB9665000844A27 /* LIKEOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956241EB9665000844A27 /* LIKEOperation.m */; };
-		DBE956321EB9665000844A27 /* PrerequisiteOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956261EB9665000844A27 /* PrerequisiteOperation.m */; };
-		DBE956331EB9665000844A27 /* ValueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956291EB9665000844A27 /* ValueOperation.m */; };
-		DBE9563B1EB9669B00844A27 /* GROUPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956361EB9669B00844A27 /* GROUPOperation.m */; };
-		DBE9563C1EB9669B00844A27 /* LimitOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956381EB9669B00844A27 /* LimitOperation.m */; };
-		DBE9563D1EB9669B00844A27 /* ORDEROperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9563A1EB9669B00844A27 /* ORDEROperation.m */; };
-		DBE956401EB966CF00844A27 /* DISTINOTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9563F1EB966CF00844A27 /* DISTINOTOperation.m */; };
-		DBE956431EB9671300844A27 /* GLOBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956421EB9671300844A27 /* GLOBOperation.m */; };
-		DBE956461EB97A9B00844A27 /* AssistOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956451EB97A9B00844A27 /* AssistOperation.m */; };
 		DBE956491EB97ED100844A27 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956481EB97ED100844A27 /* People.m */; };
-		DBE9564D1EB98F9600844A27 /* CountOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9564C1EB98F9600844A27 /* CountOperation.m */; };
-		DBE956501EB98FA700844A27 /* MAXOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9564F1EB98FA700844A27 /* MAXOperation.m */; };
-		DBE956531EB98FB200844A27 /* MINOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956521EB98FB200844A27 /* MINOperation.m */; };
-		DBE956561EB98FBC00844A27 /* AVGOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956551EB98FBC00844A27 /* AVGOperation.m */; };
-		DBE956591EB98FCA00844A27 /* SUMOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE956581EB98FCA00844A27 /* SUMOperation.m */; };
-		DBE9565C1EB98FF200844A27 /* FUNCOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9565B1EB98FF200844A27 /* FUNCOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,101 +104,103 @@
 		B206D7741C819EEA00F66DE7 /* HdataBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HdataBaseUITests.m; sourceTree = "<group>"; };
 		B206D7761C819EEA00F66DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B206D79A1C81ACC400F66DE7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		DB2D65711EC2B57E00C330BE /* JoinOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinOperation.h; sourceTree = "<group>"; };
-		DB2D65721EC2B57E00C330BE /* JoinOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinOperation.m; sourceTree = "<group>"; };
-		DB2D65741EC2B5B000C330BE /* INNEROPeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INNEROPeration.h; sourceTree = "<group>"; };
-		DB2D65751EC2B5B000C330BE /* INNEROPeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INNEROPeration.m; sourceTree = "<group>"; };
-		DB2D65771EC2B5C400C330BE /* CROSSOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROSSOperation.h; sourceTree = "<group>"; };
-		DB2D65781EC2B5C400C330BE /* CROSSOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROSSOperation.m; sourceTree = "<group>"; };
-		DB2D657A1EC2B5EC00C330BE /* LeftOUTEROperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftOUTEROperation.h; sourceTree = "<group>"; };
-		DB2D657B1EC2B5EC00C330BE /* LeftOUTEROperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftOUTEROperation.m; sourceTree = "<group>"; };
-		DB2D657D1EC2BF3900C330BE /* PropertyCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyCondition.h; sourceTree = "<group>"; };
-		DB2D657E1EC2BF3900C330BE /* PropertyCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyCondition.m; sourceTree = "<group>"; };
-		DB3E45761EB0E35E001C37AE /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseConnect.h; sourceTree = "<group>"; };
-		DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseConnect.m; sourceTree = "<group>"; };
-		DB3E45781EB0E35E001C37AE /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
-		DB3E45791EB0E35E001C37AE /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
-		DB3E457A1EB0E35E001C37AE /* IvarInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IvarInfomation.h; sourceTree = "<group>"; };
-		DB3E457B1EB0E35E001C37AE /* IvarInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IvarInfomation.m; sourceTree = "<group>"; };
-		DB3E457C1EB0E35E001C37AE /* NSObject+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Base.h"; sourceTree = "<group>"; };
-		DB3E457D1EB0E35E001C37AE /* NSObject+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Base.m"; sourceTree = "<group>"; };
-		DB3E457E1EB0E35E001C37AE /* NSObject+SEL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SEL.h"; sourceTree = "<group>"; };
-		DB3E457F1EB0E35E001C37AE /* NSObject+SEL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SEL.m"; sourceTree = "<group>"; };
-		DB3E45801EB0E35E001C37AE /* DBArhiever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBArhiever.h; sourceTree = "<group>"; };
-		DB3E45821EB0E35E001C37AE /* DBBaseTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTarget.h; sourceTree = "<group>"; };
-		DB3E45831EB0E35E001C37AE /* DBBaseTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBaseTarget.m; sourceTree = "<group>"; };
-		DB3E45841EB0E35E001C37AE /* DBBaseTargetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTargetProtocol.h; sourceTree = "<group>"; };
-		DB3E45861EB0E35E001C37AE /* ArrayProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayProperty.h; sourceTree = "<group>"; };
-		DB3E45871EB0E35E001C37AE /* ArrayProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayProperty.m; sourceTree = "<group>"; };
-		DB3E45881EB0E35E001C37AE /* ClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassProperty.h; sourceTree = "<group>"; };
-		DB3E45891EB0E35E001C37AE /* ClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassProperty.m; sourceTree = "<group>"; };
-		DB3E458A1EB0E35E001C37AE /* DictionaryProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryProperty.h; sourceTree = "<group>"; };
-		DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryProperty.m; sourceTree = "<group>"; };
-		DB3E458D1EB0E35E001C37AE /* GeneralProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralProperty.h; sourceTree = "<group>"; };
-		DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralProperty.m; sourceTree = "<group>"; };
-		DB3E45911EB0E35E001C37AE /* NumberProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberProperty.h; sourceTree = "<group>"; };
-		DB3E45921EB0E35E001C37AE /* NumberProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberProperty.m; sourceTree = "<group>"; };
-		DB3E45931EB0E35E001C37AE /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
-		DB3E45941EB0E35E001C37AE /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
-		DB3E45951EB0E35E001C37AE /* PropertyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyFactory.h; sourceTree = "<group>"; };
-		DB3E45961EB0E35E001C37AE /* PropertyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyFactory.m; sourceTree = "<group>"; };
-		DB3E45971EB0E35E001C37AE /* propertys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = propertys.h; sourceTree = "<group>"; };
-		DB3E45981EB0E35E001C37AE /* SELProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELProperty.h; sourceTree = "<group>"; };
-		DB3E45991EB0E35E001C37AE /* SELProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELProperty.m; sourceTree = "<group>"; };
-		DB3E459A1EB0E35E001C37AE /* StructProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructProperty.h; sourceTree = "<group>"; };
-		DB3E459B1EB0E35E001C37AE /* StructProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructProperty.m; sourceTree = "<group>"; };
-		DB3E459C1EB0E35E001C37AE /* TargetProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetProperty.h; sourceTree = "<group>"; };
-		DB3E459D1EB0E35E001C37AE /* TargetProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetProperty.m; sourceTree = "<group>"; };
 		DB3E45B71EB0E396001C37AE /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		DB3E45B81EB0E396001C37AE /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		DB3E45BA1EB0E505001C37AE /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
 		DB3E45BB1EB0E505001C37AE /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
-		DB3E46191EB1ED3C001C37AE /* ClassManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassManager.h; sourceTree = "<group>"; };
-		DB3E461A1EB1ED3C001C37AE /* ClassManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassManager.m; sourceTree = "<group>"; };
-		DB3E46211EB2D109001C37AE /* DBPlugBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPlugBox.h; sourceTree = "<group>"; };
-		DB3E46221EB2D109001C37AE /* DBPlugBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPlugBox.m; sourceTree = "<group>"; };
-		DB3E46241EB2D14F001C37AE /* DBPlug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPlug.h; sourceTree = "<group>"; };
-		DB3E46251EB2D14F001C37AE /* DBPlug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPlug.m; sourceTree = "<group>"; };
+		DB8935FE1F3C5D6E00083FF8 /* ClassManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassManager.h; sourceTree = "<group>"; };
+		DB8935FF1F3C5D6E00083FF8 /* ClassManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassManager.m; sourceTree = "<group>"; };
+		DB8936011F3C5D6E00083FF8 /* BaseModelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModelUtil.h; sourceTree = "<group>"; };
+		DB8936021F3C5D6E00083FF8 /* BaseModelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModelUtil.m; sourceTree = "<group>"; };
+		DB8936031F3C5D6E00083FF8 /* DataBaseConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseConnect.h; sourceTree = "<group>"; };
+		DB8936041F3C5D6E00083FF8 /* DataBaseConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseConnect.m; sourceTree = "<group>"; };
+		DB8936051F3C5D6E00083FF8 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		DB8936061F3C5D6E00083FF8 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		DB8936071F3C5D6E00083FF8 /* IvarInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IvarInfomation.h; sourceTree = "<group>"; };
+		DB8936081F3C5D6E00083FF8 /* IvarInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IvarInfomation.m; sourceTree = "<group>"; };
+		DB8936091F3C5D6E00083FF8 /* NSObject+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Base.h"; sourceTree = "<group>"; };
+		DB89360A1F3C5D6E00083FF8 /* NSObject+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Base.m"; sourceTree = "<group>"; };
+		DB89360B1F3C5D6E00083FF8 /* NSObject+SEL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SEL.h"; sourceTree = "<group>"; };
+		DB89360C1F3C5D6E00083FF8 /* NSObject+SEL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SEL.m"; sourceTree = "<group>"; };
+		DB89360F1F3C5D6E00083FF8 /* AssistOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistOperation.h; sourceTree = "<group>"; };
+		DB8936101F3C5D6E00083FF8 /* AssistOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistOperation.m; sourceTree = "<group>"; };
+		DB8936111F3C5D6E00083FF8 /* GROUPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GROUPOperation.h; sourceTree = "<group>"; };
+		DB8936121F3C5D6E00083FF8 /* GROUPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GROUPOperation.m; sourceTree = "<group>"; };
+		DB8936131F3C5D6E00083FF8 /* LimitOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitOperation.h; sourceTree = "<group>"; };
+		DB8936141F3C5D6E00083FF8 /* LimitOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitOperation.m; sourceTree = "<group>"; };
+		DB8936151F3C5D6E00083FF8 /* ORDEROperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDEROperation.h; sourceTree = "<group>"; };
+		DB8936161F3C5D6E00083FF8 /* ORDEROperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDEROperation.m; sourceTree = "<group>"; };
+		DB8936171F3C5D6E00083FF8 /* DBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBOperation.h; sourceTree = "<group>"; };
+		DB8936181F3C5D6E00083FF8 /* DBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBOperation.m; sourceTree = "<group>"; };
+		DB89361A1F3C5D6E00083FF8 /* AVGOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVGOperation.h; sourceTree = "<group>"; };
+		DB89361B1F3C5D6E00083FF8 /* AVGOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVGOperation.m; sourceTree = "<group>"; };
+		DB89361C1F3C5D6E00083FF8 /* CountOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountOperation.h; sourceTree = "<group>"; };
+		DB89361D1F3C5D6E00083FF8 /* CountOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountOperation.m; sourceTree = "<group>"; };
+		DB89361E1F3C5D6E00083FF8 /* FUNCOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUNCOperation.h; sourceTree = "<group>"; };
+		DB89361F1F3C5D6E00083FF8 /* FUNCOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUNCOperation.m; sourceTree = "<group>"; };
+		DB8936201F3C5D6E00083FF8 /* MAXOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAXOperation.h; sourceTree = "<group>"; };
+		DB8936211F3C5D6E00083FF8 /* MAXOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAXOperation.m; sourceTree = "<group>"; };
+		DB8936221F3C5D6E00083FF8 /* MINOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINOperation.h; sourceTree = "<group>"; };
+		DB8936231F3C5D6E00083FF8 /* MINOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINOperation.m; sourceTree = "<group>"; };
+		DB8936241F3C5D6E00083FF8 /* SUMOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMOperation.h; sourceTree = "<group>"; };
+		DB8936251F3C5D6E00083FF8 /* SUMOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMOperation.m; sourceTree = "<group>"; };
+		DB8936271F3C5D6E00083FF8 /* CROSSOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROSSOperation.h; sourceTree = "<group>"; };
+		DB8936281F3C5D6E00083FF8 /* CROSSOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROSSOperation.m; sourceTree = "<group>"; };
+		DB8936291F3C5D6E00083FF8 /* INNEROPeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INNEROPeration.h; sourceTree = "<group>"; };
+		DB89362A1F3C5D6E00083FF8 /* INNEROPeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INNEROPeration.m; sourceTree = "<group>"; };
+		DB89362B1F3C5D6E00083FF8 /* JoinOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinOperation.h; sourceTree = "<group>"; };
+		DB89362C1F3C5D6E00083FF8 /* JoinOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinOperation.m; sourceTree = "<group>"; };
+		DB89362D1F3C5D6E00083FF8 /* LeftOUTEROperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftOUTEROperation.h; sourceTree = "<group>"; };
+		DB89362E1F3C5D6E00083FF8 /* LeftOUTEROperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftOUTEROperation.m; sourceTree = "<group>"; };
+		DB89362F1F3C5D6E00083FF8 /* PrepareStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrepareStatus.h; sourceTree = "<group>"; };
+		DB8936301F3C5D6E00083FF8 /* PrepareStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareStatus.m; sourceTree = "<group>"; };
+		DB8936321F3C5D6E00083FF8 /* CompareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareOperation.h; sourceTree = "<group>"; };
+		DB8936331F3C5D6E00083FF8 /* CompareOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareOperation.m; sourceTree = "<group>"; };
+		DB8936341F3C5D6E00083FF8 /* GLOBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLOBOperation.h; sourceTree = "<group>"; };
+		DB8936351F3C5D6E00083FF8 /* GLOBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLOBOperation.m; sourceTree = "<group>"; };
+		DB8936361F3C5D6E00083FF8 /* LIKEOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEOperation.h; sourceTree = "<group>"; };
+		DB8936371F3C5D6E00083FF8 /* LIKEOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEOperation.m; sourceTree = "<group>"; };
+		DB8936381F3C5D6E00083FF8 /* PrerequisiteOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrerequisiteOperation.h; sourceTree = "<group>"; };
+		DB8936391F3C5D6E00083FF8 /* PrerequisiteOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrerequisiteOperation.m; sourceTree = "<group>"; };
+		DB89363A1F3C5D6E00083FF8 /* PropertyCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyCondition.h; sourceTree = "<group>"; };
+		DB89363B1F3C5D6E00083FF8 /* PropertyCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyCondition.m; sourceTree = "<group>"; };
+		DB89363D1F3C5D6E00083FF8 /* DISTINOTOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DISTINOTOperation.h; sourceTree = "<group>"; };
+		DB89363E1F3C5D6E00083FF8 /* DISTINOTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DISTINOTOperation.m; sourceTree = "<group>"; };
+		DB89363F1F3C5D6E00083FF8 /* ValueOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueOperation.h; sourceTree = "<group>"; };
+		DB8936401F3C5D6E00083FF8 /* ValueOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueOperation.m; sourceTree = "<group>"; };
+		DB8936411F3C5D6E00083FF8 /* DBArhiever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBArhiever.h; sourceTree = "<group>"; };
+		DB8936431F3C5D6E00083FF8 /* DBBaseTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTarget.h; sourceTree = "<group>"; };
+		DB8936441F3C5D6E00083FF8 /* DBBaseTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBaseTarget.m; sourceTree = "<group>"; };
+		DB8936451F3C5D6E00083FF8 /* DBBaseTargetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseTargetProtocol.h; sourceTree = "<group>"; };
+		DB8936471F3C5D6E00083FF8 /* DBPlug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPlug.h; sourceTree = "<group>"; };
+		DB8936481F3C5D6E00083FF8 /* DBPlug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPlug.m; sourceTree = "<group>"; };
+		DB8936491F3C5D6E00083FF8 /* DBPlugBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPlugBox.h; sourceTree = "<group>"; };
+		DB89364A1F3C5D6E00083FF8 /* DBPlugBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPlugBox.m; sourceTree = "<group>"; };
+		DB89364C1F3C5D6E00083FF8 /* ArrayProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayProperty.h; sourceTree = "<group>"; };
+		DB89364D1F3C5D6E00083FF8 /* ArrayProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayProperty.m; sourceTree = "<group>"; };
+		DB89364E1F3C5D6E00083FF8 /* ClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassProperty.h; sourceTree = "<group>"; };
+		DB89364F1F3C5D6E00083FF8 /* ClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassProperty.m; sourceTree = "<group>"; };
+		DB8936501F3C5D6E00083FF8 /* DictionaryProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryProperty.h; sourceTree = "<group>"; };
+		DB8936511F3C5D6E00083FF8 /* DictionaryProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryProperty.m; sourceTree = "<group>"; };
+		DB8936521F3C5D6E00083FF8 /* GeneralProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralProperty.h; sourceTree = "<group>"; };
+		DB8936531F3C5D6E00083FF8 /* GeneralProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralProperty.m; sourceTree = "<group>"; };
+		DB8936541F3C5D6E00083FF8 /* NumberProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberProperty.h; sourceTree = "<group>"; };
+		DB8936551F3C5D6E00083FF8 /* NumberProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberProperty.m; sourceTree = "<group>"; };
+		DB8936561F3C5D6E00083FF8 /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
+		DB8936571F3C5D6E00083FF8 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
+		DB8936581F3C5D6E00083FF8 /* PropertyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyFactory.h; sourceTree = "<group>"; };
+		DB8936591F3C5D6E00083FF8 /* PropertyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyFactory.m; sourceTree = "<group>"; };
+		DB89365A1F3C5D6E00083FF8 /* propertys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = propertys.h; sourceTree = "<group>"; };
+		DB89365B1F3C5D6E00083FF8 /* SELProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELProperty.h; sourceTree = "<group>"; };
+		DB89365C1F3C5D6E00083FF8 /* SELProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELProperty.m; sourceTree = "<group>"; };
+		DB89365D1F3C5D6E00083FF8 /* StructProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructProperty.h; sourceTree = "<group>"; };
+		DB89365E1F3C5D6E00083FF8 /* StructProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructProperty.m; sourceTree = "<group>"; };
+		DB89365F1F3C5D6E00083FF8 /* TargetProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetProperty.h; sourceTree = "<group>"; };
+		DB8936601F3C5D6E00083FF8 /* TargetProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetProperty.m; sourceTree = "<group>"; };
 		DBE955DE1EB8194800844A27 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		DBE955DF1EB8194800844A27 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
-		DBE956161EB9665000844A27 /* DBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBOperation.h; sourceTree = "<group>"; };
-		DBE956171EB9665000844A27 /* DBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBOperation.m; sourceTree = "<group>"; };
-		DBE9561E1EB9665000844A27 /* PrepareStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrepareStatus.h; sourceTree = "<group>"; };
-		DBE9561F1EB9665000844A27 /* PrepareStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareStatus.m; sourceTree = "<group>"; };
-		DBE956211EB9665000844A27 /* CompareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareOperation.h; sourceTree = "<group>"; };
-		DBE956221EB9665000844A27 /* CompareOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareOperation.m; sourceTree = "<group>"; };
-		DBE956231EB9665000844A27 /* LIKEOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIKEOperation.h; sourceTree = "<group>"; };
-		DBE956241EB9665000844A27 /* LIKEOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIKEOperation.m; sourceTree = "<group>"; };
-		DBE956251EB9665000844A27 /* PrerequisiteOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrerequisiteOperation.h; path = ../PrerequisiteOperation.h; sourceTree = "<group>"; };
-		DBE956261EB9665000844A27 /* PrerequisiteOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrerequisiteOperation.m; path = ../PrerequisiteOperation.m; sourceTree = "<group>"; };
-		DBE956281EB9665000844A27 /* ValueOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueOperation.h; sourceTree = "<group>"; };
-		DBE956291EB9665000844A27 /* ValueOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueOperation.m; sourceTree = "<group>"; };
-		DBE956351EB9669B00844A27 /* GROUPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GROUPOperation.h; sourceTree = "<group>"; };
-		DBE956361EB9669B00844A27 /* GROUPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GROUPOperation.m; sourceTree = "<group>"; };
-		DBE956371EB9669B00844A27 /* LimitOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitOperation.h; sourceTree = "<group>"; };
-		DBE956381EB9669B00844A27 /* LimitOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitOperation.m; sourceTree = "<group>"; };
-		DBE956391EB9669B00844A27 /* ORDEROperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDEROperation.h; sourceTree = "<group>"; };
-		DBE9563A1EB9669B00844A27 /* ORDEROperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDEROperation.m; sourceTree = "<group>"; };
-		DBE9563E1EB966CF00844A27 /* DISTINOTOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DISTINOTOperation.h; sourceTree = "<group>"; };
-		DBE9563F1EB966CF00844A27 /* DISTINOTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DISTINOTOperation.m; sourceTree = "<group>"; };
-		DBE956411EB9671300844A27 /* GLOBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLOBOperation.h; sourceTree = "<group>"; };
-		DBE956421EB9671300844A27 /* GLOBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLOBOperation.m; sourceTree = "<group>"; };
-		DBE956441EB97A9B00844A27 /* AssistOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistOperation.h; sourceTree = "<group>"; };
-		DBE956451EB97A9B00844A27 /* AssistOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistOperation.m; sourceTree = "<group>"; };
 		DBE956471EB97ED100844A27 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
 		DBE956481EB97ED100844A27 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
-		DBE9564B1EB98F9600844A27 /* CountOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountOperation.h; sourceTree = "<group>"; };
-		DBE9564C1EB98F9600844A27 /* CountOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountOperation.m; sourceTree = "<group>"; };
-		DBE9564E1EB98FA700844A27 /* MAXOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAXOperation.h; sourceTree = "<group>"; };
-		DBE9564F1EB98FA700844A27 /* MAXOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAXOperation.m; sourceTree = "<group>"; };
-		DBE956511EB98FB200844A27 /* MINOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINOperation.h; sourceTree = "<group>"; };
-		DBE956521EB98FB200844A27 /* MINOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINOperation.m; sourceTree = "<group>"; };
-		DBE956541EB98FBC00844A27 /* AVGOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVGOperation.h; sourceTree = "<group>"; };
-		DBE956551EB98FBC00844A27 /* AVGOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVGOperation.m; sourceTree = "<group>"; };
-		DBE956571EB98FCA00844A27 /* SUMOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMOperation.h; sourceTree = "<group>"; };
-		DBE956581EB98FCA00844A27 /* SUMOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMOperation.m; sourceTree = "<group>"; };
-		DBE9565A1EB98FF200844A27 /* FUNCOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUNCOperation.h; sourceTree = "<group>"; };
-		DBE9565B1EB98FF200844A27 /* FUNCOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUNCOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +264,7 @@
 		B206D74E1C819EE900F66DE7 /* HdataBase */ = {
 			isa = PBXGroup;
 			children = (
-				DB3E45621EB0E35E001C37AE /* HDataArhiever */,
+				DB8935FC1F3C5D6E00083FF8 /* HDataArhiever */,
 				B206D7521C819EEA00F66DE7 /* AppDelegate.h */,
 				B206D7531C819EEA00F66DE7 /* AppDelegate.m */,
 				B206D7551C819EEA00F66DE7 /* ViewController.h */,
@@ -318,186 +321,188 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DB2D65701EC2B32400C330BE /* join */ = {
+		DB8935FC1F3C5D6E00083FF8 /* HDataArhiever */ = {
 			isa = PBXGroup;
 			children = (
-				DB2D65711EC2B57E00C330BE /* JoinOperation.h */,
-				DB2D65721EC2B57E00C330BE /* JoinOperation.m */,
-				DB2D65741EC2B5B000C330BE /* INNEROPeration.h */,
-				DB2D65751EC2B5B000C330BE /* INNEROPeration.m */,
-				DB2D65771EC2B5C400C330BE /* CROSSOperation.h */,
-				DB2D65781EC2B5C400C330BE /* CROSSOperation.m */,
-				DB2D657A1EC2B5EC00C330BE /* LeftOUTEROperation.h */,
-				DB2D657B1EC2B5EC00C330BE /* LeftOUTEROperation.m */,
-			);
-			path = join;
-			sourceTree = "<group>";
-		};
-		DB3E45621EB0E35E001C37AE /* HDataArhiever */ = {
-			isa = PBXGroup;
-			children = (
-				DB3E46201EB2D0EA001C37AE /* plug */,
-				DB3E46181EB1ED25001C37AE /* class */,
-				DB3E45751EB0E35E001C37AE /* core */,
-				DB3E45801EB0E35E001C37AE /* DBArhiever.h */,
-				DB3E45811EB0E35E001C37AE /* model */,
-				DB3E45851EB0E35E001C37AE /* propertys */,
+				DB8935FD1F3C5D6E00083FF8 /* class */,
+				DB8936001F3C5D6E00083FF8 /* core */,
+				DB8936411F3C5D6E00083FF8 /* DBArhiever.h */,
+				DB8936421F3C5D6E00083FF8 /* model */,
+				DB8936461F3C5D6E00083FF8 /* plug */,
+				DB89364B1F3C5D6E00083FF8 /* propertys */,
 			);
 			path = HDataArhiever;
 			sourceTree = "<group>";
 		};
-		DB3E45751EB0E35E001C37AE /* core */ = {
+		DB8935FD1F3C5D6E00083FF8 /* class */ = {
 			isa = PBXGroup;
 			children = (
-				DB3E45761EB0E35E001C37AE /* DataBaseConnect.h */,
-				DB3E45771EB0E35E001C37AE /* DataBaseConnect.m */,
-				DB3E45781EB0E35E001C37AE /* DBManager.h */,
-				DB3E45791EB0E35E001C37AE /* DBManager.m */,
-				DB3E457A1EB0E35E001C37AE /* IvarInfomation.h */,
-				DB3E457B1EB0E35E001C37AE /* IvarInfomation.m */,
-				DB3E457C1EB0E35E001C37AE /* NSObject+Base.h */,
-				DB3E457D1EB0E35E001C37AE /* NSObject+Base.m */,
-				DB3E457E1EB0E35E001C37AE /* NSObject+SEL.h */,
-				DB3E457F1EB0E35E001C37AE /* NSObject+SEL.m */,
-				DBE956151EB9665000844A27 /* Operations */,
-			);
-			path = core;
-			sourceTree = "<group>";
-		};
-		DB3E45811EB0E35E001C37AE /* model */ = {
-			isa = PBXGroup;
-			children = (
-				DB3E45821EB0E35E001C37AE /* DBBaseTarget.h */,
-				DB3E45831EB0E35E001C37AE /* DBBaseTarget.m */,
-				DB3E45841EB0E35E001C37AE /* DBBaseTargetProtocol.h */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		DB3E45851EB0E35E001C37AE /* propertys */ = {
-			isa = PBXGroup;
-			children = (
-				DB3E45861EB0E35E001C37AE /* ArrayProperty.h */,
-				DB3E45871EB0E35E001C37AE /* ArrayProperty.m */,
-				DB3E45881EB0E35E001C37AE /* ClassProperty.h */,
-				DB3E45891EB0E35E001C37AE /* ClassProperty.m */,
-				DB3E458A1EB0E35E001C37AE /* DictionaryProperty.h */,
-				DB3E458B1EB0E35E001C37AE /* DictionaryProperty.m */,
-				DB3E458D1EB0E35E001C37AE /* GeneralProperty.h */,
-				DB3E458E1EB0E35E001C37AE /* GeneralProperty.m */,
-				DB3E45911EB0E35E001C37AE /* NumberProperty.h */,
-				DB3E45921EB0E35E001C37AE /* NumberProperty.m */,
-				DB3E45931EB0E35E001C37AE /* Property.h */,
-				DB3E45941EB0E35E001C37AE /* Property.m */,
-				DB3E45951EB0E35E001C37AE /* PropertyFactory.h */,
-				DB3E45961EB0E35E001C37AE /* PropertyFactory.m */,
-				DB3E45971EB0E35E001C37AE /* propertys.h */,
-				DB3E45981EB0E35E001C37AE /* SELProperty.h */,
-				DB3E45991EB0E35E001C37AE /* SELProperty.m */,
-				DB3E459A1EB0E35E001C37AE /* StructProperty.h */,
-				DB3E459B1EB0E35E001C37AE /* StructProperty.m */,
-				DB3E459C1EB0E35E001C37AE /* TargetProperty.h */,
-				DB3E459D1EB0E35E001C37AE /* TargetProperty.m */,
-			);
-			path = propertys;
-			sourceTree = "<group>";
-		};
-		DB3E46181EB1ED25001C37AE /* class */ = {
-			isa = PBXGroup;
-			children = (
-				DB3E46191EB1ED3C001C37AE /* ClassManager.h */,
-				DB3E461A1EB1ED3C001C37AE /* ClassManager.m */,
+				DB8935FE1F3C5D6E00083FF8 /* ClassManager.h */,
+				DB8935FF1F3C5D6E00083FF8 /* ClassManager.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
 		};
-		DB3E46201EB2D0EA001C37AE /* plug */ = {
+		DB8936001F3C5D6E00083FF8 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				DB3E46211EB2D109001C37AE /* DBPlugBox.h */,
-				DB3E46221EB2D109001C37AE /* DBPlugBox.m */,
-				DB3E46241EB2D14F001C37AE /* DBPlug.h */,
-				DB3E46251EB2D14F001C37AE /* DBPlug.m */,
+				DB8936011F3C5D6E00083FF8 /* BaseModelUtil.h */,
+				DB8936021F3C5D6E00083FF8 /* BaseModelUtil.m */,
+				DB8936031F3C5D6E00083FF8 /* DataBaseConnect.h */,
+				DB8936041F3C5D6E00083FF8 /* DataBaseConnect.m */,
+				DB8936051F3C5D6E00083FF8 /* DBManager.h */,
+				DB8936061F3C5D6E00083FF8 /* DBManager.m */,
+				DB8936071F3C5D6E00083FF8 /* IvarInfomation.h */,
+				DB8936081F3C5D6E00083FF8 /* IvarInfomation.m */,
+				DB8936091F3C5D6E00083FF8 /* NSObject+Base.h */,
+				DB89360A1F3C5D6E00083FF8 /* NSObject+Base.m */,
+				DB89360B1F3C5D6E00083FF8 /* NSObject+SEL.h */,
+				DB89360C1F3C5D6E00083FF8 /* NSObject+SEL.m */,
+				DB89360D1F3C5D6E00083FF8 /* Operations */,
 			);
-			path = plug;
+			path = core;
 			sourceTree = "<group>";
 		};
-		DBE956151EB9665000844A27 /* Operations */ = {
+		DB89360D1F3C5D6E00083FF8 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				DBE956161EB9665000844A27 /* DBOperation.h */,
-				DBE956171EB9665000844A27 /* DBOperation.m */,
-				DBE9561E1EB9665000844A27 /* PrepareStatus.h */,
-				DBE9561F1EB9665000844A27 /* PrepareStatus.m */,
-				DB2D657D1EC2BF3900C330BE /* PropertyCondition.h */,
-				DB2D657E1EC2BF3900C330BE /* PropertyCondition.m */,
-				DB2D65701EC2B32400C330BE /* join */,
-				DBE9564A1EB98F7600844A27 /* function */,
-				DBE956341EB9669B00844A27 /* assist */,
-				DBE956201EB9665000844A27 /* prerequisite */,
-				DBE956271EB9665000844A27 /* Value */,
+				DB89360E1F3C5D6E00083FF8 /* assist */,
+				DB8936171F3C5D6E00083FF8 /* DBOperation.h */,
+				DB8936181F3C5D6E00083FF8 /* DBOperation.m */,
+				DB8936191F3C5D6E00083FF8 /* function */,
+				DB8936261F3C5D6E00083FF8 /* join */,
+				DB89362F1F3C5D6E00083FF8 /* PrepareStatus.h */,
+				DB8936301F3C5D6E00083FF8 /* PrepareStatus.m */,
+				DB8936311F3C5D6E00083FF8 /* prerequisite */,
+				DB8936381F3C5D6E00083FF8 /* PrerequisiteOperation.h */,
+				DB8936391F3C5D6E00083FF8 /* PrerequisiteOperation.m */,
+				DB89363A1F3C5D6E00083FF8 /* PropertyCondition.h */,
+				DB89363B1F3C5D6E00083FF8 /* PropertyCondition.m */,
+				DB89363C1F3C5D6E00083FF8 /* Value */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
 		};
-		DBE956201EB9665000844A27 /* prerequisite */ = {
+		DB89360E1F3C5D6E00083FF8 /* assist */ = {
 			isa = PBXGroup;
 			children = (
-				DBE956251EB9665000844A27 /* PrerequisiteOperation.h */,
-				DBE956261EB9665000844A27 /* PrerequisiteOperation.m */,
-				DBE956211EB9665000844A27 /* CompareOperation.h */,
-				DBE956221EB9665000844A27 /* CompareOperation.m */,
-				DBE956231EB9665000844A27 /* LIKEOperation.h */,
-				DBE956241EB9665000844A27 /* LIKEOperation.m */,
-				DBE956411EB9671300844A27 /* GLOBOperation.h */,
-				DBE956421EB9671300844A27 /* GLOBOperation.m */,
-			);
-			path = prerequisite;
-			sourceTree = "<group>";
-		};
-		DBE956271EB9665000844A27 /* Value */ = {
-			isa = PBXGroup;
-			children = (
-				DBE956281EB9665000844A27 /* ValueOperation.h */,
-				DBE956291EB9665000844A27 /* ValueOperation.m */,
-				DBE9563E1EB966CF00844A27 /* DISTINOTOperation.h */,
-				DBE9563F1EB966CF00844A27 /* DISTINOTOperation.m */,
-			);
-			path = Value;
-			sourceTree = "<group>";
-		};
-		DBE956341EB9669B00844A27 /* assist */ = {
-			isa = PBXGroup;
-			children = (
-				DBE956441EB97A9B00844A27 /* AssistOperation.h */,
-				DBE956451EB97A9B00844A27 /* AssistOperation.m */,
-				DBE956351EB9669B00844A27 /* GROUPOperation.h */,
-				DBE956361EB9669B00844A27 /* GROUPOperation.m */,
-				DBE956371EB9669B00844A27 /* LimitOperation.h */,
-				DBE956381EB9669B00844A27 /* LimitOperation.m */,
-				DBE956391EB9669B00844A27 /* ORDEROperation.h */,
-				DBE9563A1EB9669B00844A27 /* ORDEROperation.m */,
+				DB89360F1F3C5D6E00083FF8 /* AssistOperation.h */,
+				DB8936101F3C5D6E00083FF8 /* AssistOperation.m */,
+				DB8936111F3C5D6E00083FF8 /* GROUPOperation.h */,
+				DB8936121F3C5D6E00083FF8 /* GROUPOperation.m */,
+				DB8936131F3C5D6E00083FF8 /* LimitOperation.h */,
+				DB8936141F3C5D6E00083FF8 /* LimitOperation.m */,
+				DB8936151F3C5D6E00083FF8 /* ORDEROperation.h */,
+				DB8936161F3C5D6E00083FF8 /* ORDEROperation.m */,
 			);
 			path = assist;
 			sourceTree = "<group>";
 		};
-		DBE9564A1EB98F7600844A27 /* function */ = {
+		DB8936191F3C5D6E00083FF8 /* function */ = {
 			isa = PBXGroup;
 			children = (
-				DBE9565A1EB98FF200844A27 /* FUNCOperation.h */,
-				DBE9565B1EB98FF200844A27 /* FUNCOperation.m */,
-				DBE9564B1EB98F9600844A27 /* CountOperation.h */,
-				DBE9564C1EB98F9600844A27 /* CountOperation.m */,
-				DBE9564E1EB98FA700844A27 /* MAXOperation.h */,
-				DBE9564F1EB98FA700844A27 /* MAXOperation.m */,
-				DBE956511EB98FB200844A27 /* MINOperation.h */,
-				DBE956521EB98FB200844A27 /* MINOperation.m */,
-				DBE956541EB98FBC00844A27 /* AVGOperation.h */,
-				DBE956551EB98FBC00844A27 /* AVGOperation.m */,
-				DBE956571EB98FCA00844A27 /* SUMOperation.h */,
-				DBE956581EB98FCA00844A27 /* SUMOperation.m */,
+				DB89361A1F3C5D6E00083FF8 /* AVGOperation.h */,
+				DB89361B1F3C5D6E00083FF8 /* AVGOperation.m */,
+				DB89361C1F3C5D6E00083FF8 /* CountOperation.h */,
+				DB89361D1F3C5D6E00083FF8 /* CountOperation.m */,
+				DB89361E1F3C5D6E00083FF8 /* FUNCOperation.h */,
+				DB89361F1F3C5D6E00083FF8 /* FUNCOperation.m */,
+				DB8936201F3C5D6E00083FF8 /* MAXOperation.h */,
+				DB8936211F3C5D6E00083FF8 /* MAXOperation.m */,
+				DB8936221F3C5D6E00083FF8 /* MINOperation.h */,
+				DB8936231F3C5D6E00083FF8 /* MINOperation.m */,
+				DB8936241F3C5D6E00083FF8 /* SUMOperation.h */,
+				DB8936251F3C5D6E00083FF8 /* SUMOperation.m */,
 			);
 			path = function;
+			sourceTree = "<group>";
+		};
+		DB8936261F3C5D6E00083FF8 /* join */ = {
+			isa = PBXGroup;
+			children = (
+				DB8936271F3C5D6E00083FF8 /* CROSSOperation.h */,
+				DB8936281F3C5D6E00083FF8 /* CROSSOperation.m */,
+				DB8936291F3C5D6E00083FF8 /* INNEROPeration.h */,
+				DB89362A1F3C5D6E00083FF8 /* INNEROPeration.m */,
+				DB89362B1F3C5D6E00083FF8 /* JoinOperation.h */,
+				DB89362C1F3C5D6E00083FF8 /* JoinOperation.m */,
+				DB89362D1F3C5D6E00083FF8 /* LeftOUTEROperation.h */,
+				DB89362E1F3C5D6E00083FF8 /* LeftOUTEROperation.m */,
+			);
+			path = join;
+			sourceTree = "<group>";
+		};
+		DB8936311F3C5D6E00083FF8 /* prerequisite */ = {
+			isa = PBXGroup;
+			children = (
+				DB8936321F3C5D6E00083FF8 /* CompareOperation.h */,
+				DB8936331F3C5D6E00083FF8 /* CompareOperation.m */,
+				DB8936341F3C5D6E00083FF8 /* GLOBOperation.h */,
+				DB8936351F3C5D6E00083FF8 /* GLOBOperation.m */,
+				DB8936361F3C5D6E00083FF8 /* LIKEOperation.h */,
+				DB8936371F3C5D6E00083FF8 /* LIKEOperation.m */,
+			);
+			path = prerequisite;
+			sourceTree = "<group>";
+		};
+		DB89363C1F3C5D6E00083FF8 /* Value */ = {
+			isa = PBXGroup;
+			children = (
+				DB89363D1F3C5D6E00083FF8 /* DISTINOTOperation.h */,
+				DB89363E1F3C5D6E00083FF8 /* DISTINOTOperation.m */,
+				DB89363F1F3C5D6E00083FF8 /* ValueOperation.h */,
+				DB8936401F3C5D6E00083FF8 /* ValueOperation.m */,
+			);
+			path = Value;
+			sourceTree = "<group>";
+		};
+		DB8936421F3C5D6E00083FF8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DB8936431F3C5D6E00083FF8 /* DBBaseTarget.h */,
+				DB8936441F3C5D6E00083FF8 /* DBBaseTarget.m */,
+				DB8936451F3C5D6E00083FF8 /* DBBaseTargetProtocol.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		DB8936461F3C5D6E00083FF8 /* plug */ = {
+			isa = PBXGroup;
+			children = (
+				DB8936471F3C5D6E00083FF8 /* DBPlug.h */,
+				DB8936481F3C5D6E00083FF8 /* DBPlug.m */,
+				DB8936491F3C5D6E00083FF8 /* DBPlugBox.h */,
+				DB89364A1F3C5D6E00083FF8 /* DBPlugBox.m */,
+			);
+			path = plug;
+			sourceTree = "<group>";
+		};
+		DB89364B1F3C5D6E00083FF8 /* propertys */ = {
+			isa = PBXGroup;
+			children = (
+				DB89364C1F3C5D6E00083FF8 /* ArrayProperty.h */,
+				DB89364D1F3C5D6E00083FF8 /* ArrayProperty.m */,
+				DB89364E1F3C5D6E00083FF8 /* ClassProperty.h */,
+				DB89364F1F3C5D6E00083FF8 /* ClassProperty.m */,
+				DB8936501F3C5D6E00083FF8 /* DictionaryProperty.h */,
+				DB8936511F3C5D6E00083FF8 /* DictionaryProperty.m */,
+				DB8936521F3C5D6E00083FF8 /* GeneralProperty.h */,
+				DB8936531F3C5D6E00083FF8 /* GeneralProperty.m */,
+				DB8936541F3C5D6E00083FF8 /* NumberProperty.h */,
+				DB8936551F3C5D6E00083FF8 /* NumberProperty.m */,
+				DB8936561F3C5D6E00083FF8 /* Property.h */,
+				DB8936571F3C5D6E00083FF8 /* Property.m */,
+				DB8936581F3C5D6E00083FF8 /* PropertyFactory.h */,
+				DB8936591F3C5D6E00083FF8 /* PropertyFactory.m */,
+				DB89365A1F3C5D6E00083FF8 /* propertys.h */,
+				DB89365B1F3C5D6E00083FF8 /* SELProperty.h */,
+				DB89365C1F3C5D6E00083FF8 /* SELProperty.m */,
+				DB89365D1F3C5D6E00083FF8 /* StructProperty.h */,
+				DB89365E1F3C5D6E00083FF8 /* StructProperty.m */,
+				DB89365F1F3C5D6E00083FF8 /* TargetProperty.h */,
+				DB8936601F3C5D6E00083FF8 /* TargetProperty.m */,
+			);
+			path = propertys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -682,55 +687,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB2D65761EC2B5B000C330BE /* INNEROPeration.m in Sources */,
-				DBE956311EB9665000844A27 /* LIKEOperation.m in Sources */,
-				DB3E45AC1EB0E35E001C37AE /* ArrayProperty.m in Sources */,
-				DB3E45B21EB0E35E001C37AE /* Property.m in Sources */,
-				DB3E45B61EB0E35E001C37AE /* TargetProperty.m in Sources */,
-				DB3E45AB1EB0E35E001C37AE /* DBBaseTarget.m in Sources */,
-				DB2D65791EC2B5C400C330BE /* CROSSOperation.m in Sources */,
-				DBE956331EB9665000844A27 /* ValueOperation.m in Sources */,
-				DB3E46231EB2D109001C37AE /* DBPlugBox.m in Sources */,
-				DB3E45B31EB0E35E001C37AE /* PropertyFactory.m in Sources */,
-				DB2D657C1EC2B5EC00C330BE /* LeftOUTEROperation.m in Sources */,
-				DBE956401EB966CF00844A27 /* DISTINOTOperation.m in Sources */,
-				DB3E46261EB2D14F001C37AE /* DBPlug.m in Sources */,
-				DBE9563B1EB9669B00844A27 /* GROUPOperation.m in Sources */,
-				DBE9563D1EB9669B00844A27 /* ORDEROperation.m in Sources */,
-				DBE956561EB98FBC00844A27 /* AVGOperation.m in Sources */,
-				DB3E45AF1EB0E35E001C37AE /* GeneralProperty.m in Sources */,
-				DB3E45AA1EB0E35E001C37AE /* NSObject+SEL.m in Sources */,
+				DB8936621F3C5D6E00083FF8 /* BaseModelUtil.m in Sources */,
+				DB89367E1F3C5D6E00083FF8 /* ValueOperation.m in Sources */,
+				DB8936881F3C5D6E00083FF8 /* PropertyFactory.m in Sources */,
+				DB89366F1F3C5D6E00083FF8 /* FUNCOperation.m in Sources */,
+				DB89367F1F3C5D6E00083FF8 /* DBBaseTarget.m in Sources */,
+				DB8936661F3C5D6E00083FF8 /* NSObject+Base.m in Sources */,
+				DB89367C1F3C5D6E00083FF8 /* PropertyCondition.m in Sources */,
+				DB89368B1F3C5D6E00083FF8 /* TargetProperty.m in Sources */,
+				DB8936751F3C5D6E00083FF8 /* JoinOperation.m in Sources */,
+				DB8936851F3C5D6E00083FF8 /* GeneralProperty.m in Sources */,
 				B206D7571C819EEA00F66DE7 /* ViewController.m in Sources */,
-				DBE956461EB97A9B00844A27 /* AssistOperation.m in Sources */,
-				DBE956501EB98FA700844A27 /* MAXOperation.m in Sources */,
+				DB8936841F3C5D6E00083FF8 /* DictionaryProperty.m in Sources */,
 				DB3E45B91EB0E396001C37AE /* Video.m in Sources */,
-				DBE9564D1EB98F9600844A27 /* CountOperation.m in Sources */,
+				DB8936761F3C5D6E00083FF8 /* LeftOUTEROperation.m in Sources */,
+				DB8936861F3C5D6E00083FF8 /* NumberProperty.m in Sources */,
+				DB8936611F3C5D6E00083FF8 /* ClassManager.m in Sources */,
+				DB89366E1F3C5D6E00083FF8 /* CountOperation.m in Sources */,
+				DB8936721F3C5D6E00083FF8 /* SUMOperation.m in Sources */,
+				DB8936891F3C5D6E00083FF8 /* SELProperty.m in Sources */,
 				B206D7541C819EEA00F66DE7 /* AppDelegate.m in Sources */,
 				DB3E45BC1EB0E505001C37AE /* Author.m in Sources */,
+				DB89367D1F3C5D6E00083FF8 /* DISTINOTOperation.m in Sources */,
 				DBE955E01EB8194800844A27 /* Dog.m in Sources */,
-				DBE9565C1EB98FF200844A27 /* FUNCOperation.m in Sources */,
-				DBE956431EB9671300844A27 /* GLOBOperation.m in Sources */,
-				DBE956321EB9665000844A27 /* PrerequisiteOperation.m in Sources */,
+				DB89366B1F3C5D6E00083FF8 /* ORDEROperation.m in Sources */,
+				DB89366C1F3C5D6E00083FF8 /* DBOperation.m in Sources */,
+				DB8936831F3C5D6E00083FF8 /* ClassProperty.m in Sources */,
+				DB8936671F3C5D6E00083FF8 /* NSObject+SEL.m in Sources */,
+				DB8936691F3C5D6E00083FF8 /* GROUPOperation.m in Sources */,
+				DB89366A1F3C5D6E00083FF8 /* LimitOperation.m in Sources */,
+				DB8936681F3C5D6E00083FF8 /* AssistOperation.m in Sources */,
+				DB8936641F3C5D6E00083FF8 /* DBManager.m in Sources */,
 				B206D7511C819EEA00F66DE7 /* main.m in Sources */,
-				DBE956531EB98FB200844A27 /* MINOperation.m in Sources */,
-				DB3E45B11EB0E35E001C37AE /* NumberProperty.m in Sources */,
-				DB3E45AE1EB0E35E001C37AE /* DictionaryProperty.m in Sources */,
-				DB3E45A81EB0E35E001C37AE /* IvarInfomation.m in Sources */,
-				DB3E45AD1EB0E35E001C37AE /* ClassProperty.m in Sources */,
-				DB3E45A61EB0E35E001C37AE /* DataBaseConnect.m in Sources */,
+				DB89366D1F3C5D6E00083FF8 /* AVGOperation.m in Sources */,
+				DB8936781F3C5D6E00083FF8 /* CompareOperation.m in Sources */,
+				DB8936701F3C5D6E00083FF8 /* MAXOperation.m in Sources */,
+				DB8936651F3C5D6E00083FF8 /* IvarInfomation.m in Sources */,
+				DB8936731F3C5D6E00083FF8 /* CROSSOperation.m in Sources */,
+				DB8936821F3C5D6E00083FF8 /* ArrayProperty.m in Sources */,
 				DBE956491EB97ED100844A27 /* People.m in Sources */,
-				DBE956301EB9665000844A27 /* CompareOperation.m in Sources */,
-				DB2D657F1EC2BF3900C330BE /* PropertyCondition.m in Sources */,
-				DBE956591EB98FCA00844A27 /* SUMOperation.m in Sources */,
-				DB3E461B1EB1ED3C001C37AE /* ClassManager.m in Sources */,
-				DB3E45A91EB0E35E001C37AE /* NSObject+Base.m in Sources */,
-				DB3E45B51EB0E35E001C37AE /* StructProperty.m in Sources */,
-				DBE9562B1EB9665000844A27 /* DBOperation.m in Sources */,
-				DB3E45A71EB0E35E001C37AE /* DBManager.m in Sources */,
-				DBE9563C1EB9669B00844A27 /* LimitOperation.m in Sources */,
-				DBE9562F1EB9665000844A27 /* PrepareStatus.m in Sources */,
-				DB3E45B41EB0E35E001C37AE /* SELProperty.m in Sources */,
-				DB2D65731EC2B57E00C330BE /* JoinOperation.m in Sources */,
+				DB8936711F3C5D6E00083FF8 /* MINOperation.m in Sources */,
+				DB8936771F3C5D6E00083FF8 /* PrepareStatus.m in Sources */,
+				DB8936631F3C5D6E00083FF8 /* DataBaseConnect.m in Sources */,
+				DB8936801F3C5D6E00083FF8 /* DBPlug.m in Sources */,
+				DB8936871F3C5D6E00083FF8 /* Property.m in Sources */,
+				DB8936741F3C5D6E00083FF8 /* INNEROPeration.m in Sources */,
+				DB8936791F3C5D6E00083FF8 /* GLOBOperation.m in Sources */,
+				DB8936811F3C5D6E00083FF8 /* DBPlugBox.m in Sources */,
+				DB89367A1F3C5D6E00083FF8 /* LIKEOperation.m in Sources */,
+				DB89367B1F3C5D6E00083FF8 /* PrerequisiteOperation.m in Sources */,
+				DB89368A1F3C5D6E00083FF8 /* StructProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

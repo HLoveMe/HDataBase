@@ -29,8 +29,8 @@
  当你指定关注的值 可以选择返回值类型
  @return
  */
--(id)valuesForArray;
--(id)valuesForDictionary;
+-(NSArray *)valuesForArray;
+-(NSDictionary *)valuesForDictionary;
 
 //+(Class)valueC;
 @end

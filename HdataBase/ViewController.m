@@ -24,33 +24,69 @@
 - (void)viewDidLoad {
     NSLog(@"%@",NSHomeDirectory());
     [super viewDidLoad];
+    /**
+     需要注意的是 如果你多次运行这段代码
+     数据库会Video没有出现多次记录
+     而 Author 出现多次
+     这是由于 Video  实现了uniqueness 来确定其的唯一性
+     */
+    Video *v = [[Video alloc] init];
+    NSMutableString *aaaaa = [[NSMutableString alloc]initWithString:@"爱情公寓"];
+    v.name = aaaaa;
+    v.url = [NSURL URLWithString:@"http://www.baidu.com"];
+    v.time = 3000.3;
+    v.ID = @"10002";
+    v.info = @{@"AA":@(100),@"BB":[[NSURL alloc]initWithString:@"http://a.b.c"]};
+    v.date = [NSDate new];
+    
+    [DataBaseConnect saveObjectAllProperty:v];
+    
+    Author *au = [[Author alloc]init];
+    au.name = @"咸菜";
+    au.age = 99;
+    au.icon = @"http://www.test.cpm/image/a.png";
+    //Author 必须也是实现DBArhieverProtocol
+    
+    v.author = au;
+    
+    //插入
+    [DataBaseConnect saveObjectAllProperty:v];
+    //修改
+    v.name = @"爱情公寓2";
+    [DataBaseConnect updataObject:v Agrms:@{@"ID":@"100001"}];
+    //查找
+    id obj = [DataBaseConnect objectWithClass:[Video class] filed:@"ID" value:@"100001"];
+    NSArray *aus = [DataBaseConnect objectsWithClass:[Author class]];
+    int wwa = 1;
+    
+    return;
     //数据库更新
     
-    [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
-//       返回新的对象
-        return [Video new];
-    }];
+    //    [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
+    ////       返回新的对象
+    //        return [Video new];
+    //    }];
     
     
-//    NSArray *ae = @[
-//                   [People people:@"Paul" age:32 address:@"California" sl:20000.0],
-//                   [People people:@"Allen" age:25 address:@"Texas" sl:15000.0],
-//                   [People people:@"Teddy" age:23 address:@"Norway" sl:25000.0],
-//                   [People people:@"Mark" age:25 address:@"Rich-Mond" sl:27000.0],
-//                   [People people:@"David" age:27 address:@"Texas" sl:25000.0],
-//                   [People people:@"Kim" age:22 address:@"South-Hall" sl:35000.0],
-//                   [People people:@"James" age:24 address:@"Houston" sl:41000.0],
-//                   ];
-//     BOOL asasa = [DataBaseConnect saveObjscts:ae];
+    //    NSArray *ae = @[
+    //                   [People people:@"Paul" age:32 address:@"California" sl:20000.0],
+    //                   [People people:@"Allen" age:25 address:@"Texas" sl:15000.0],
+    //                   [People people:@"Teddy" age:23 address:@"Norway" sl:25000.0],
+    //                   [People people:@"Mark" age:25 address:@"Rich-Mond" sl:27000.0],
+    //                   [People people:@"David" age:27 address:@"Texas" sl:25000.0],
+    //                   [People people:@"Kim" age:22 address:@"South-Hall" sl:35000.0],
+    //                   [People people:@"James" age:24 address:@"Houston" sl:41000.0],
+    //                   ];
+    //     BOOL asasa = [DataBaseConnect saveObjscts:ae];
     
     
-/**
- 
-    [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
-        
-        return nil;
-    }];
-*/
+    /**
+     
+     [DataBaseConnect update2:[Video class] dataChange:^id<DBArhieverProtocol>(NSDictionary *value) {
+     
+     return nil;
+     }];
+     */
     /** 操作符的使用*/
     
     //select * from table limit 2 offset 2
@@ -71,9 +107,9 @@
     //select * from table where name GLOG 'D*'  名字D 开头
     id va6 = [[[DataBaseConnect objectsWithTarget:[People class]] addOperation:[GLOBOperation Operation:@"name" compera:@"D*" and:YES]] values];
     
-     //select * from t_People  where  name GLOB '*m*'  and  alalry >= 3700.000000    ORDER BY age ASC   limit 3 offset 0
+    //select * from t_People  where  name GLOB '*m*'  and  alalry >= 3700.000000    ORDER BY age ASC   limit 3 offset 0
     PrepareStatus *statu  = [[[[[DataBaseConnect objectsWithTarget:[People class]] addOperation:[GLOBOperation Operation:@"name" compera:@"*m*" and:YES]] addOperation:[ORDEROperation Operation:@"-age"]] addOperation:[CompareOperation Operation:@"alalry" compare:D value:37000 and:YES]] addOperation:[LimitOperation Operation:NSMakeRange(0, 3)]];
-//    NSLog(@"%@",[statu sql]);
+    //    NSLog(@"%@",[statu sql]);
     id va7 = [statu values];
     
     //select MAX(age) from table
@@ -91,9 +127,9 @@
     
     //简便方式
     id v2alu2 = DataBaseConnect.prepare([People class]).AddOperation([ValueOperation Operation:@[@"name",@"alalry"]]).AddOperation([ORDEROperation Operation:@"-alalry"]).AddOperation([LimitOperation Operation:NSMakeRange(0, 3)]).values;
-   
+    
     //join
-
+    
     
     //select  t_People.name AS People__name, t_Author.name AS Author__name from t_People   INNER JOIN t_Author USING (oneself)
     id dada2 = DataBaseConnect.prepare([People class]).AddOperation([[INNEROPeration alloc] initOperationJoin:[Author class] with:@"oneself"]).AddOperation([ValueOperation Operation:@[[PropertyCondition Condition:@"name" clazz:[People class]],[PropertyCondition Condition:@"name" clazz:[Author class]]]]).values;
@@ -105,40 +141,10 @@
     
     
     id dada2saqq = [[[DataBaseConnect objectsWithTarget:[People class]] addOperation:[[LeftOUTEROperation alloc] initOperationJoin:[Author class] with:@"oneself"]] addOperation:[MAXOperation Operation:[PropertyCondition Condition:@"age" clazz:[People class]]]].values;
-    /**
-     需要注意的是 如果你多次运行这段代码
-     数据库会Video没有出现多次记录
-     而 Author 出现多次
-     这是由于 Video  实现了uniqueness 来确定其的唯一性
-     
-     */
-    Video *v = [[Video alloc] init];
-    NSMutableString *aaaaa = [[NSMutableString alloc]initWithString:@"爱情公寓"];
-    v.name = aaaaa;
-    v.url = [NSURL URLWithString:@"http://www.baidu.com"];
-    v.time = 3000.3;
-    v.ID = @"100001";
-    v.info = @{@"AA":@(100),@"BB":[[NSURL alloc]initWithString:@"http://a.b.c"]};
-    v.date = [NSDate new];
     
     
-    Author *au = [[Author alloc]init];
-    au.name = @"咸菜";
-    au.age = 99;
-    au.icon = @"http://www.test.cpm/image/a.png";
-    //Author 必须也是实现DBArhieverProtocol
     
-    v.author = au;
     
-    //插入
-    [DataBaseConnect saveObjectAllProperty:v];
-    //修改
-    v.name = @"爱情公寓2";
-    [DataBaseConnect updataObject:v Agrms:@{@"ID":@"100001"}];
-    //查找
-    id obj = [DataBaseConnect objectWithClass:[Video class] filed:@"ID" value:@"100001"];
-    NSArray *aus = [DataBaseConnect objectsWithClass:[Author class]];
-    int wwa = 1;
     
 }
 

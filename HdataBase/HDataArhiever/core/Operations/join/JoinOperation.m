@@ -9,6 +9,7 @@
 #import "JoinOperation.h"
 #import "DataBaseConnect.h"
 #import "PropertyCondition.h"
+#import "BaseModelUtil.h"
 @interface JoinOperation()
 @property(nonatomic,assign)Class target;
 @property(nonatomic,strong)id condition;
@@ -53,7 +54,8 @@
             if(_condition){
                 con = [NSString stringWithFormat:@"USING (%@)",_condition];
             }else{
-                con =[NSString stringWithFormat:@"USING (%@)",@"oneself"];
+                
+                con =[NSString stringWithFormat:@"USING (%@)",[BaseModelUtil uniqueness:origin]];
             }
         }
         _Acontent = [[NSString alloc]initWithFormat:@" %@ %@ %@", join,[DataBaseConnect tableName:_target],con];

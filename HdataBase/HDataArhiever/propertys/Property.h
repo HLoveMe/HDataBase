@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "DBBaseTargetProtocol.h"
 #import "NSObject+Base.h"
-#import "FMResultSet.h"
+#import <FMDB/FMDB.h>
 typedef NS_ENUM(NSInteger, ValueType) {
     isEnCode = 1,
     isBaseTarget = 2

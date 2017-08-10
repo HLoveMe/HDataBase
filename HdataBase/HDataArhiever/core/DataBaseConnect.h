@@ -24,6 +24,10 @@
  字段保存   保存对象所有属性为字段
 
  @param obj 对象 如果你的模型有唯一标识  那么会先验证是否存在 存在它将是属于Update操作
+    说明:
+        如果obj 有关联的另一个对象A(满足数据库存储条件)
+        保存过程中仅仅查询A主键是否存在 来判断是否存储A  而不会更新原有
+ 
  @return 是否成功
  */
 +(BOOL)saveObjectAllProperty:(NSObject<DBArhieverProtocol> *)obj;
@@ -53,6 +57,11 @@
  */
 +(BOOL)deleteAllObjects:(Class)clazz;
 
+/**
+    ID 删除
+ */
++(BOOL)deleteObjdect:(id)flag ForClass:(Class)clazz;
+
 
 /**
  字段保存   查找满足dic的对象 将其修改为obj 《开启事务》
@@ -66,12 +75,19 @@
 /**
  提供唯一性属性的值 更新数据   《开启事务》
 
- @param obj 满足条件的数据 修改为obj
+ @param obj 满足条件的数据 修改--->obj
  @param isaValue 唯一性的值
  @return 是否成功
  */
-+(BOOL)updateObject:(NSObject<DBArhieverProtocol> *)obj oneself:(NSString *)isaValue;
++(BOOL)updateObject:(NSObject<DBArhieverProtocol> *)obj oneself:(long)isaValue;
 
+/**
+ 根据obj 主键查找修改
+
+ @param obj nil
+ @return nil
+ */
++(BOOL)updateObject:(NSObject<DBArhieverProtocol> *)obj;
 
 
 /**
@@ -127,7 +143,9 @@
 
 @interface DataBaseConnect (updateBase)
 /**
- 更新数据库      更新表为新的表
+ 
+    OLD----New
+    更新数据库      更新表为新的表
  更新失败机制如果失败  就会会退到之前数据
  
  >这里使用的文件复制 保证失败后撤销   (没有选择事务机制)
@@ -137,7 +155,7 @@
  @param flag 是否删除旧表
  @return 是否成功
  */
-+(BOOL)dataUpdate:(Class)old new:(Class)newC dataChange:(id<DBArhieverProtocol>(^)(id value))handle deleteOld:(BOOL)flag;
++(BOOL)baseUpdate:(Class)old new:(Class)newC dataChange:(id<DBArhieverProtocol>(^)(id value))handle deleteOld:(BOOL)flag;
 
 /**
  更新 当前表数据
@@ -161,7 +179,7 @@
         return value;
  }];
  */
-+(BOOL)update:(Class)clazz dataChange:(id<DBArhieverProtocol>(^)(id value))handle;
++(BOOL)baseUpdate:(Class)clazz dataChange:(id<DBArhieverProtocol>(^)(id value))handle;
 
 /**
  更新数据
@@ -176,7 +194,7 @@
  }
  @return 是否成功
  */
-+(BOOL)update2:(Class)clazz dataChange:(id<DBArhieverProtocol>(^)(NSDictionary *value))handle;
++(BOOL)baseUpdate2:(Class)clazz dataChange:(id<DBArhieverProtocol>(^)(NSDictionary *value))handle;
 @end
 
 @interface DataBaseConnect (operation)

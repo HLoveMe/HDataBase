@@ -21,6 +21,7 @@
 #import "PropertyFactory.h"
 #import "PropertyCondition.h"
 #import "NSObject+Base.h"
+#import "BaseModelUtil.h"
 @interface PrepareStatus()
 //所有
 @property(nonatomic,strong)NSMutableArray<DBOperation *> *operas;
@@ -209,7 +210,7 @@
             else{
                 DBManager *manager = [DBManager shareDBManager];
                 NSMutableArray *result = [NSMutableArray array];
-                [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+                [manager connectDatabaseOperationNoClose:^(FMDatabase *database) {
                     FMResultSet *set = [database executeQuery:self.sql];
                     int count = [set columnCount];
                     while ([set next]) {
@@ -218,7 +219,7 @@
                             NSString *name = [set columnNameForIndex:i];
                             NSString *value = [set stringForColumnIndex:i];
                             id one  = [PropertyFactory valueForString:value block:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
-                                return [DataBaseConnect objectWithClass:class filed:@"oneself" value:onself];;
+                                return [DataBaseConnect objectWithClass:class filed:[BaseModelUtil uniqueness:class]value:onself];;
                             }];
                             current[[name componentsSeparatedByString:[PropertyCondition spearaStr]].lastObject]=one;
                         }
@@ -227,7 +228,6 @@
                         [result addObject:one];
 
                     }
-                    return YES;
                 }];
                 return result;//是个问题
             }
@@ -235,7 +235,7 @@
             //指定函数  count sum max min
             DBManager *manager = [DBManager shareDBManager];
             NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-            [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+            [manager connectDatabaseOperationNoClose:^(FMDatabase *database) {
                 FMResultSet *set  = [database executeQuery:self.sql];
                 int count  = [set columnCount];
                 while ([set next]) {
@@ -244,7 +244,6 @@
                         dic[name] = [set stringForColumnIndex:i];
                     }
                 }
-                return YES;
             }];
             return dic;
         }
@@ -260,7 +259,7 @@
         //返回数组  [[a,b,c],[a,b,c],[a,b,c]]
         if(self.ValueArry){
             NSMutableArray<NSMutableArray *> *result = [NSMutableArray array];
-            [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+            [manager connectDatabaseOperationNoClose:^(FMDatabase *database) {
                 FMResultSet *set = [database executeQuery:self.sql];
                 int count = [set columnCount];
                 while ([set next]) {
@@ -268,13 +267,12 @@
                     for (int i=0; i<count; i++) {
                         NSString *value = [set stringForColumnIndex:i];
                         id one  = [PropertyFactory valueForString:value block:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
-                            return [DataBaseConnect objectWithClass:class filed:@"oneself" value:onself];;
+                            return [DataBaseConnect objectWithClass:class filed:[BaseModelUtil uniqueness:class] value:onself];;
                         }];
                         [current addObject:one];
                     }
                     [result addObject:current];
                 }
-                return YES;
             }];
             return result;
         }else{
@@ -285,7 +283,7 @@
                 result[[key isKindOfClass:[NSString class]] ? key : [(PropertyCondition *)key propertyName]] = [NSMutableArray array];
             }];
             
-            [manager connectDatabaseOperation:^BOOL(FMDatabase *database) {
+            [manager connectDatabaseOperationNoClose:^(FMDatabase *database) {
                 FMResultSet *set = [database executeQuery:self.sql];
                 int count = [set columnCount];
                 while ([set next]) {
@@ -293,26 +291,25 @@
                         NSString *name = [set columnNameForIndex:i];
                         NSString *value = [set stringForColumnIndex:i];
                         id one  = [PropertyFactory valueForString:value block:^id<DBArhieverProtocol>(NSString *onself, __unsafe_unretained Class class) {
-                            return [DataBaseConnect objectWithClass:class filed:@"oneself" value:onself];;
+                            return [DataBaseConnect objectWithClass:class filed:[BaseModelUtil uniqueness:class] value:onself];;
                         }];
                         [result[name] addObject:one];
                     }
                 }
-                return YES;
             }];
             return  result;
         }
     }
     return nil;
 }
--(id)valuesForArray{
-    return [self values];
+-(NSArray*)valuesForArray{
+    return (NSArray *)[self values];
 }
--(id)valuesForDictionary{
+-(NSDictionary *)valuesForDictionary{
     self.ValueArry = NO;
     id va = [self values];
     self.ValueArry = YES;
-    return va;
+    return (NSDictionary *)va;
 }
 @end
 

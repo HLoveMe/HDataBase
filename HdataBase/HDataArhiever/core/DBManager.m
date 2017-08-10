@@ -11,10 +11,16 @@ static DBManager *single;
 @interface DBManager()
 @property(nonatomic,strong)FMDatabase *database;
 @property(nonatomic,copy)NSString *dbPath;
-@property(nonatomic,assign)BOOL allowClose;
+//保存表 是否创建
+@property(nonatomic,strong)NSMutableArray* tableExits;
 @end
 @implementation DBManager
-
+-(NSMutableArray *)tableExits{
+    if(_tableExits==nil){
+        _tableExits = [[NSMutableArray alloc]init];
+    }
+    return _tableExits;
+}
 +(void)setDBPath:(NSString *)path{
     DBManager *m = [self shareDBManager];
     m.dbPath = path;
@@ -22,7 +28,7 @@ static DBManager *single;
 +(instancetype)shareDBManager{
     if (single == nil){
         DBManager *m = [[DBManager  alloc]init];
-        m.allowClose = YES;
+        single = m;
     }
     return single;
 }
@@ -32,8 +38,15 @@ static DBManager *single;
         single = self;
         [self clearTempFile];
         self.database = [FMDatabase databaseWithPath:[self dbPath]];
+        [self.database open];
     }
     return single;
+}
+-(void)addtableExits:(NSString*)name{
+    [self.tableExits addObject:name];
+}
+-(BOOL)hasExitsTable:(NSString*)name{
+    return [self.tableExits containsObject:name];
 }
 -(BOOL)clearTempFile{
     NSString *temp = [self temppath];
@@ -56,7 +69,6 @@ static DBManager *single;
     return err == nil;
 }
 -(FMDatabase *)dataBase{
-    [self.database open];
     return self.database;
 }
 -(NSString *)dbPath{
@@ -68,23 +80,9 @@ static DBManager *single;
 -(NSString *)temppath{
     return [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:[NSString stringWithFormat:@"temp_%@.db",[NSBundle mainBundle].infoDictionary[@"CFBundleName"]]];
 }
--(void)connectDatabaseOperation:(BOOL(^)(FMDatabase *data))block{
-    [self.database open];
-    BOOL close = NO;
-    if (block){
-        close = block(self.database);
-    }
-    if (close&&_allowClose)
-        [self.database close];
-}
 -(void)connectDatabaseOperationNoClose:(void(^)(FMDatabase *database))block{
-    self.allowClose = NO;
-    if(block){
-        [self.database open];
-        block(self.database);
-    }
-    self.allowClose = YES;
-    [self.database close];
+    //队列处理
+    block(self.database);
 }
 -(void)dataUpdate:(BOOL(^)(FMDatabase *data))block{
     void(^HANDLE)(void)=^(){

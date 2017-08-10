@@ -19,20 +19,15 @@
 
 +(instancetype)shareDBManager;
 
+-(NSString *)dbPath;
+
 -(FMDatabase *)dataBase;
 
-//查找完成  指定是否关闭数据库
--(void)connectDatabaseOperation:(BOOL(^)(FMDatabase *database))block;
+-(void)addtableExits:(NSString*)name;
+-(BOOL)hasExitsTable:(NSString*)name;
 
 
-/**
- block 内部所有操作  不会关闭数据库  《除非你 直接调用 [database close]》
- block 调用完成后关闭数据库
- @param block 数据库操作
- */
 -(void)connectDatabaseOperationNoClose:(void(^)(FMDatabase *database))block;
-
-
 /**
  提供数据库升级环境 
  数据库升级 保证失败后撤销  
