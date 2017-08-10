@@ -1,27 +1,34 @@
 # HDataBase
 基于FMDB的封装   一行代码完成数据的读写
 
-* 协议
-	* DBBaseTargetProtocol
-   * @property(nonatomic,assign)long oneself;内部进行识别的标示
-        dbFileds     剔除不需要保存的属性
-* 属性:
+* 模型
 
-	* 1:只可以为 int long BOOL...基本数据类型
-   * 2:NSNumber NSString NSMutableString  NSURL NSDate NSAttributedString
-   * 3:DBBaseTargetProtocol协议
-   * 4:DBBaseTarget 子类
-   * 5:数组
-           * NSNumber NSString NSMutableString  NSAttributedString NSURL NSDate
-           * DBBaseTargetProtocol协议
-           * DBBaseTarget 子类
-        
-   * 6 字典:
-   
-	   	```
-		key:value(NSNumber 	NSString ... ,DBBaseTargetProtocol)
-	   ```
-   
+	* 协议
+		* DBBaseTargetProtocol
+	   * @property(nonatomic,assign)long oneself;内部进行识别的标示
+	   * dbFileds     剔除不需要保存的属性
+	 	* -(NSString *)uniqueness; 指定你的主键
+	 
+	* DBBaseTarget<DBBaseTargetProtocol>
+		* oneself 为主键
+		
+	* 属性:
+	
+		* 1:只可以为 int long BOOL...基本数据类型
+	   * 2:NSNumber NSString NSMutableString  NSURL NSDate NSAttributedString
+	   * 3:DBBaseTargetProtocol协议
+	   * 4:DBBaseTarget 子类
+	   * 5:数组
+	           * NSNumber NSString NSMutableString  NSAttributedString NSURL NSDate
+	           * DBBaseTargetProtocol协议
+	           * DBBaseTarget 子类
+	        
+	   * 6 字典:
+	   
+		   	```
+			key:value(NSNumber 	NSString ... ,DBBaseTargetProtocol)
+		   ```
+	   
 * 注意
 
         >你所需要保存数据库的模型 尽可能简单(不要包含逻辑代码)
@@ -72,14 +79,19 @@
 	|CROSSOperation|交叉| A CROSS JOIN B|
 	|LeftOUTEROperation|左外联| A LEFT OUTER JOIN B|
 
-* 使用:
+* API:
 
     ```
+    DataBaseConnect:数据库操作全部使用其
+    	
         [DataBaseConnect saveObjectAllProperty:tea];
  
         [DataBaseConnect objectsWithClass:[Teacher class]];
- 
-	     。。。。
+ 	
+ 	DBManager
+ 		数据库管理	
+ 		
+	
 	```
 	
 * 操作符使用
@@ -99,3 +111,11 @@
     看Dome
 	```
 	
+* Swift
+	
+	```
+		你的模型类 必须提供 初始化
+			override init() {  }
+			所有相关Int long Double 不能用可选	
+		
+	```
